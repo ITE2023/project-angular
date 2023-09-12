@@ -1,0 +1,63 @@
+{
+  "merchant_message": {
+    "error_08": "Tên ĐVCNTT này đã được sử dụng.",
+    "error_88": "Dữ liệu được yêu cầu không hợp lệ.",
+    "error_09": "Thông tin đơn vị quản lý không chính xác.",
+    "error_10": "Email người đại diện đã tồn tại.",
+    "error_05": "Thông tin phương thức thanh toán không chính xác.",
+    "error_04": "ĐVCNTT không tồn tại.",
+    "error_11": "Trạng thái ĐVCNTT không đúng.",
+    "error_01": "Thông tin ngày tháng không đúng.",
+    "error_02": "Không tìm thấy dữ liệu phù hợp.",
+    "error_99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị..",
+    "success_00": "Thành công"
+  },
+  "error_code": {
+    "login": {
+      "error_01": "Thông tin tài khoản hoặc mật khẩu không đúng.",
+      "error_02": "Tài khoản đang bị khóa.",
+      "error_99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+      "error_88": "Thông tin yêu cầu không hợp lệ.",
+      "error_03": "Thông tin Email hoặc Số điện thoại không tồn tại.",
+      "error_04": "Hệ thống chưa hỗ trợ gửi mã OTP qua SMS. Vui lòng thử lại với email.",
+      "error_05": "Giao dịch xác thực không tồn tại hoặc đã quá hết hiệu lực.",
+      "error_06": "Mã OTP không đúng.",
+      "error_07": "Người dùng không tồn tại hoặc bị khóa.",
+      "error_105": "Nhập sai mật khẩu 5 lần, tài khoản của bạn sẽ bị khóa. Vui lòng liên hệ ban quản trị"
+    },
+    "forgot": {
+      "sussess_00": "Mật khẩu mới đã được cập nhật.",
+      "error_11": "Đã quá số lần gửi OTP cho phép.",
+      "error_02": "Tài khoản đang bị khóa.",
+      "error_99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+      "error_88": "Thông tin yêu cầu không hợp lệ.",
+      "error_03": "Email không tồn tại.",
+      "error_04": "Hệ thống chưa hỗ trợ gửi mã OTP qua SMS. Vui lòng thử lại với email.",
+      "error_05": "Mã OTP không hợp lệ do quá hạn hoặc nhập sai quá 3 lần. Vui lòng nhấn Gửi lại OTP.",
+      "error_06": "Mã OTP không đúng.",
+      "error_07": "Người dùng không tồn tại hoặc bị khóa."
+    },
+    "changepassword": {
+      "sussess_00": "Mật khẩu mới đã được cập nhật.",
+      "error_06": "Mật khẩu cũ của bạn không đúng.",
+      "error_-1": "Bạn nên trở về trang đăng nhập và nhấn nút Quên mật khẩu để thao tác.",
+      "error_88": "Dữ liệu yêu cầu không đúng",
+      "error_99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+      "format": {
+        "lowercase": "Chữ thường",
+        "uppercase": "Chữ hoa",
+        "min": "8 kí tự",
+        "special": "Kí tự đặc biệt",
+        "number": "Chữ số",
+        "utf8": "Kí tự hợp lệ"
+      }
+    },
+    "risks": {
+      "account_format": "Số tài khoản/ví không đúng định dạng",
+      "account_length": "Số tài khoản/ví có tối thiểu 4 ký tự",
+      "bank_number_length": "Số thẻ có tối thiểu 16 ký tự",
+      "bank_number_format": "Số thẻ ngân hàng không đúng định dạng",
+      "bin_format": "Dải BIN thẻ không đúng định dạng"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<button
+  *ngIf="flag && flag !== ''"
+  [matMenuTriggerFor]="language"
+  class="no-border-first-item"
+  mat-icon-button
+  class="no-border-first-item mr-4 profile"
+>
+  <img [src]="flag" alt="Language" class="lang-pic" />
+  <span class="badge"><i class="fa fa-caret-down"> </i></span>
+</button>
+
+<mat-menu #language="matMenu" class="mymegamenu">
+  <button
+    mat-menu-item
+    (click)="changeLang('vi')"
+    class="no-border-first-item lang"
+  >
+    <img src="assets/images/flag/Vietnam.png" alt="user" class="lang-pic" />
+    {{ "languageList.Vietnamese" | translate }}
+  </button>
+  <button mat-menu-item (click)="changeLang('en')" class="lang">
+    <img
+      src="assets/images/flag/United-Kingdom.png"
+      alt="user"
+      class="lang-pic"
+    />
+    {{ "languageList.English" | translate }}
+  </button>
+</mat-menu>
+
+<ite-notification *ngIf="checkPermission(2106)"></ite-notification>
+
+<button
+  [matMenuTriggerFor]="profile"
+  mat-icon-button
+  class="profile no-border-first-item"
+>
+  <img
+    [src]="profileImage"
+    alt="user"
+    default="{{ defaultAvatar }}"
+    class="profile-pic"
+  />
+  <span class="badge"><i class="fa fa-caret-down"> </i></span>
+</button>
+<mat-menu #profile="matMenu" class="mymegamenu">
+  <div class="text-center pt-3 profile-container">
+    <img
+      [src]="profileImage"
+      alt="user"
+      default="{{ defaultAvatar }}"
+      class="profile-pic-dropdown"
+    />
+  </div>
+  <div class="text-center border-bottom fullname">
+    {{ profileName }}
+  </div>
+  <button mat-menu-item (click)="redirectProfile()">
+    <mat-icon>account_box</mat-icon> {{ "profile" | translate }}
+  </button>
+  <button
+    *ngIf="checkPermission(2003)"
+    mat-menu-item
+    (click)="openChangePasswordModal()"
+  >
+    <mat-icon>lock</mat-icon> {{ "changePassword.changePassword" | translate }}
+  </button>
+  <button mat-menu-item (click)="logOut()">
+    <mat-icon>exit_to_app</mat-icon> {{ "logout" | translate }}
+  </button>
+</mat-menu>

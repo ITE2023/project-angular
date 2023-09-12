@@ -1,0 +1,117 @@
+<div>
+  <mat-card class="mb-3">
+    <mat-card-content>
+      <div class="profile-management">
+        <div class="row ml-0 mr-0">
+          <div class="col-12 col-sm-8 col-lg-10 pl-0">
+            <div class="row ml-0">
+              <div class="avatar-container" (click)="openChangeImg()">
+                <img
+                  class="avatar"
+                  [src]="profileImage"
+                  alt="user"
+                  default="{{ defaultAvatar }}"
+                />
+                <i class="fa fa-2x fa-camera img-upload" aria-hidden="true"></i>
+              </div>
+
+              <div class="profile-detail d-flex flex-column">
+                <div class="fullname">{{ profile?.full_name }}</div>
+
+                <div class="info">
+                  <div class="col-title text-secondary">
+                    {{ "profileAccount.username" | translate }}:
+                  </div>
+                  <div class="col-info">
+                    {{ profile?.username }}
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="col-title text-secondary">
+                    {{ "profileAccount.email" | translate }}:
+                  </div>
+                  <div class="col-info">
+                    {{ profile?.email }}
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="col-title text-secondary">
+                    {{ "profileAccount.address" | translate }}:
+                  </div>
+                  <div class="col-info">
+                    {{ profile?.address }}
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="col-title text-secondary">
+                    {{ "profileAccount.phone" | translate }}:
+                  </div>
+                  <div class="col-info">
+                    {{ profile?.phone }}
+                  </div>
+                </div>
+                <!-- <div class="info">
+                  <div class="col-title text-secondary">
+                    {{ "profileAccount.createdDate" | translate }}:
+                  </div>
+                  <div class="col-info">
+                    {{ profile?.created_date }}
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 col-lg-2 pl-0 pr-0 edit-profile">
+            <button mat-raised-button class="btn-edit" (click)="editProfile()">
+              <i class="material-icons">edit</i>
+              {{ "profileAccount.edit" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- <mat-card class="mb-3">
+    <div class="language-container">
+      <mat-card-title>
+        {{ "language" | translate }}
+      </mat-card-title>
+      <mat-card-content class="">
+        <div>{{ "profileAccount.defaultLanguage" | translate }}</div>
+        <div class="language" *ngIf="language">{{ language | translate }}</div>
+      </mat-card-content>
+    </div>
+  </mat-card>
+
+  <mat-card class="mb-3">
+    <div class="history-container">
+      <mat-card-title>
+        {{ "profileAccount.history" | translate }}
+      </mat-card-title>
+      <mat-card-content class="content">
+        <div
+          *ngFor="let item of history; let odd = odd; let even = even"
+          class="history"
+        >
+          <div class="dot" [ngClass]="{ 'bg-odd': odd, 'bg-even': even }"></div>
+          <div class="history-content">
+            <div
+              class="action-time"
+              [ngClass]="{ 'bg-odd': odd, 'bg-even': even }"
+            >
+              {{ item?.action_time }}
+            </div>
+            <div class="action-name">
+              {{ multiLangData(item?.action_name) }}
+            </div>
+          </div>
+        </div>
+        <div class="see-more ct-link" *ngIf="isSeeMore" (click)="seeMore()">
+          {{ "profileAccount.seeMore" | translate }}
+        </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div> -->
+</div>

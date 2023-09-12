@@ -1,0 +1,26 @@
+<div class="body" *ngIf="breadState && breadState.length > 0">
+  <ol class="breadcrumb breadcrumb-col-teal">
+    <li
+      *ngFor="let item of breadState; let i = index"
+      [class.active]="i === breadState.length - 1"
+    >
+      <a
+        [routerLink]="item.url"
+        *ngIf="
+          i < breadState.length - 1 && item.url !== '' && item.url !== null
+        "
+      >
+        <i class="material-icons bc-icon">{{ item.icon }}</i>
+        {{ item.name | translate }}
+      </a>
+      <span *ngIf="i < breadState.length - 1 && item.url === null">
+        <i class="material-icons bc-icon">{{ item.icon }}</i>
+        {{ item.name | translate }}
+      </span>
+      <span *ngIf="i === breadState.length - 1">
+        <i class="material-icons bc-icon">{{ item.icon }}</i>
+        {{ item.name | translate }}
+      </span>
+    </li>
+  </ol>
+</div>

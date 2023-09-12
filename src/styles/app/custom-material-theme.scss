@@ -1,0 +1,153 @@
+@import "./ultilities/_variable.scss";
+@import "./ultilities/_variable.color.scss";
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $main-color !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: $main-color !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $main-color !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $main-color !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $main-color !important;
+}
+
+.mat-input-element {
+  caret-color: $main-color !important;
+}
+
+.custom-mat-radio-search {
+  .mat-radio-group {
+    display: inline-flex !important;
+  }
+}
+
+.common-button .material-icons {
+  margin-right: 3px;
+}
+
+.mat-card {
+  border: 0.5px solid #d8d8d8;
+}
+
+.mat-card-title {
+  margin-bottom: 12px;
+  font-size: 20px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px !important;
+  }
+}
+
+.mat-drawer,
+.mat-card {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: $main-color;
+}
+
+.mat-card-content {
+  margin-bottom: 6px !important;
+}
+
+.mat-option.mat-selected:not(.mat-option-disabled),
+.mat-option.mat-option-disabled {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.material-icons {
+  font-size: 18px;
+}
+
+.mat-select-placeholder,
+.mat-form-field-appearance-legacy .mat-form-field-label,
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: #495057;
+  opacity: 0.8;
+}
+
+.mat-radio-button .mat-radio-ripple,
+.mat-checkbox .mat-checkbox-ripple {
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 16px !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 16px 16px !important;
+}
+
+.ct-dialog .mat-form-field-flex {
+  padding-top: 6px;
+}
+
+.ct-dialog .ct-datepicker .mat-form-field-flex {
+  padding-top: 0;
+}
+
+.mat-select-arrow {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.mat-checkbox-checked.mat-checkbox-disabled .mat-checkbox-inner-container {
+  opacity: 0.5;
+}
+
+.mat-option:not(.mat-option-disabled):hover {
+  background-color: $main-color !important;
+  color: #fff !important;
+
+  .mat-pseudo-checkbox {
+    color: #fff;
+  }
+}
+
+.mat-icon {
+  height: initial !important;
+
+  &.sub-item-icon {
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+
+.mat-card-header-text {
+  margin: 0 !important;
+}
+
+// .mat-form-field-infix {
+//   border-top: 13px solid transparent !important;
+// }
+
+.ct-radio-button.mat-radio-button.mat-radio-disabled .mat-radio-label-content {
+  color: rgba(0, 0, 0, 0.87);
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+}
+
+
+.mat-select-disabled .mat-select-value {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mat-select-panel {
+  max-height: 300px !important;
+}

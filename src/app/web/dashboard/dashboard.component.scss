@@ -1,0 +1,276 @@
+@import "../../../styles/ultilities/variable.color";
+@import "../../../styles/ultilities/_variable.color.scss";
+
+.info-box {
+  background: $white;
+  display: flex;
+  margin-bottom: 3px;
+  min-height: 80px;
+  padding: 0.5rem;
+  position: relative;
+
+  .progress {
+    background-color: rgba(#000, 0.125);
+    height: 2px;
+    margin: 5px 0;
+
+    .progress-bar {
+      background-color: $white;
+    }
+  }
+
+  .info-box-icon {
+    align-items: center;
+    display: flex;
+    font-size: 1.875rem;
+    justify-content: center;
+    text-align: center;
+    width: 70px;
+
+    >img {
+      max-width: 100%;
+    }
+  }
+
+  .info-box-content {
+    flex: 1;
+    padding: 5px 10px;
+  }
+
+  .info-box-number {
+    display: block;
+    font-weight: 700 !important;
+  }
+
+  .info-box-gray {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    color: gray;
+  }
+
+  .progress-description,
+  .info-box-text {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .info-box-more {
+    display: block;
+  }
+
+  .progress-description {
+    margin: 0;
+  }
+}
+
+.box-custom {
+  color: white;
+  height: 150px;
+  //width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow: 2px 1px #6c6c6c;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  flex-basis: 32%;
+  margin-bottom: 20px;
+  background-image: url('/assets/images/bg-chart.png');
+}
+
+.badge-custom .badge {
+  width: 130px;
+  padding: 10px 5px;
+  font-size: 100%;
+  font-weight: 100;
+}
+
+.bg-green {
+  background-color: #369b8a;
+}
+
+.bg-yellow {
+  background-color: #e39124;
+}
+
+.bg-blue {
+  background-color: #007db8;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.select-period {
+  width: 200px;
+}
+
+.grid-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid-layout {
+  .grid-right {
+    flex: 1;
+    overflow-x: auto;
+
+    table {
+      min-width: 100% !important;
+    }
+  }
+
+  .grid-left {
+    flex: 1;
+    display: flex;
+
+    .grid-chart_pie {
+      margin-bottom: 20px;
+      flex: 1;
+      width: 50%;
+      padding-left: 10px;
+    }
+
+    .grid-chart_line {
+      margin-bottom: 20px;
+      flex: 1;
+      width: 50%;
+      padding-right: 10px;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 1300px) {
+  .grid-layout {
+    display: block;
+
+    .grid-right {
+      padding: 0;
+      flex: 2;
+    }
+
+    .grid-left {
+      flex: 1;
+      display: block;
+
+      .grid-chart_line {
+        margin-right: 0;
+        width: 100%;
+        padding: 0;
+      }
+
+      .grid-chart_pie {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .grid-box {
+    flex-wrap: wrap;
+  }
+
+  .grid-right {
+    flex: 2;
+  }
+
+  .grid-left {
+    flex: 1;
+    display: block;
+
+    .grid-chart_line {
+      margin-right: 0;
+      width: 100%;
+      padding: 0;
+    }
+
+    .grid-chart_pie {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .left {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .box-custom {
+    flex-basis: 100%;
+  }
+
+  .grid-box {
+    display: block;
+  }
+
+  .grid-right {
+    flex: 2;
+  }
+
+  .grid-left {
+    flex: 1;
+    display: block;
+
+    .grid-chart_line {
+      margin-right: 0;
+      width: 100%;
+      padding: 0;
+    }
+
+    .grid-chart_pie {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+.border-btn {
+  border: 1px solid darkcyan;
+}
+
+@media only screen and (min-width: 1200px) {
+  .left {
+    padding-right: 7.5px;
+  }
+
+  .right {
+    padding-left: 7.5px;
+  }
+}
+
+
+.top {
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 767px) {
+  .item-1 {
+    align-items: baseline;
+  }
+}
+
+.col-date {
+  min-width: 160px !important;
+}
+
+.newest-trans {
+  width: 100%;
+  align-content: center;
+  justify-content: space-between;
+}
+
+

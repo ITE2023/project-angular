@@ -1,0 +1,163 @@
+.notification-management {
+  .title {
+    padding-left: 12px;
+  }
+
+  .search-form {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .search-icon {
+      position: absolute;
+      right: 175px;
+      top: 10px;
+      font-size: 14px;
+    }
+
+    .form-control {
+      width: 200px;
+      font-size: 14px;
+      padding-left: 30px;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.notification-list {
+  margin-bottom: 16px;
+  border: 1px solid #dee2e6;
+
+  .action {
+    background: #dee2e6;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .button-action {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: inherit;
+    min-width: 100px;
+    margin-left: 12px;
+
+    i {
+      margin-bottom: 4px;
+      margin-left: 4px;
+    }
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .item {
+    position: relative;
+    padding: 12px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  .item-checkbox {
+    margin-right: 12px;
+    position: absolute;
+  }
+
+  .item-content {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .item-title {
+    margin-bottom: 5px;
+  }
+
+  .item-time {
+    min-width: 120px;
+    text-align: right;
+  }
+
+  .unread {
+    font-weight: bold;
+  }
+
+  .content {
+    padding-left: 28px;
+  }
+
+  .time {
+    text-align: right;
+
+    @media screen and (max-width: 767px) {
+      text-align: left;
+      margin: 5px 0;
+      font-style: italic;
+    }
+  }
+}
+
+.refresh.material-icons {
+  font-size: 24px;
+  margin-left: 10px;
+  padding: 4px;
+  width: 32px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+  }
+}
+
+.filter {
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 6px 8px;
+  margin-left: 3px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+  }
+}
+
+.notification-list.no-data {
+  margin-bottom: 0;
+  border-bottom: 0;
+
+  .action {
+    margin-bottom: 0;
+  }
+}
+
+::ng-deep {
+  .notification-management .mat-checkbox label {
+    margin-bottom: 0;
+  }
+
+  .action-menu .mat-menu-item {
+    height: 30px;
+    line-height: 30px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.content {
+  margin-top: 3px;
+  word-break: break-word;
+  -ms-word-break: break-all;
+}
+
+.subject {
+  font-style: italic;
+}

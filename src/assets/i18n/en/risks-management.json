@@ -1,0 +1,274 @@
+{
+  "risks-management": {
+    "title-main": "Risk Management - BlackList",
+    "success": "success",
+    "dialog": {
+      "placeholder": {
+        "file": "Select file to upload",
+        "ip": "Enter IP address",
+        "bin": "Enter card BIN range",
+        "business": "Corresponding MCC name",
+        "account": "Enter account number/e-wallet",
+        "card": "Enter bank card number",
+        "date": "Enter/select an applicable date",
+        "sl": "Enter quantity",
+        "price": "Enter a value",
+        "issuer": "Select issuer",
+        "method": "Select treatment method",
+        "upload": "Select file to upload",
+        "mcc": "Select MCC",
+        "search": "Enter search information",
+        "nation": "Enter country name"
+      }
+    },
+    "button": {
+      "add": "Add New",
+      "export": "Export file",
+      "close": "Close",
+      "search": "Search",
+      "edit": "Update",
+      "delete": "Delete"
+    },
+    "card": {
+      "title": "Limited card list",
+      "title_add": "Add new limited card",
+      "title_edit": "Update limited card",
+      "title_delete": "Delete limited card",
+      "file_name": "Limited-card-list",
+      "search": {
+        "number": "Bank card number",
+        "dv": "Issuer",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "name_list": "List of tags"
+      },
+      "list": {
+        "no": "No.",
+        "number": "Card number",
+        "dv": "Issuer",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "menu": "Actions",
+        "account": "Created account"
+      }
+    },
+    "account": {
+      "title": "Limited accounts/e-wallets list",
+      "title_add": "Add new limited accounts/e-wallets",
+      "title_edit": "Update limited accounts/e-wallets",
+      "title_delete": "Delete limited accounts/e-wallets",
+      "file_name": "Limited-accounts-e-wallets-list",
+      "search": {
+        "number": "Account/wallet number",
+        "dv": "Issuer",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "name_list": "List of accounts/wallets"
+      },
+      "list": {
+        "no": "No.",
+        "number": "Account/wallet number",
+        "dv": "Issuer",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "menu": "Actions",
+        "account": "Created account"
+      }
+    },
+    "bin": {
+      "title": "Limited BIN range list",
+      "title_add": "Add new limited BIN range",
+      "title_edit": "Update limited BIN range",
+      "title_delete": "Delete the limited BIN range",
+      "file_name": "Limited-BIN-range-list",
+      "search": {
+        "number": "Card BIN Range",
+        "dv": "Issuer",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "name_list": "Tag BIN range list"
+      },
+      "list": {
+        "no": "No.",
+        "number": "Card BIN Range",
+        "dv": "Issuer",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "menu": "Actions",
+        "account": "Created account"
+      },
+      "minlength": "The tag BIN range has at least 4 characters"
+    },
+    "transaction": {
+      "title": "Suspicious transaction list",
+      "file_name": "Suspicious-transaction-list",
+      "search": {
+        "dv": "Merchant ID",
+        "status": "Status",
+        "date": "Time",
+        "action": "Form of payment",
+        "from": "Transaction from date",
+        "to": "To date"
+      },
+      "status": {
+        "1": "Success",
+        "0": "Failed"
+      },
+      "list": {
+        "dv": "Merchant ID",
+        "date": "Time",
+        "code": "GD code",
+        "price": "Value (VND)",
+        "type": "Form",
+        "action": "Form of handling",
+        "menu": "Actions",
+        "status": "Status",
+        "reason": "Cause",
+        "warning-type": "Warning type"
+      },
+      "risk-type": {
+        "account": "Electric account/wallet",
+        "card": "Bank card",
+        "card_bin": "Card BIN Range",
+        "ip": "IP address",
+        "mcc": "Type of business",
+        "timeout": "Unknown"
+      }
+    },
+    "business": {
+      "title": "Limited business type list",
+      "title_add": "Add new limited business type",
+      "title_edit": "Update limited business type",
+      "title_delete": "Delete limited business type",
+      "file_name": "Limited-business-type-list",
+      "search": {
+        "mcc": "MCC Code",
+        "nameDv": "MCC Business Type",
+        "group": "Group MCC",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "name_list": "KD type list",
+        "sl": "Amount/day",
+        "price": "Value/trans. (VND)"
+      },
+      "list": {
+        "no": "No.",
+        "dv": "MCC Business Type",
+        "mcc": "MCC Code",
+        "group": "Group MCC",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "menu": "Actions",
+        "account": "Account created",
+        "amount": "SLGD/day",
+        "value": "Value/GD (VND)",
+        "mcc_name": "MCC Name"
+      }
+    },
+    "ip": {
+      "title": "Limited IP addresses list",
+      "title_add": "Add new limited IP address",
+      "title_edit": "Update limited IP address",
+      "title_delete": "Delete limited IP addresses",
+      "file_name": "Limited-IP-addresses-list",
+      "search": {
+        "number": "IP address",
+        "dv": "Country",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "name_list": "List of IP addresses"
+      },
+      "list": {
+        "no": "No.",
+        "number": "IP address",
+        "dv": "Country",
+        "date": "Applicable date",
+        "action": "Form of handling",
+        "menu": "Actions",
+        "account": "Created account"
+      }
+    },
+    "methodList": {
+      "block": "Block transaction",
+      "warning": "Risk warning",
+      "timeout": "Not checked"
+    },
+    "all": {
+      "issuer": "All TCPH",
+      "method": "All forms",
+      "nation": "All countries",
+      "status": "All status",
+      "object": "All objects",
+      "warning_type": "All warning types"
+    },
+    "errors": {
+      "03": "Invalid status",
+      "05": "Risk Management with information already exists",
+      "06": "Incorrect Risk Management Information",
+      "11": "Applicable date must be greater than current date",
+      "13": "The date information is incorrect",
+      "88": "Invalid request data",
+      "99": "The system is temporarily down. Please contact the administrator.",
+      "upload": "Invalid data in the second line",
+      "upload-again": "Please check and re-download the file"
+    },
+    "date": {
+      "from": "Applicable from date",
+      "to": "To date"
+    },
+    "undefined": "Undefined",
+    "object": "Applicable object",
+    "system": "System",
+    "active": {
+      "account": "Account",
+      "card": "Card",
+      "bin": "BIN range",
+      "ip": "IP address",
+      "mcc": "Type of business",
+      "success": "Success state transition"
+    },
+    "history": {
+      "title": "Update history",
+      "ADD": "added new information",
+      "EDIT": "updated information",
+      "CHANGE_STATUS": "changed state to",
+      "noData": "No update history"
+    },
+    "statusList": {
+      "active": "Effective",
+      "inactive": "Inactive"
+    },
+    "template": "Download file template",
+    "here": "here"
+  },
+  "risks-whitelist": {
+    "card": {
+      "title": "Priority card list",
+      "title_add": "Add new priority card",
+      "title_edit": "Update priority card",
+      "title_delete": "Delete priority card",
+      "file_name": "Priority-card-list"
+    },
+    "account": {
+      "title": "Priority accounts/e-wallets list",
+      "title_add": "Add new priority accounts/e-wallets list",
+      "title_edit": "Update priority accounts/e-wallets list",
+      "title_delete": "Delete priority accounts/e-wallets list",
+      "file_name": "Priority-accounts-e-wallets-list"
+    },
+    "bin": {
+      "title": "Priority BIN range list",
+      "title_add": "Add new priority BIN range list",
+      "title_edit": "Update priority BIN range list",
+      "title_delete": "Delete priority BIN range list",
+      "file_name": "Priority-BIN-range-list"
+    },
+    "ip": {
+      "title": "Priority IP addresses list",
+      "title_add": "Add new priority IP address",
+      "title_edit": "Update priority IP address",
+      "title_delete": "Delete priority IP address",
+      "file_name": "Priority-IP-addresses-list"
+    }
+  }
+}

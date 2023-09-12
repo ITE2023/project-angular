@@ -1,0 +1,137 @@
+@import "../../../../styles/ultilities/variable.color";
+
+.small-icon {
+  font-size: 20px !important;
+}
+
+.sub-item-text {
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+::ng-deep {
+  .ct-left-menu .mat-icon {
+    min-width: 24px;
+  }
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden;
+}
+
+::ng-deep .mat-list-base::-webkit-scrollbar {
+  width: 10px;
+  transition: all 0.1 ease-in-out;
+}
+
+::ng-deep .mat-list-base::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+::ng-deep .mat-list-base::-webkit-scrollbar-thumb {
+  // background: -webkit-linear-gradient(45deg,
+  //     rgba(255, 255, 255, 0.2) 25%,
+  //     transparent 25%,
+  //     transparent 50%,
+  //     rgba(255, 255, 255, 0.2) 50%,
+  //     rgba(255, 255, 255, 0.2) 75%,
+  //     transparent 75%,
+  //     transparent);
+  background-color: #ccc;
+  //background-color: #b0d8c2;
+  //border-radius: 20px;
+}
+
+.user-profile {
+  height: 170px;
+  transition: all 700ms ease-in-out;
+}
+
+.user-profile-close {
+  width: 100%;
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 1px solid #ccc
+  }
+
+  .profile-img {
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 7px 0;
+  }
+}
+
+.mat-list-base {
+  overflow-x: hidden;
+  padding: 15px 10px 0;
+}
+
+.mat-list-base-open {
+  max-height: calc(100% - 170px);
+  overflow-y: auto;
+}
+
+.mat-list-base-close {
+  max-height: calc(100vh - 125px);
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0px;
+  }
+
+  &:hover {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, .2)
+    }
+  }
+}
+
+::ng-deep .mat-tooltip {
+  /* your own custom styles here */
+  /* e.g. */
+  color: yellow;
+}
+
+.ct-left-menu .material-icons {
+  font-size: 22px;
+}
+
+.sub-menu-item {
+  &:hover {
+    background: $main-color-hover !important;
+
+    .sub-item-icon {
+      color: #fff;
+    }
+  }
+}
+
+.sub-menu-list {
+  .mat-menu-content {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

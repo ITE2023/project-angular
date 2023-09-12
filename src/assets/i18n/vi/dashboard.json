@@ -1,0 +1,55 @@
+{
+  "dashboard-page": {
+    "mutual": {
+      "title": "Kết quả kinh doanh ngày hôm nay",
+      "from_date": "Từ ngày",
+      "to_date": "Đến ngày",
+      "criteria": {
+        "active_wallet": "Tổng số lượng ví active",
+        "online_wallet": "Tổng số lượng ví online",
+        "top_highest_value": "Top 10 ví có giá trị giao dịch cao nhất",
+        "top_highest_number": "Top 10 ví có số lượng giao dịch cao nhất"
+      }
+    },
+    "circle_chart": {
+      "title_active": "Tổng số lượng ví active",
+      "title_online": "Tổng số lượng ví online",
+
+      "data_table": {
+        "status_col": "Trạng thái",
+        "amount_col": "Số lượng ví",
+        "scale_col": "Tỉ lệ",
+        "wallet_status": {
+          "active": {
+            "active": "Hoạt động",
+            "block": "Khóa",
+            "delete": "Xoá"
+          },
+          "online": {
+            "online": "Online",
+            "offline": "Offline"
+          }
+        },
+        "total_label": "Tổng cộng"
+      }
+    },
+    "column_chart": {
+      "combobox": {
+        "top_number": "Số lượng giao dịch",
+        "top_value": "Giá trị giao dịch"
+      },
+      "time_choose": {
+        "day": "Ngày",
+        "week": "Tuần",
+        "month": "Tháng"
+      },
+      "unit_label_value": "GTGD",
+      "unit_label_number": "SLGD"
+    },
+    "new_trans": {
+      "title": "Giao dịch mới nhất",
+      "see_more": "Xem thêm"
+    },
+    "no-statistic": "Chưa có dữ liệu"
+  }
+}

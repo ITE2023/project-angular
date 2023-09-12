@@ -1,0 +1,55 @@
+{
+  "monitoring": {
+    "title": "Monitoring",
+    "moni-service": "Service Monitor",
+    "moni-system": "System Monitor",
+    "period": {
+      "title": "Period",
+      "5": "5 minutes",
+      "15": "15 minutes",
+      "30": "30 minutes",
+      "60": "1 hour",
+      "360": "6 hours",
+      "720": "12 hours",
+      "1440": "1 day",
+      "4320": "3 days"
+    },
+    "select-period": "Select period",
+    "number-of-transaction-chart": "Chart of number of transactions by payment method",
+    "number-of-risk-chart": "Chart of the number of risky transactions",
+    "table-data": "Detailed data table",
+    "success-rate-chart": "The chart of successful transaction rate by payment method",
+    "date": "Day",
+    "hour": "Hour/Minute",
+    "total": "Total",
+    "from": "From",
+    "to": "To",
+    "status": {
+      "success": "Success",
+      "fail": "Fail",
+      "wait": "Pending"
+    },
+    "risk-transaction": "Risk transaction",
+    "payment-method": {
+      "320": "E-wallet",
+      "321": "Domestic Card",
+      "322": "International Card",
+      "323": "Installment payment",
+      "324": "QR Payment",
+      "330": "Bank account",
+      "331": "International Card(Emulator)"
+    },
+    "number-of-transation-chart-by-period": "Chart of number of transactions over time",
+    "success-rate-chart-by-period": "Chart of successful transaction rate",
+    "issuer-response-time-ratio-chart": "Chart of issuer response time (t) rate",
+    "response-time": {
+      "lessThan15Seconds": "t <= 15s",
+      "lessThan5Minutes": "15s < t <= 5m",
+      "largerThan5Minutes": "t > 5m",
+      "total": "Total success"
+    },
+    "service-file-name": "Giam_sat_dich_vu_",
+    "system-file-name": "Giam_sat_he_thong_",
+    "select": "Select"
+  }
+}

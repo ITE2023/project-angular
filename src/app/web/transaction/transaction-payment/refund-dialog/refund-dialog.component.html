@@ -1,0 +1,93 @@
+<div class="ct-dialog">
+  <mat-card-title class="mat-title-dialog text-center">
+    {{ "transaction.payment.transaction-refund" | translate }}
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form [formGroup]="reasonForm" (ngSubmit)="onSubmit()" class="mt-4 fs-14">
+      <div class="form-group row">
+        <div class="col-md-4">
+          {{ "transaction.payment.maximum-refund-amount" | translate }}
+        </div>
+        <div class="col-md-8 d-flex align-items-center">
+          <div class="d-flex">
+            <span>{{ data.available_refund_amount | number: '1.0-2'}} {{ data?.currency | uppercase }} </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-4">
+          <span class="label">
+            {{ "transaction.payment.refund-amount" | translate }} <span class="text-danger">
+              *</span>
+          </span>
+        </div>
+        <div class="col-md-8">
+          <div class="input-group">
+            <input type="text" class="form-control fs-14" formControlName="amount" appNumberOnly mask="separator.0"
+              thousandSeparator="," maxlength="11" [placeholder]="'transaction.payment.enter-amount' | translate"
+              (input)="amountError = false;" />
+            <div class="input-group-append">
+              <div class="input-group-text small-suffix bg-white border-left-0 text-suffix fs-14">
+                {{ data?.currency | uppercase }}
+              </div>
+            </div>
+          </div>
+          <div class="server-error"
+            *ngIf="submitted && f.amount.invalid && f.amount.errors.required && f.amount.touched">
+            {{ commonErrorCode.REQUIRED |translate }}
+          </div>
+          <div class="server-error" *ngIf="amountError">
+            {{ 'transaction.errors.106' |translate }}
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-4">
+          <span class="label">
+            {{ "transaction.payment.reason" | translate }} <span class="text-danger">
+              *</span>
+          </span>
+        </div>
+        <div class="col-md-8">
+          <mat-select class="form-control form-field fs-14" formControlName="reason"
+            placeholder="{{'transaction.placeholder.reason'| translate}}" disableOptionCentering
+            panelClass="ct-select-position dialog-select" (selectionChange)="onChangeShowInput($event)">
+            <mat-option *ngFor="let item of reasons" value="{{item.value}}">
+              {{ 'transaction.payment.refund-reason.' + item.value | translate }}
+            </mat-option>
+          </mat-select>
+          <div class="server-error"
+            *ngIf="submitted && f.reason.invalid && f.reason.errors.required && f.reason.touched">
+            {{ commonErrorCode.REQUIRED |translate }}
+          </div>
+        </div>
+      </div>
+      <div class="form-group row" *ngIf="isShowTextarea">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <textarea class="form-control w-100 fs-14" rows="5" formControlName="contentReason" maxlength="300"
+            [placeholder]="'transaction.payment.reason-refund' | translate"></textarea>
+          <div class="server-error"
+            *ngIf="submitted && f.contentReason.invalid && f.contentReason.errors.required && f.contentReason.touched">
+            {{ commonErrorCode.REQUIRED |translate }}
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mt-4">
+        <button type="button" class="btn-cancel text-white common-button" (click)="cancel()" mat-raised-button>
+          <i class="material-icons">close</i>
+          {{'commonAction.cancel'|translate}}
+        </button>
+        <button type="submit" mat-raised-button class=" btn-save text-white button-submit ml-3 common-button">
+          <i class="material-icons">save</i>
+          {{'changePassword.confirm'|translate}}
+        </button>
+      </div>
+    </form>
+    <div class="btn-close" (click)="cancel()">
+      <i class="material-icons">close</i>
+    </div>
+  </mat-card-content>
+</div>

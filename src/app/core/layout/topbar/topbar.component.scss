@@ -1,0 +1,45 @@
+@import "../../../../styles/ultilities/_variable.scss";
+@import "../../../../styles/ultilities/_variable.color.scss";
+
+.fullname {
+  padding: 10px 16px;
+  font-weight: 600;
+  word-break: break-word;
+-ms-word-break: break-all;
+
+}
+
+::ng-deep .mymegamenu {
+  margin-top: 12px;
+
+  .mat-menu-content {
+    overflow: hidden;
+  }
+
+  .mat-menu-item {
+    height: 36px;
+    line-height: 36px;
+
+    .mat-icon {
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    &:hover {
+      background-color: $main-color;
+      color: #fff;
+
+      .mat-icon {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  margin-left: 16px;
+}

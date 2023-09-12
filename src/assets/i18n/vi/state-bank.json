@@ -1,0 +1,129 @@
+{
+  "state_bank_page": {
+    "wallet_balance": {
+      "current_day": {
+        "title": "Báo cáo số dư ví tại thời điểm hiện tại",
+        "selected_title": "Tại thời điểm truy cập"
+      },
+      "selected_month": {
+        "title": "Báo cáo số dư ví theo kỳ",
+        "selected_title": "Theo kỳ"
+      },
+      "table_data": {
+        "column_data": {
+          "no": "STT",
+          "type_wallet": "Loại ví",
+          "status": "Trạng thái",
+          "amout_wallet": "Số lượng ví",
+          "bal_wallet": "Số dư ví"
+        },
+        "wallet_data": {
+          "type_wallet": {
+            "personal": "Ví điện tử cá nhân",
+            "organize": "Ví điện tử tổ chức",
+            "merchant": "Ví điện tử ĐVCNTT"
+          },
+          "status_wallet": {
+            "active": "Active",
+            "online": "Online",
+            "release": "Phát hành"
+          },
+          "total": "Tổng số"
+        }
+      }
+    },
+    "guaranteed_balance": {
+      "title": "Số dư tài khoản đảm bảo thanh toán",
+      "column_data": {
+        "no": "STT",
+        "date": "Ngày",
+        "debit": "GHI NỢ",
+        "credit": "GHI CÓ",
+        "note": "Ghi chú"
+      },
+      "column_mutual": {
+        "quan_trans": "Số lượng giao dịch",
+        "val_trans": "Giá trị giao dịch"
+      },
+      "guaranteed_acc": {
+        "label": "Tài khoản ĐBTT",
+        "search": "Nhập tên tài khoản"
+      },
+      "basic_info": {
+        "acc_num": "Số tài khoản",
+        "bank": "Ngân hàng",
+        "acc_name": "Tên tài khoản",
+        "acc_balance": "Số dư tài khoản"
+      }
+    },
+    "type_report": {
+      "title": "Báo cáo theo loại giao dịch",
+      "column_data": {
+        "no": "STT",
+        "date": "Ngày",
+        "recharge_trans": "Giao dịch nạp tiền",
+        "withdraw_trans": "Giao dịch rút tiền",
+        "transfer_trans": "Giao dịch chuyển tiền",
+        "payment_trans": "Giao dịch thanh toán",
+        "refund_trans": "Giao dịch hoàn trả",
+        "other_trans": "Giao dịch khác",
+        "total": "Tổng"
+      },
+      "column_mutual": {
+        "quantity": "Số lượng",
+        "value": "Giá trị"
+      }
+    },
+    "top_most": {
+      "title": "Top 10 ví số lượng giao dịch nhiều nhất",
+      "column_data": {
+        "no": "STT",
+        "wallet_name": "Tên ví điện tử",
+        "first_balance": "Số dư đầu kỳ",
+        "last_balance": "Số dư cuối kỳ",
+        "deposit_withdraw": "Nạp/rút tiền",
+        "payment_transfer": "Giao dịch thanh toán",
+        "refund": "Giao dịch hoàn trả",
+        "other_trans": "Giao dịch khác",
+        "total": "Tổng",
+        "deposit": "Nạp tiền",
+        "withdraw": "Rút tiền",
+        "bank_name": "Tên ngân hàng"
+      },
+      "column_mutual": {
+        "quantity": "Số lượng",
+        "value": "Giá trị"
+      }
+    },
+    "top_highest": {
+      "title": "Top 10 ví giá trị giao dịch cao nhất",
+      "detail": {
+        "wallet_info_title": "Thông tin giao dịch của ví"
+      }
+    },
+    "wallet_volatility": {
+      "title": "Biến động ví trong tháng",
+      "column_data": {
+        "no": "STT",
+        "e_wallet": "Tên ví điện tử",
+        "open_balance": "Số dư đầu kì",
+        "end_balance": "Số dư cuối kì",
+        "volatility_percent": "Biến động ví (%)",
+        "payment_trans": "Giao dịch thanh toán",
+        "total": "Tổng"
+      },
+      "column_mutual": {
+        "quantity": "Số lượng",
+        "value": "Giá trị"
+      }
+    },
+    "mutual_text": {
+      "search_term": "Điều kiện tìm kiếm",
+      "month_search": "Tháng báo cáo",
+      "day_search": "Ngày thống kê",
+      "month_placeholder": "Tháng yêu cầu",
+      "total_quantity": "Tổng số lượng giao dịch",
+      "total_value": "Tổng giá trị giao dịch"
+    }
+  }
+}

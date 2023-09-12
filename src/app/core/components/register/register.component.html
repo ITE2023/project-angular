@@ -1,0 +1,97 @@
+<div class="body">
+  <div class="main-container">
+    <mat-toolbar color="primary" class="topbar telative">
+      <div class="navbar-header">
+        <a class="navbar-brand d-flex justify-content-center" (click)="goToLoginPage()">
+          <b>
+            <img src="assets/images/logo/logo-mm-white.png" alt="homepage" class="light-logo">
+          </b>
+        </a>
+      </div>
+      <span fxFlex class="flex-box"></span>
+    </mat-toolbar>
+  </div>
+  <mat-card>
+    <mat-card-title>
+      Register
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="registForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="demo-full-width">
+              <input matInput placeholder="Username" formControlName="userName">
+              <mat-error *ngIf="!f['userName'].valid && f['userName'].dirty">
+                {{ error.requiredField }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="demo-full-width">
+              <input matInput placeholder="First Name" formControlName="firstName">
+              <mat-error *ngIf="!f['firstName'].valid && f['firstName'].dirty">
+                {{ error.requiredField }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="demo-full-width">
+              <input matInput placeholder="Last Name" formControlName="lastName">
+              <mat-error *ngIf="!f['lastName'].valid && f['lastName'].dirty">
+                {{ error.requiredField }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="demo-full-width">
+              <textarea matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2"
+                formControlName="address" matAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="demo-full-width">
+              <input matInput placeholder="Email" formControlName='email'>
+              <mat-error *ngIf="!f['email'].valid && f['email'].errors.required && f['email'].dirty">
+                {{ error.requiredField }}
+              </mat-error>
+              <mat-error *ngIf="!f['email'].valid && f['email'].errors.pattern && f['email'].dirty">
+                {{ error.emailpattern }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="demo-full-width">
+              <input type="password" matInput placeholder="Password" formControlName="password">
+              <mat-error *ngIf="!f['password'].valid && f['password'].errors.required && f['password'].dirty">
+                {{ error.requiredField }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="demo-full-width">
+              <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword"
+                [errorStateMatcher]="errorMatcher">
+              <mat-error *ngIf="registForm.errors && registForm.errors.passwordMismatch && f['confirmPassword'].dirty">
+                {{ error.pwMismatch }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <button type="submit" mat-raised-button class="button-submit mr-2">Regist</button>
+          <button mat-raised-button>Cancel</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

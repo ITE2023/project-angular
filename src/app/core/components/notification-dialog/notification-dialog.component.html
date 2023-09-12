@@ -1,0 +1,38 @@
+<div class="ct-dialog">
+  <mat-card-title class="mat-title-dialog text-center">
+    <div class="title">{{ 'notifications.title' | translate }}</div>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content class="mb-0">
+    <div class="row">
+      <div class="col-12 question-container">
+        <div class="icon">
+          <i class="material-icons">warning</i>
+        </div>
+        <div class="question">
+          <ng-container *ngIf="data.change_password_period">
+            <span>{{ 'changePassword.period.text-1' | translate }} </span>
+            <span><b>{{ data.day }}</b></span>
+            <span> {{ 'changePassword.period.text-2' | translate }}</span>.
+            <span>{{ 'changePassword.period.text-3' | translate }}</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center mt-4">
+      <button type="button" class="btn-cancel text-white common-button" (click)="close()" mat-raised-button>
+        <i class="material-icons">close</i>
+        {{ 'commonAction.close' | translate }}
+      </button>
+      <ng-container *ngIf="data.change_password_period">
+        <button type="button" class="btn-save text-white common-button ml-3" (click)="changePassword()" mat-raised-button>
+          <i class="material-icons">lock</i>
+          {{ 'changePassword.changePassword' | translate }}
+        </button>
+      </ng-container>
+    </div>
+  </mat-card-content>
+  <div class="btn-close" (click)="close()">
+    <i class="material-icons">close</i>
+  </div>
+</div>

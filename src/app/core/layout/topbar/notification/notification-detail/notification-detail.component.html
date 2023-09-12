@@ -1,0 +1,28 @@
+<mat-card class="notification-management common-management" *ngIf="!loading">
+  <mat-card-content>
+    <div class="action">
+      <i class="material-icons ml-0" (click)="back()"
+        [matTooltip]="'notifications.back'|translate">keyboard_backspace</i>
+      <i class="material-icons" (click)="delete()" [matTooltip]="'notifications.delete'|translate">delete_forever</i>
+      <i class="material-icons" (click)="markAsUnread()"
+        [matTooltip]="'notifications.markUnread'|translate">markunread</i>
+    </div>
+    <div class="notification-detail">
+      <div class="row">
+        <div class="col-md-8 col-lg-9 title">{{ multiLangData(notify.subject) }}</div>
+        <div class="col-md-4 col-lg-3 time">{{ notify.send_date }}</div>
+      </div>
+      <div class="row">
+        <div class="col-12 content">{{ multiLangData(notify.content) }}</div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button *ngIf="notify.target_id !== null" mat-raised-button class="button-search mt-3"
+            (click)="viewDetail(notify)">
+            {{ 'breadcrumb.detail' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

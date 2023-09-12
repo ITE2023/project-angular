@@ -1,0 +1,294 @@
+{
+  "settings": "Settings",
+  "profile": "Profile",
+  "logout": "Logout",
+  "homepage": "Homepage",
+  "dashboard": "Dashboard",
+  "languageList": {
+    "Vietnamese": "Vietnamese",
+    "English": "English"
+  },
+  "language": "Language",
+  "warning_language": "Please select your preferred language for your Control Panel, including date, time and number formats",
+  "selectlanguage": "Select language",
+  "phone": "Phone",
+  "cancel": "Exit",
+  "sendemail": "Send Email",
+  "departmentLang": "Room",
+  "save": "Save",
+  "changeimage": {
+    "title": "Change avatar",
+    "chooseImageButton": "Select image",
+    "message": {
+      "require": "Please select a JPG, JPEG, PNG format image up to 2MB.",
+      "wrongFormat": "The image is not in the correct format",
+      "risk_wrongFormatFile": "The file is not in the correct format",
+      "overSize": "The image exceeds the maximum size of 2MB",
+      "success": "Successfully changed avatar",
+      "chooseImageMust": "This is a required field",
+      "fileNoti": "Please select file {{fileType}} with maximum size {{fileSize}}"
+    }
+  },
+  "createdate": "Date created",
+  "changeInfor": {
+    "title": "Update account information",
+    "name": "Display name",
+    "email": "Email",
+    "phone": "Phone number",
+    "adress": "Address"
+  },
+  "forgotpassword": "Forgot password?",
+  "emailaddress": "Email address",
+  "resetpassword": "Reset password",
+  "changethere": "You need to change your password for the first login",
+  "reethere": "Please enter the email address you registered on the system",
+  "dialogSuccessResetPw": {
+    "message": "OTP has been sent to your Email/Phone number. Please enter the OTP to retrieve your password.",
+    "submit": "Agree"
+  },
+  "changePassword": {
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordWarning": "To confirm, re-enter the new password.",
+    "newPasswordWarning": "Password must be 6-50 characters and cannot contain spaces.",
+    "confirm": "Confirm",
+    "placeholder": {
+      "old": "Enter current password",
+      "new": "Enter new password",
+      "re-new": "Re-enter new password"
+    },
+    "firstLogin": "Change password for the first time login",
+    "period": {
+      "text-1": "Your account password on the system will expire in",
+      "text-2": "more days",
+      "text-3": "Please enter the change password function to change your password. Your account will be locked if the password is overdue!"
+    }
+  },
+  "breadcrumb": {
+    "dashboard": "Dashboard",
+    "usermanage": "User Management",
+    "wallet": "Wallet management",
+    "department": "Department",
+    "profile": "User account management",
+    "mcc": "MCC Management",
+    "fee-merchant": "For merchant",
+    "fee-agency": "For agency",
+    "pm": "Payment method",
+    "acquirer": "Acquirer Management",
+    "issuer": "Issuer Management",
+    "channel": "Transaction channel",
+    "merchant": "Merchant Management",
+    "agency": "Agency Management",
+    "detail": "Details",
+    "add": "Add New",
+    "risk": "Risk management - BlackList",
+    "security": "Role Management",
+    "transaction": "Transaction Management",
+    "sandbox-merchant": "Sandbox account",
+    "report.for-issuer": "Report for issuer",
+    "report.for-volatility": "Month wallet volatility",
+    "report.for-merchant": "Report for merchant",
+    "report.for-agency": "Report for agency",
+    "state-bank": "State bank"
+  },
+  "title": {
+    "usermanage": "User Management"
+  },
+  "profileAccount": {
+    "language": "Language",
+    "phone": "Phone number",
+    "email": "Email address",
+    "address": "Address",
+    "unit": "Unit",
+    "username": "Username",
+    "fullName": "First and last name",
+    "createdDate": "Created Date",
+    "edit": "Update",
+    "defaultLanguage": "Default display language",
+    "history": "Activity history",
+    "seeMore": "See more",
+    "validator": {
+      "required": "This is a required field",
+      "success": "Successfully updated account information",
+      "successPassword": "Password has been changed successfully",
+      "strongPassword": "Password must contain letters, numbers and special characters",
+      "equalPassword": "New password does not match",
+      "currentPass": "The current password is incorrect",
+      "lengthPass": "Password must contain at least 6 characters"
+    }
+  },
+  "expire_otp": "OTP will expire in 5 minutes",
+  "otp_expired": "OTP has expired. Please press Resend OTP button to get a new OTP",
+  "get_otp": "Resend OTP",
+  "error": {
+    "require": "This is a required field",
+    "non-fullspace": "Do not enter spaces",
+    "email-pattern": "Invalid email format",
+    "email-invalid": "The email address is not registered on the system.",
+    "format-email-invalid": "Invalid email format.",
+    "phone-invalid": "The phone number is not registered in the system.",
+    "format-phone-invalid": "The phone number is not in the correct format.",
+    "phone-pattern": "Invalid phone number",
+    "password-mismatch": "Password does not match",
+    "minlength-6": "Password must be between 6 and 50 characters in length",
+    "maxlength": "The text you just entered is too long.",
+    "invalid-format": "Password must contain letters, numbers and special characters",
+    "invalid-format-ip": "The IP address is not in the correct format.",
+    "invalid-url-format": "The website is not in the correct format",
+    "not_match": "Password does not match.",
+    "representerLength": "The representative name is between 1 and 50 characters long.",
+    "accountLength": "Beneficiary account must be between 8 and 19 characters in length",
+    "accountFormat": "Invalid beneficiary account format (number or start with '711A')",
+    "idNolength": "The ID must be 9 or 12 digits long",
+    "taxCodeLength": "The tax code must be 10 or 13 digits long",
+    "login": "Incorrect username or password. Please check again",
+    "forgot": {
+      "sussess_00": "The password has been updated."
+    },
+    "changepassword": {
+      "sussess_00": "Password has been updated",
+      "error_06": "Old password is incorrect"
+    },
+    "not-formatted": "The data field is malformed",
+    "upload": {
+      "overSize": "File exceeds the maximum size of 2MB",
+      "wrongFormat": "The file is not in the correct format"
+    }
+  },
+  "notifications": {
+    "new": "New Notice",
+    "markRead": "Mark as read",
+    "markUnread": "Mark as unread",
+    "delete": "Delete",
+    "seeAll": "See all",
+    "title": "Notice",
+    "action": "Action",
+    "noSelected": "No notifications selected yet",
+    "read": "Mark as read successfully",
+    "unread": "Mark as unread successfully",
+    "deleted": "Deleted success message",
+    "refresh": "Refresh",
+    "back": "Back",
+    "filter": {
+      "title": "Filter",
+      "all": "All",
+      "trans": "Transaction",
+      "update": "update"
+    },
+    "errors": {
+      "99": "The system is temporarily down. Please contact the administrator."
+    },
+    "noData": "Currently no new announcements"
+  },
+  "commonAction": {
+    "add": "Add New",
+    "edit": "Update",
+    "export": "Export file",
+    "search": "Search",
+    "cancel": "Cancel",
+    "save": "Save",
+    "update": "Update",
+    "total": "Total",
+    "noData": "No results found",
+    "view": "Detail view",
+    "check": "Check",
+    "delete": "Delete",
+    "close": "Close",
+    "agree": "agree",
+    "download": "Download",
+    "copyURL": "Copy QR code URL",
+    "pdf": "Export PDF",
+    "excel": "Export Excel"
+  },
+  "left-menu": {
+    "dashboard": "Dashboard",
+    "transaction": {
+      "manager": "Transaction",
+      "payment": "Payment",
+      "refund": "Refund"
+    },
+    "report": {
+      "title": "Report",
+      "for-agency": "For agency",
+      "for-merchant": "For merchant",
+      "for-volatility": "Month wallet volatility"
+    },
+    "ruin-manager": {
+      "title": "Risk Management - BlackList",
+      "restrict-wallet": "Account/Wallet",
+      "restrict-bank-card": "Bank card",
+      "restrict-bin-card": "Card BIN range",
+      "restrict-ip": "IP address",
+      "restrict-mcc": "Type of business",
+      "suspicious-trans": "Suspicious transaction"
+    },
+    "user-manager": "User Management",
+    "wallet-manager": "Wallet management",
+    "state-bank": {
+      "title": "State bank",
+      "wallet-balance": "Wallet balance",
+      "guaranteed-balance": "Guaranteed payment account balance",
+      "type-report": "Report by transaction type",
+      "top-most": "Top 10 wallets with the most transactions",
+      "top-highest": "Top 10 wallets with the highest transaction value",
+      "wallet-volatility": "Month wallet volatility"
+    }
+  },
+  "pagination": {
+    "size": "Display"
+  },
+  "login": {
+    "form_header": "Login information",
+    "user-name": "Username",
+    "password": "Password",
+    "remember-me": "Remember",
+    "title": "Login",
+    "forgot-password": "Forgot password?",
+    "or": "Or",
+    "register": "Register",
+    "errors": {
+      "01": "Incorrect username or password.",
+      "02": "Account is locked. Please contact the administrator.",
+      "03": "Account is pending approval. Please contact admin.",
+      "99": "The system is temporarily down. Please contact the administrator.",
+      "88": "The requested information is invalid.",
+      "100": "Account has been locked due to overdue password change. Please contact the administrator.",
+      "105": "Enter the wrong password 5 times, your account will be locked. Please contact the administrator."
+    }
+  },
+  "reset_pw": {
+    "title": "Reset Password",
+    "ref": "Transaction code",
+    "otp": "OTP Code",
+    "repw": "Re-enter new password",
+    "newpw": "Enter New Password",
+    "title-newpw": "New password",
+    "title-repw": "Confirm new password",
+    "success_get_otp": "Successfully resend OTP. Please check your email address to receive a new OTP.",
+    "fail_get_otp": "OTP resend failed. Please try again."
+  },
+  "trans-status": {
+    "AwaitingPayment": "Waiting for payment",
+    "Fail": "Failed",
+    "Success": "Success"
+  },
+  "for-got": {
+    "mes-1": "OTP has been sent to your email.",
+    "mes-2": "Please enter OTP to reset password.",
+    "Accept": "Agree"
+  },
+  "title_yes": "Agree",
+  "title_no": "Cancel",
+  "all": {
+    "status": "All status",
+    "department": "All units"
+  },
+  "function-role": "You do not have permission to perform this function",
+  "page-role": "You do not have permission to access this page",
+  "return-page": "Return to main page",
+  "session-timeout": "The session has expired. Please login again to continue using the system.",
+  "date-from": "From",
+  "date-to": "to"
+}

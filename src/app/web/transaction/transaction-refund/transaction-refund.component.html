@@ -1,0 +1,266 @@
+<mat-card class="transaction-management common-management mb-3">
+  <mat-card-content>
+    <mat-card-title class="w-100 mb-4">
+      <div class="row header mr-0">
+        <div class="col-md-6">
+          <span class="title page-title">{{
+            "transaction.refund.title" | translate
+          }}</span>
+        </div>
+        <div
+          class="col-md-6 d-flex justify-content-end pr-0 align-items-center"
+        >
+          <!-- <button
+            mat-raised-button
+            (click)="importFile()"
+            class="button-search mr-2 ml-3"
+            *ngIf="checkPermission(20205) || checkPermission(20207)"
+          >
+            <i class="fa fa-upload"></i>
+            {{ "transaction.refund.search.import" | translate }}
+          </button> -->
+          <button
+            mat-raised-button
+            (click)="exportToExcel()"
+            class="button-search"
+          >
+            <i class="fa fa-download"></i>
+            {{ "commonAction.export" | translate }}
+          </button>
+        </div>
+      </div>
+
+      <div class="search-form mt-4" *ngIf="checkPermission(20201)">
+        <form [formGroup]="searchForm" (ngSubmit)="searchData()">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container">
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-1"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp1.toggle()"
+                  [attr.aria-expanded]="dp1.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="'transaction.payment.from-date' | translate"
+                  formControlName="from_date"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp1="bsDatepicker"
+                  [maxDate]="maxFromDate"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (ngModelChange)="dateChange('from_date')"
+                  (change)="isInvalidDate($event, 'from_date')"
+                  maxlength="10"
+                />
+              </mat-form-field>
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-2"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp2.toggle()"
+                  [attr.aria-expanded]="dp2.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="'transaction.payment.to-date' | translate"
+                  formControlName="to_date"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp2="bsDatepicker"
+                  [maxDate]="maxToDate"
+                  [minDate]="minToDate"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (ngModelChange)="dateChange('to_date')"
+                  (change)="isInvalidDate($event, 'to_date')"
+                  maxlength="10"
+                />
+              </mat-form-field>
+
+              <input
+                type="text"
+                formControlName="refund_id"
+                class="form-control item-5"
+                [placeholder]="'transaction.refund.search.trans_id' | translate"
+              />
+              <mat-select
+                class="form-control item-5"
+                formControlName="status_code"
+                disableOptionCentering
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'transaction.refund.data_table.trans_status' | translate
+                }}"
+              >
+                <mat-option value="">{{
+                  "transaction.refund.search.all_status" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of statusList"
+                  value="{{ item.value }}"
+                >
+                  {{
+                    "transaction.payment.statusList." + item.value | translate
+                  }}
+                </mat-option>
+              </mat-select>
+              <input
+                type="text"
+                formControlName="source_name"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.source_name' | translate
+                "
+              />
+              <input
+                type="text"
+                formControlName="source_mobile"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.source_mobile' | translate
+                "
+              />
+              <input
+                type="text"
+                formControlName="receive_name"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.receive_name' | translate
+                "
+              />
+              <input
+                type="text"
+                formControlName="receive_mobile"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.receive_mobile' | translate
+                "
+              />
+            </div>
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button mat-raised-button class="button-search">
+                <i class="fa fa-search"></i>
+                {{ "commonAction.search" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+
+    <div class="table-responsive table-hover">
+      <table class="management-table table">
+        <thead>
+          <tr>
+            <th class="col-no">
+              {{ "transaction.refund.data_table.no" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.refund.data_table.trans_id" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.refund.data_table.amount" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.refund.data_table.origin_trans_id" | translate }}
+            </th>
+
+            <!-- Bo sung cot -->
+            <th class="col-name">
+              {{ "transaction.refund.data_table.source_acc" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.refund.data_table.source_name" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.refund.data_table.receive_acc" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.refund.data_table.receive_name" | translate }}
+            </th>
+
+            <th class="col-name">
+              {{ "transaction.refund.data_table.trans_status" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.refund.data_table.content" | translate }}
+            </th>
+            <th class="col-date">
+              {{ "transaction.refund.data_table.created_date" | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="paymentLists && paymentLists.length">
+          <tr
+            *ngFor="let item of paymentLists; let i = index"
+            (click)="viewDetail(item)"
+            class="pointer"
+          >
+            <td class="col-no">
+              {{ (page - 1) * pageSize + i + 1 }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.id }}
+            </td>
+            <td class="col-name text-right">
+              {{ item.amount | number : "1.0-2" }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.origintransactionId }}
+            </td>
+
+            <td class="col-name">{{ item.sourceInfo.username }}</td>
+            <td class="col-name">{{ item.sourceInfo.fullname }}</td>
+            <td class="col-name">{{ item.receiverInfo.username }}</td>
+            <td class="col-name">{{ item.receiverInfo.fullname }}</td>
+
+            <td class="col-name text-center">
+              <span
+                class="item-status"
+                [ngClass]="{
+                  'bg-success': item?.status === '00',
+                  'bg-danger': item?.status === '01',
+                  'bg-warning': item?.status === '02'
+                }"
+                >{{
+                  "transaction.payment.statusList." + item.status | translate
+                }}</span
+              >
+            </td>
+            <td class="col-name">
+              {{ item.content }}
+            </td>
+            <td class="col-date text-center">
+              {{ item.createdAt | date : "dd/MM/yyyy HH:mm" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ite-pagination
+      [page]="page"
+      [pageSize]="pageSize"
+      [total]="total"
+      (pageChange)="changePage($event)"
+      (pageSizeChange)="onPageSizeChange($event)"
+      [loading]="loading"
+    >
+    </ite-pagination>
+  </mat-card-content>
+</mat-card>

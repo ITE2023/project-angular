@@ -1,0 +1,14 @@
+.custom-refund-history {
+  cursor: pointer;
+  color: #007bffc7;
+  text-decoration: underline;
+
+  &:hover {
+    color: #0764c8;
+  }
+}
+
+.label {
+  margin-top: 7px;
+  display: inline-block;
+}

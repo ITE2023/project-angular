@@ -1,0 +1,11 @@
+.dropdown-divider-cutom {
+    height: 0;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #b3b3b3;
+}
+
+.page-item.active .page-link {
+    background-color: $main-color!important;
+    border-color: $main-color!important;
+}

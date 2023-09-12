@@ -1,0 +1,150 @@
+{
+  "wallet-account-page": {
+    "title": "Quản lý tài khoản ví",
+    "list": {
+      "header": {
+        "no": "STT",
+        "name": "Họ và tên",
+        "userName": "Tên đăng nhập",
+        "identity": "Định danh",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "status": "Trạng thái",
+        "balance": "Số dư",
+        "created_date": "Thời gian tạo",
+        "action": "Tác vụ"
+      },
+      "total": "Tổng số người dùng",
+      "tooltip": {
+        "view": "Chi tiết người dùng",
+        "edit": "Cập nhật chi tiết người dùng",
+        "delete": "Xóa người dùng"
+      },
+      "search": {
+        "content": "Tìm kiếm",
+        "placeholder": {
+          "key-search": "Nhập thông tin tìm kiếm",
+          "centre": "Đơn vị",
+          "status": "Trạng thái"
+        }
+      },
+      "account-status": {
+        "block": "Khóa",
+        "active": "Hoạt động",
+        "pendingApproval": "Chờ phê duyệt",
+        "rejected": "Từ chối phê duyệt"
+      },
+      "filename": "Danh-sách-tài-khoản-ví_",
+      "filename_ma": "Quản-trị-trang-merchant-admin_",
+      "filename_aa": "Quản-trị-trang-agent-admin_"
+    },
+    "add-edit-detail": {
+      "edit-title": "Cập nhật thông tin tài khoản ví",
+      "add-title": "Thêm mới người dùng nội bộ",
+      "detail-title": "Thông tin người dùng",
+      "label": {
+        "userName": "Tên đăng nhập",
+        "name": "Họ và tên",
+        "phone": "Số điện thoại",
+        "email": "Email",
+        "role": "Vai trò",
+        "department": "Đơn vị",
+        "status": "Trạng thái",
+        "password": "Mật khẩu",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "sendLoginInfo": "Gửi thông tin đăng nhập đến",
+        "sendLoginInfoRadioButton": {
+          "byEmail": "Địa chỉ email",
+          "byPhone": "Số điện thoại"
+        },
+        "created_date": "Ngày tạo",
+        "user_created": "Người tạo"
+      },
+      "button": {
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "close": "Đóng",
+        "lock": "Khóa",
+        "active": "Kích hoạt",
+        "approve": "Phê duyệt",
+        "agree": "Đồng ý",
+        "reject": "Từ chối",
+        "return": "Trở về"
+      },
+      "placeholder": {
+        "userName": "Nhập tên đăng nhập",
+        "fullName": "Nhập họ và tên",
+        "password": "Nhập mật khẩu",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "phone": "Nhập số điện thoại",
+        "email": "Nhập địa chỉ email",
+        "role": "Vai trò",
+        "department": "Chọn đơn vị"
+      },
+      "approval-dialog": {
+        "title": "Xác nhận phê duyệt",
+        "context": "Bạn đồng ý phê duyệt người dùng ",
+        "yes": "Đồng ý",
+        "no": "Hủy"
+      },
+      "reject-approval-dialog": {
+        "title": "Xác nhận từ chối phê duyệt",
+        "context": "Bạn quyết định từ chối phê duyệt người dùng ",
+        "reason": "Lý do từ chối (nếu có)",
+        "yes": "Đồng ý",
+        "no": "Hủy"
+      },
+      "notification": {
+        "edit": {
+          "success": "Yêu cầu cập nhập thông tin người dùng đã được ghi nhận. Vui lòng chờ phê duyệt."
+        },
+        "add": {
+          "success": "Yêu cầu thêm mới người dùng nội bộ đã được ghi nhận. Vui lòng chờ phê duyệt.",
+          "Error_01": "Bạn không có quyền thực hiện hành động! Vui lòng liên hệ ban quản trị",
+          "Error_02": "Trạng thái tài khoản không hợp lệ",
+          "Error_03": "Dữ liệu không đúng định dạng",
+          "Error_04": "Tên đăng nhập đã tồn tại",
+          "Error_06": "Trạng thái không chính xác",
+          "Error_07": "Người dùng không tồn tại",
+          "Error_08": "Thông tin đơn vị không chính xác",
+          "Error_99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+          "Error_09": "Kênh nhận thông tin tài khoản chưa được hỗ trợ.",
+          "Error_10": "Email đã tồn tại",
+          "Error_11": "Số điện thoại đã tồn tại",
+          "Error_88": "Dữ liệu yêu cầu không hợp lệ",
+          "usernameMinLength": "Tên đăng nhập có tối thiểu 4 ký tự",
+          "usernamePattern": "Tên đăng nhập không đúng định dạng"
+        },
+        "approve": {
+          "success": "Phê duyệt người dùng thành công"
+        },
+        "reject": {
+          "success": "Từ chối phê duyệt người dùng thành công"
+        }
+      }
+    },
+    "basicInfo": "Thông tin cơ bản",
+    "lock": {
+      "title": "Xác nhận khóa",
+      "text1": "Tài khoản ví",
+      "text2": "sẽ bị khóa. ",
+      "text3": "Bạn chắc chắn không?",
+      "success": "Khóa tài khoản ví thành công"
+    },
+    "active": {
+      "title": "Xác nhận kích hoạt tài khoản",
+      "text2": "sẽ được kích hoạt. ",
+      "success": "Kích hoạt tài khoản ví thành công"
+    },
+    "role": {
+      "title": "Nhóm quyền",
+      "view": "Bạn không có quyền xem chi tiết người dùng"
+    },
+    "reset": {
+      "title": "Đặt lại mật khẩu",
+      "confirm": "Xác nhận thông tin",
+      "text1": "Bạn đang thực hiện reset mật khẩu cho người dùng",
+      "notify": "Hệ thống đã gửi thông tin tài khoản gồm Tên đăng nhập và Mật khẩu mới đến email của người dùng"
+    }
+  }
+}

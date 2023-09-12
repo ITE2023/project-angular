@@ -1,0 +1,63 @@
+{
+  "merchant_message": {
+    "error_08": "This merchant name has already been used.",
+    "error_88": "The requested data is invalid.",
+    "error_09": "Incorrect management department.",
+    "error_10": "Presenter's email has already existed.",
+    "error_05": "Incorrect payment method information.",
+    "error_04": "Merchant not found.",
+    "error_11": "Incorrect mechant status.",
+    "error_01": "The date information is incorrect.",
+    "error_02": "Suitable data not found.",
+    "error_99": "System temporary unavailable.Please contact administrator for more detail.",
+    "success_00": "Successful"
+  },
+  "error_code": {
+    "login": {
+      "error_01": "The account information or password is incorrect.",
+      "error_02": "Account is locked.",
+      "error_99": "The system was temporarily unavailable. Please contact the administrator.",
+      "error_88": "The requested information is not valid.",
+      "error_03": "Email Information or Phone Number does not exist.",
+      "error_04": "The system does not support sending OTP code via SMS yet. Please try again with email.",
+      "error_05": "Expired OTP or type over 3 times. Please press Send OTP button.",
+      "error_06": "Incorrect authentication code.",
+      "error_07": "User does not exist or is locked.",
+      "error_105": "Enter the wrong password 5 times, your account will be locked. Please contact the administrator."
+    },
+    "forgot": {
+      "sussess_00": "New password has been updated.",
+      "error_11": "Maximum request to send OTP.",
+      "error_02": "The account is locked.",
+      "error_99": "The system is temporarily down. Please contact the administrator.",
+      "error_88": "The requested information is invalid.",
+      "error_03": "Email information does not exist.",
+      "error_04": "The system does not yet support sending OTP Code via SMS. Please try again with email.",
+      "error_05": "Expired OTP or type over 3 times. Please press Send OTP button.",
+      "error_06": "The Authentication Code is incorrect.",
+      "error_07": "User does not exist or is locked."
+    },
+    "changepassword": {
+      "sussess_00": "New password has been updated.",
+      "error_06": "Your old password is incorrect.",
+      "error_-1": "You must come back to Login page and press fotgot password's link to action.",
+      "error_99": "The system is temporarily down. Please contact the administrator.",
+      "error_88": "The requested information is invalid.",
+      "format": {
+        "lowercase": "Lowercase",
+        "uppercase": "Uppercase",
+        "min": "Minimum 8 characters",
+        "special": "Special characters",
+        "number": "Numbers",
+        "utf8": "Valid characters"
+      }
+    },
+    "risks": {
+      "account_format": "The account number / wallet is malformed",
+      "account_length": "The account number / wallet has at least 4 characters",
+      "bank_number_length": "The card number has at least 16 characters",
+      "bank_number_format": "The bank card number is not in the correct format",
+      "bin_format": "The tag BIN strip is malformed"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+<div class="body">
+  <div class="form-login">
+    <div class="form-group">
+      <div class="theme">
+        <img src="/assets/images/login/theme.jpg" alt="image here" />
+      </div>
+      <div class="description">
+        <div class="text-right language-des mb-30">
+          <button
+            [matMenuTriggerFor]="language"
+            class="no-border-first-item"
+            mat-icon-button
+            class="no-border-first-item profile"
+          >
+            <img [src]="flag" alt="Language" class="lang-pic" />
+            <span class="badge" style="color: black"
+              ><i class="fa fa-caret-down"> </i
+            ></span>
+          </button>
+          <mat-menu #language="matMenu">
+            <button
+              mat-menu-item
+              (click)="changeLang('vi')"
+              class="no-border-first-item"
+            >
+              <img
+                src="assets/images/flag/Vietnam.png"
+                alt="user"
+                class="lang-pic"
+              />
+              {{ "languageList.Vietnamese" | translate }}
+            </button>
+            <button mat-menu-item (click)="changeLang('en')">
+              <img
+                src="assets/images/flag/United-Kingdom.png"
+                alt="user"
+                class="lang-pic"
+              />
+              {{ "languageList.English" | translate }}
+            </button>
+          </mat-menu>
+        </div>
+        <div class="text-center form-header mb-20">
+          {{ "login.form_header" | translate }}
+        </div>
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+          class="description-body"
+        >
+          <div class="input-group mb-20">
+            <label>{{ "login.user-name" | translate }}</label>
+            <input
+              formControlName="username"
+              autofocus
+              type="text"
+              (focus)="focusEvent()"
+              id="username"
+              (keydown.enter)="enter($event)"
+            />
+            <div
+              *ngIf="
+                !f.username.valid && f.username.errors.required && submitted
+              "
+              class="server-error"
+            >
+              {{ commonErrorCode.REQUIRED | translate }}
+            </div>
+          </div>
+          <div class="input-group mb-20">
+            <label>{{ "login.password" | translate }}</label>
+            <div class="ipt-group_pw">
+              <input
+                id="password"
+                formControlName="password"
+                [type]="showPw ? 'text' : 'password'"
+                (focus)="focusEvent()"
+                (keydown.enter)="enter($event)"
+              />
+              <i class="material-icons pw-icon" (click)="togglePw()">
+                <span *ngIf="showPw">visibility</span>
+                <span *ngIf="!showPw">visibility_off</span>
+              </i>
+            </div>
+            <div
+              *ngIf="
+                !f.password.valid && f.password.errors.required && submitted
+              "
+              class="server-error"
+            >
+              {{ commonErrorCode.REQUIRED | translate }}
+            </div>
+          </div>
+          <div class="description-body-radio-group login-group-form-remember">
+            <label for="remember" class="lb-container"
+              >{{ "login.remember-me" | translate }}
+              <input
+                id="remember"
+                type="checkbox"
+                (change)="setValue($event)"
+                formControlName="remember_me"
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="row" *ngIf="apiError" class="login-error">
+            <div class="col-12 pl-0">
+              <small class="text-danger">
+                {{ "login.errors." + errorCode | translate }}
+              </small>
+            </div>
+          </div>
+          <div class="description-body-button">
+            <button id="btn-login" class="mb-30 btn-login">
+              {{ "login.title" | translate }}
+            </button>
+            <div class="description-footer">
+              <a class="text-center mb-30" (click)="redirect()">{{
+                "login.forgot-password" | translate
+              }}</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

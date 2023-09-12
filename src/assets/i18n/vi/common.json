@@ -1,0 +1,294 @@
+{
+  "settings": "Cài đặt",
+  "profile": "Hồ sơ",
+  "logout": "Đăng xuất",
+  "homepage": "Trang chủ",
+  "dashboard": "Bảng điều khiển",
+  "languageList": {
+    "Vietnamese": "Tiếng Việt",
+    "English": "Tiếng Anh"
+  },
+  "language": "Ngôn ngữ",
+  "warning_language": "Vui lòng chọn ngôn ngữ ưa thích cho Bảng điều khiển của bạn, bao gồm định dạng ngày, giờ và số",
+  "selectlanguage": "Lựa chọn ngôn ngữ",
+  "phone": "Điện thoại",
+  "cancel": "Thoát",
+  "sendemail": "Gửi Email",
+  "departmentLang": "Phòng",
+  "save": "Lưu",
+  "changeimage": {
+    "title": "Thay đổi ảnh đại diện",
+    "chooseImageButton": "Chọn ảnh",
+    "message": {
+      "require": "Vui lòng chọn ảnh định dạng JPG, JPEG, PNG với kích thước tối đa 2MB.",
+      "wrongFormat": "Ảnh không đúng định dạng",
+      "risk_wrongFormatFile": "Tệp không đúng định dạng",
+      "overSize": "Ảnh vượt quá kích thước tối đa 2MB",
+      "success": "Thay đổi ảnh đại diện thành công",
+      "chooseImageMust": "Đây là trường bắt buộc",
+      "fileNoti": "Vui lòng chọn file {{fileType}} với kích thước tối đa {{fileSize}}"
+    }
+  },
+  "createdate": "Ngày tạo",
+  "changeInfor": {
+    "title": "Cập nhật thông tin tài khoản",
+    "name": "Tên hiển thị",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "adress": "Địa chỉ"
+  },
+  "forgotpassword": "Quên mật khẩu?",
+  "emailaddress": "Địa chỉ email",
+  "resetpassword": "Đặt lại mật khẩu",
+  "changethere": "Bạn cần thay đổi mật khẩu cho lần đăng nhập đầu tiên",
+  "resethere": "Vui lòng điền địa chỉ email bạn đã đăng ký trên hệ thống",
+  "dialogSuccessResetPw": {
+    "message": "Mã OTP đã được gửi đến Email/SĐT của quý khách. Quý khách vui lòng nhập mã OTP để lấy lại mật khẩu.",
+    "submit": "Đồng ý"
+  },
+  "changePassword": {
+    "changePassword": "Đổi mật khẩu",
+    "currentPassword": "Mật khẩu hiện tại",
+    "newPassword": "Mật khẩu mới",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "confirmPasswordWarning": "Để xác nhận, nhập lại mật khẩu mới.",
+    "newPasswordWarning": "Mật khẩu phải có 6-50 ký tự và không được chứa dấu cách.",
+    "confirm": "Xác nhận",
+    "placeholder": {
+      "old": "Nhập mật khẩu hiện tại",
+      "new": "Nhập mật khẩu mới",
+      "re-new": "Nhập lại mật khẩu mới"
+    },
+    "firstLogin": "Đổi mật khẩu lần đầu đăng nhập",
+    "period": {
+      "text-1": "Mật khẩu tài khoản của bạn trên hệ thống sẽ hết hạn trong",
+      "text-2": "ngày nữa",
+      "text-3": "Vui lòng vào chức năng đổi mật khẩu để đổi lại mật khẩu. Tài khoản của bạn sẽ bị khóa nếu quá hạn đổi mật khẩu!"
+    }
+  },
+  "breadcrumb": {
+    "dashboard": "Bảng điều khiển",
+    "usermanage": "Quản lý người dùng",
+    "wallet": "Quản lý tài khoản ví",
+    "department": "Quản lý đơn vị",
+    "profile": "Quản lý tài khoản người dùng",
+    "mcc": "Quản lý MCC",
+    "fee-merchant": "Quản lý phí dành cho ĐVCNTT",
+    "fee-agency": "Quản lý phí dành cho đại lý",
+    "pm": "Quản lý PTTT và DV GTGT",
+    "acquirer": "Quản lý TCTT",
+    "issuer": "Quản lý TCPH",
+    "channel": "Quản lý kênh giao dịch",
+    "merchant": "Quản lý ĐVCNTT",
+    "agency": "Quản lý đại lý",
+    "detail": "Chi tiết",
+    "add": "Thêm mới",
+    "risk": "Quản lý rủi ro - BlackList",
+    "security": "Quản lý nhóm quyền",
+    "transaction": "Quản lý giao dịch",
+    "sandbox-merchant": "Quản lý ĐVCNTT sandbox",
+    "report.for-issuer": "Báo cáo cho TCPH",
+    "report.for-volatility": "Biến động ví trong tháng",
+    "report.for-merchant": "Báo cáo cho ĐVCNTT",
+    "report.for-agency": "Báo cáo cho đại lý",
+    "state-bank": "Ngân hàng nhà nước"
+  },
+  "title": {
+    "usermanage": "Quản lý người dùng"
+  },
+  "profileAccount": {
+    "language": "Ngôn ngữ",
+    "phone": "Số điện thoại",
+    "email": "Địa chỉ email",
+    "address": "Địa chỉ",
+    "unit": "Đơn vị",
+    "username": "Tên đăng nhập",
+    "fullName": "Họ và tên",
+    "createdDate": "Ngày tạo",
+    "edit": "Cập nhật",
+    "defaultLanguage": "Ngôn ngữ hiển thị mặc định",
+    "history": "Lịch sử hoạt động",
+    "seeMore": "Xem thêm",
+    "validator": {
+      "required": "Đây là trường bắt buộc nhập",
+      "success": "Cập nhật thông tin tài khoản thành công",
+      "successPassword": "Mật khẩu đã được thay đổi thành công",
+      "strongPassword": "Mật khẩu phải gồm chữ cái, số và ký tự đặc biệt",
+      "equalPassword": "Mật khẩu mới không trùng khớp",
+      "currentPass": "Mật khẩu hiện tại không đúng",
+      "lengthPass": "Mật khẩu phải chứa ít nhất 6 ký tự"
+    }
+  },
+  "expire_otp": "OTP sẽ hết hạn sau 5 phút",
+  "otp_expired": "OTP đã hết hạn. Vui lòng nhấn nút Gửi lại OTP để nhận mã OTP mới",
+  "get_otp": "Gửi lại OTP",
+  "error": {
+    "require": "Đây là trường bắt buộc",
+    "non-fullspace": "Không được nhập khoảng trắng",
+    "email-pattern": "Email không đúng định dạng",
+    "email-invalid": "Địa chỉ email chưa được đăng ký trên hệ thống.",
+    "format-email-invalid": "Email không đúng định dạng.",
+    "phone-invalid": "Số điện thoại chưa được đăng ký trên hệ thống.",
+    "format-phone-invalid": "Số điện thoại không đúng định dạng.",
+    "phone-pattern": "Số điện thoại không đúng định dạng",
+    "password-mismatch": "Mật khẩu không khớp",
+    "minlength-6": "Mật khẩu phải có độ dài từ 6 đến 50 kí tự",
+    "maxlength": "Đoạn kí tự bạn vừa nhập quá dài.",
+    "invalid-format": "Mật khẩu phải gồm chữ cái, số và ký tự đặc biệt",
+    "invalid-format-ip": "Địa chỉ IP không đúng định dạng.",
+    "invalid-url-format": "Website không đúng định dạng",
+    "not_match": "Mật khẩu không trùng khớp.",
+    "representerLength": "Tên người đại diện có độ dài từ 1 đến 50 ký tự.",
+    "accountLength": "Tài khoản thụ hưởng phải có độ dài từ 8 đến 19 ký tự",
+    "accountFormat": "Tài khoản thụ hưởng  không đúng định dạng (số hoặc bắt đầu bằng '711A')",
+    "idNolength": "CMND phải có độ dài 9 hoặc 12 chữ số",
+    "taxCodeLength": "Mã số thuế phải có độ dài 10 hoặc 13 chữ số",
+    "login": "Tên đăng nhập hoặc mật khẩu không chính xác. Quý khách vui lòng kiểm tra lại",
+    "forgot": {
+      "sussess_00": "Mật khẩu đã được cập nhật."
+    },
+    "changepassword": {
+      "sussess_00": "Mật khẩu đã được cập nhật",
+      "error_06": "Mật khẩu cũ không chính xác"
+    },
+    "not-formatted": "Trường dữ liệu không đúng định dạng",
+    "upload": {
+      "overSize": "File vượt quá kích thước tối đa 2MB",
+      "wrongFormat": "File không đúng định dạng"
+    }
+  },
+  "notifications": {
+    "new": "Thông báo mới",
+    "markRead": "Đánh dấu là đã đọc",
+    "markUnread": "Đánh dấu là chưa đọc",
+    "delete": "Xóa",
+    "seeAll": "Xem tất cả",
+    "title": "Thông báo",
+    "action": "Tác vụ",
+    "noSelected": "Chưa có thông báo nào được chọn",
+    "read": "Đánh dấu là đã đọc thành công",
+    "unread": "Đánh dấu là chưa đọc thành công",
+    "deleted": "Xóa thông báo thành công",
+    "refresh": "Làm mới",
+    "back": "Quay lại",
+    "filter": {
+      "title": "Lọc",
+      "all": "Tất cả",
+      "trans": "Giao dịch",
+      "update": "Cập nhật"
+    },
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    },
+    "noData": "Hiện tại không có thông báo mới nào"
+  },
+  "commonAction": {
+    "add": "Thêm mới",
+    "edit": "Cập nhật",
+    "export": "Xuất file",
+    "search": "Tìm kiếm",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "update": "Cập nhật",
+    "total": "Tổng số",
+    "noData": "Không tìm thấy kết quả nào",
+    "view": "Xem chi tiết",
+    "check": "Kiểm tra",
+    "delete": "Xóa",
+    "close": "Đóng",
+    "agree": "Đồng ý",
+    "download": "Tải xuống",
+    "copyURL": "Copy mã QR URL",
+    "pdf": "Xuất PDF",
+    "excel": "Xuất Excel"
+  },
+  "left-menu": {
+    "dashboard": "Bảng điều khiển",
+    "transaction": {
+      "manager": "Quản lý giao dịch",
+      "payment": "Thanh toán",
+      "refund": "Hoàn trả"
+    },
+    "report": {
+      "title": "Báo cáo",
+      "for-agency": "Cho đại lý",
+      "for-merchant": "Cho ĐVCNTT",
+      "for-volatility": "Biến động ví trong tháng"
+    },
+    "ruin-manager": {
+      "title": "Quản lý rủi ro - BlackList",
+      "restrict-wallet": "Tài khoản/Ví",
+      "restrict-bank-card": "Thẻ ngân hàng",
+      "restrict-bin-card": "Dải BIN thẻ",
+      "restrict-ip": "Địa chỉ IP",
+      "restrict-mcc": "Loại hình kinh doanh",
+      "suspicious-trans": "Giao dịch nghi ngờ"
+    },
+    "user-manager": "Quản lý người dùng",
+    "wallet-manager": "Quản lý tài khoản ví",
+    "state-bank": {
+      "title": "Ngân hàng nhà nước",
+      "wallet-balance": "Số dư ví",
+      "guaranteed-balance": "Số dư tài khoản DBTT",
+      "type-report": "Báo cáo theo loại giao dịch",
+      "top-most": "Top 10 ví số lượng GD nhiều nhất",
+      "top-highest": "Top 10 ví giá trị GD cao nhất",
+      "wallet-volatility": "Biến động ví trong tháng"
+    }
+  },
+  "pagination": {
+    "size": "Hiển thị"
+  },
+  "login": {
+    "form_header": "Thông tin đăng nhập",
+    "user-name": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "remember-me": "Ghi nhớ",
+    "title": "Đăng nhập",
+    "forgot-password": "Quên mật khẩu?",
+    "or": "Hoặc",
+    "register": "Đăng ký",
+    "errors": {
+      "01": "Tên đăng nhập hoặc mật khẩu không chính xác.",
+      "02": "Tài khoản bị khóa. Vui lòng liên hệ ban quản trị.",
+      "03": "Tài khoản đang chờ phê duyệt. Vui lòng liên hệ ban quản trị.",
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+      "88": "Thông tin yêu cầu không hợp lệ.",
+      "100": "Tài khoản đã bị khóa do quá hạn đổi mật khẩu. Vui lòng liên hệ ban quản trị.",
+      "105": "Nhập sai mật khẩu 5 lần, tài khoản của bạn sẽ bị khóa. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "reset_pw": {
+    "title": "Đặt lại mật khẩu",
+    "ref": "Mã giao dịch",
+    "otp": "Mã OTP",
+    "repw": "Nhập lại mật khẩu mới",
+    "newpw": "Nhập Mật khẩu mới",
+    "title-newpw": "Mật khẩu mới",
+    "title-repw": "Xác nhận mật khẩu mới",
+    "success_get_otp": "Gửi lại mã OTP thành công. Vui lòng kiểm tra địa chỉ email để nhận mã OTP mới.",
+    "fail_get_otp": "Gửi lại mã OTP không thành công. Vui lòng thử lại."
+  },
+  "trans-status": {
+    "AwaitingPayment": "Chờ thanh toán",
+    "Fail": "Không thành công",
+    "Success": "Thành công"
+  },
+  "for-got": {
+    "mes-1": "Mã OTP đã được gửi đến email của quý khách.",
+    "mes-2": "Quý khách vui lòng nhập mã OTP để lấy lại mật khẩu.",
+    "Accept": "Đồng ý"
+  },
+  "title_yes": "Đồng ý",
+  "title_no": "Hủy",
+  "all": {
+    "status": "Tất cả trạng thái",
+    "department": "Tất cả đơn vị"
+  },
+  "function-role": "Bạn không có quyền thực hiện chức năng này",
+  "page-role": "Bạn không có quyền truy cập trang này",
+  "return-page": "Trở về trang chính",
+  "session-timeout": "Phiên đăng nhập đã hết hạn. Bạn vui lòng đăng nhập lại để tiếp tục sử dụng hệ thống.",
+  "date-from": "Từ",
+  "date-to": "đến"
+}

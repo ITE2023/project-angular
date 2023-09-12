@@ -1,0 +1,5 @@
+<div style="display: block;" *ngIf="!loading && chartData.length>0">
+  <canvas baseChart [data]="chartData" [labels]="chartLabels" [chartType]="pieChartType" [options]="chartOptions"
+    [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+  </canvas>
+</div>

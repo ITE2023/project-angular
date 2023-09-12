@@ -1,0 +1,435 @@
+<mat-card class="transaction-management common-management mb-3">
+  <mat-card-content>
+    <mat-card-title class="w-100 mb-4">
+      <div class="row header mr-0">
+        <div class="col-md-6">
+          <span class="title page-title">{{
+            "transaction.payment.title" | translate
+          }}</span>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-end pr-0">
+          <button
+            mat-raised-button
+            (click)="exportToExcel()"
+            class="button-search"
+            *ngIf="checkPermission(20103)"
+          >
+            <i class="fa fa-download"></i>
+            {{ "commonAction.export" | translate }}
+          </button>
+        </div>
+      </div>
+
+      <div class="search-form mt-4" *ngIf="checkPermission(20101)">
+        <form [formGroup]="searchForm" (ngSubmit)="searchData()">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container">
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-1"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp1.toggle()"
+                  [attr.aria-expanded]="dp1.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="'transaction.payment.from-date' | translate"
+                  formControlName="from_date"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp1="bsDatepicker"
+                  [maxDate]="maxFromDate"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (ngModelChange)="dateChange('from_date')"
+                  (change)="isInvalidDate($event, 'from_date')"
+                  maxlength="10"
+                />
+              </mat-form-field>
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-2"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp2.toggle()"
+                  [attr.aria-expanded]="dp2.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="'transaction.payment.to-date' | translate"
+                  formControlName="to_date"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp2="bsDatepicker"
+                  [maxDate]="maxToDate"
+                  [minDate]="minToDate"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (ngModelChange)="dateChange('to_date')"
+                  (change)="isInvalidDate($event, 'to_date')"
+                  maxlength="10"
+                />
+              </mat-form-field>
+
+              <input
+                type="text"
+                formControlName="transaction_id"
+                class="form-control item-5"
+                [placeholder]="'transaction.payment.trans-id' | translate"
+              />
+              <mat-select
+                class="form-control item-5"
+                formControlName="status_code"
+                disableOptionCentering
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'transaction.payment.transaction-status' | translate
+                }}"
+              >
+                <mat-option value="">{{
+                  "transaction.payment.all.status" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of statusList"
+                  value="{{ item.value }}"
+                >
+                  {{
+                    "transaction.payment.statusList." + item.value | translate
+                  }}
+                </mat-option>
+              </mat-select>
+              <input
+                type="text"
+                formControlName="source_name"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.source_name' | translate
+                "
+              />
+              <input
+                type="text"
+                formControlName="source_mobile"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.source_mobile' | translate
+                "
+              />
+              <input
+                type="text"
+                formControlName="receive_name"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.receive_name' | translate
+                "
+              />
+              <input
+                type="text"
+                formControlName="receive_mobile"
+                class="form-control item-5"
+                [placeholder]="
+                  'transaction.refund.search.receive_mobile' | translate
+                "
+              />
+
+              <!-- <input
+                type="text"
+                formControlName="trans_amount"
+                class="form-control item-4"
+                [placeholder]="'transaction.payment.amount' | translate"
+              /> -->
+              <!-- <input
+                type="text"
+                formControlName="card_number"
+                class="form-control item-5"
+                [placeholder]="'transaction.payment.search.account' | translate"
+              /> -->
+              <!-- <mat-select
+                class="form-control item-6"
+                formControlName="payment_method"
+                disableOptionCentering
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'transaction.payment.payment-method' | translate
+                }}"
+              >
+                <mat-option value="">{{
+                  "transaction.payment.all.payment-method" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of paymentMethodList"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc }}
+                </mat-option>
+              </mat-select>
+              <mat-select
+                class="form-control item-7"
+                formControlName="transaction_channel"
+                disableOptionCentering
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'transaction.payment.transaction-channel' | translate
+                }}"
+              >
+                <mat-option value="">{{
+                  "transaction.payment.all.channel" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of channelList"
+                  value="{{ item.channel_code }}"
+                >
+                  {{ item.channel_name }}
+                </mat-option>
+              </mat-select> -->
+
+              <!-- <mat-select
+                class="form-control item-9"
+                formControlName="master_id"
+                (selectionChange)="changeMerchant($event)"
+                panelClass="ct-merchant-trans"
+                placeholder="{{
+                  'transaction.payment.merchant-name' | translate
+                }}"
+              >
+                <mat-option>
+                  <ngx-mat-select-search
+                    [formControl]="merchantFilterCtrl"
+                    placeholderLabel="{{
+                      'transaction.placeholder.merchant' | translate
+                    }}"
+                    noEntriesFoundLabel="{{
+                      'commonAction.noData' | translate
+                    }}"
+                  ></ngx-mat-select-search>
+                </mat-option>
+                <mat-option value="">{{
+                  "transaction.payment.all.merchant" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of merchants"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc }}
+                </mat-option>
+              </mat-select>
+              <mat-select
+                class="form-control item-10 sub-merchant"
+                formControlName="merchant_id"
+                placeholder="{{
+                  'transaction.payment.sub-merchant' | translate
+                }}"
+                panelClass="ct-merchant-trans"
+              >
+                <mat-option>
+                  <ngx-mat-select-search
+                    [formControl]="subMerchantFilterCtrl"
+                    placeholderLabel="{{
+                      'transaction.placeholder.sub-merchant' | translate
+                    }}"
+                    noEntriesFoundLabel="{{
+                      'commonAction.noData' | translate
+                    }}"
+                  ></ngx-mat-select-search>
+                </mat-option>
+                <mat-option value="">{{
+                  "transaction.payment.all.sub-merchant" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of subMerchants"
+                  value="{{ item.merchant_id }}"
+                >
+                  {{ item.merchant_biz_name }}
+                </mat-option>
+              </mat-select>
+
+              <mat-select
+                class="form-control item-11"
+                formControlName="agency_id"
+                disableOptionCentering
+                panelClass="ct-merchant-trans"
+                placeholder="{{
+                  'transaction.payment.search.agency' | translate
+                }}"
+              >
+                <mat-option>
+                  <ngx-mat-select-search
+                    [formControl]="agencyFilterCtrl"
+                    placeholderLabel="{{
+                      'transaction.placeholder.agency' | translate
+                    }}"
+                    noEntriesFoundLabel="{{
+                      'commonAction.noData' | translate
+                    }}"
+                  ></ngx-mat-select-search>
+                </mat-option>
+                <mat-option value="">{{
+                  "transaction.payment.all.agency" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of agencies"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>
+
+              <mat-select
+                class="form-control item-12"
+                formControlName="issuer_code"
+                disableOptionCentering
+                panelClass="ct-merchant-trans"
+                placeholder="{{
+                  'transaction.payment.search.issuer' | translate
+                }}"
+              >
+                <mat-option>
+                  <ngx-mat-select-search
+                    [formControl]="issuerFilterCtrl"
+                    placeholderLabel="{{
+                      'transaction.placeholder.issuer' | translate
+                    }}"
+                    noEntriesFoundLabel="{{
+                      'commonAction.noData' | translate
+                    }}"
+                  ></ngx-mat-select-search>
+                </mat-option>
+                <mat-option value="">{{
+                  "transaction.payment.all.issuer" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of issuers"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>   -->
+            </div>
+
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button mat-raised-button class="button-search">
+                <i class="fa fa-search"></i>
+                {{ "commonAction.search" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+
+    <div class="table-responsive table-hover">
+      <table class="management-table table">
+        <thead>
+          <tr>
+            <th class="col-no">
+              {{ "transaction.payment.data_table.no" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.trans_id" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.amount" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.partner_ref" | translate }}
+            </th>
+
+            <th class="col-name">
+              {{ "transaction.payment.data_table.source_acc" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.source_name" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.receive_acc" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.receive_name" | translate }}
+            </th>
+
+            <th class="col-name">
+              {{ "transaction.payment.data_table.trans_status" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.content" | translate }}
+            </th>
+            <th class="col-name">
+              {{ "transaction.payment.data_table.created_date" | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="paymentLists && paymentLists.length">
+          <tr
+            *ngFor="let item of paymentLists; let i = index"
+            (click)="viewDetail(item)"
+            class="pointer"
+          >
+            <td class="col-no">
+              {{ (page - 1) * pageSize + i + 1 }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.id }}
+            </td>
+            <td class="text-right col-name">
+              {{ item.amount | number : "1.0-2" }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.partnerReference }}
+            </td>
+
+            <td class="col-name">
+              {{ item.sourceInfo?.username }}
+            </td>
+            <td class="col-name">{{ item.sourceInfo?.fullname }}</td>
+            <td class="col-name">
+              {{ item.receiverInfo?.username }}
+            </td>
+            <td class="col-name">{{ item.receiverInfo?.fullname }}</td>
+
+            <td class="col-name text-center">
+              <span
+                class="item-status"
+                [ngClass]="{
+                  'bg-success': item?.status === '00',
+                  'bg-danger': item?.status === '01',
+                  'bg-warning': item?.status === '02'
+                }"
+                >{{
+                  "transaction.payment.statusList." + item.status | translate
+                }}</span
+              >
+            </td>
+            <td class="col-name">
+              {{ item.content }}
+            </td>
+            <td class="col-date text-center">
+              <!-- {{ item.createdAt }} -->
+              {{ item.createdAt | date : "dd/MM/yyyy HH:mm" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ite-pagination
+      [page]="page"
+      [pageSize]="pageSize"
+      [total]="total"
+      (pageChange)="changePage($event)"
+      (pageSizeChange)="onPageSizeChange($event)"
+      [loading]="loading"
+    >
+    </ite-pagination>
+  </mat-card-content>
+</mat-card>

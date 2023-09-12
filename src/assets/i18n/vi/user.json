@@ -1,0 +1,152 @@
+{
+  "user": {
+    "tab-title": "Người dùng nội bộ",
+    "list": {
+      "title": "Quản lý người dùng",
+      "add": "Thêm người dùng",
+      "header": {
+        "userName": "Tên đăng nhập",
+        "avatar": "Ảnh đại diện",
+        "name": "Họ và tên",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "department": "Đơn vị",
+        "action": "Tác vụ"
+      },
+      "total": "Tổng số người dùng",
+      "tooltip": {
+        "view": "Chi tiết người dùng",
+        "edit": "Cập nhật chi tiết người dùng",
+        "delete": "Xóa người dùng"
+      },
+      "search": {
+        "content": "Tìm kiếm",
+        "placeholder": {
+          "key-search": "Nhập thông tin tìm kiếm",
+          "centre": "Đơn vị",
+          "status": "Trạng thái"
+        }
+      },
+      "account-status": {
+        "Inactive": "Khóa",
+        "Active": "Hoạt động",
+        "PendingApproval": "Chờ phê duyệt",
+        "Rejected": "Từ chối phê duyệt"
+      },
+      "filename": "Người-dùng-nội-bộ_",
+      "filename_ma": "Quản-trị-trang-merchant-admin_",
+      "filename_aa": "Quản-trị-trang-agent-admin_"
+    },
+    "add-edit-detail": {
+      "edit-title": "Cập nhật thông tin người dùng",
+      "add-title": "Thêm mới người dùng nội bộ",
+      "detail-title": "Thông tin người dùng",
+      "label": {
+        "userName": "Tên đăng nhập",
+        "name": "Họ và tên",
+        "phone": "Số điện thoại",
+        "email": "Email",
+        "role": "Vai trò",
+        "department": "Đơn vị",
+        "status": "Trạng thái",
+        "password": "Mật khẩu",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "sendLoginInfo": "Gửi thông tin đăng nhập đến",
+        "sendLoginInfoRadioButton": {
+          "byEmail": "Địa chỉ email",
+          "byPhone": "Số điện thoại"
+        },
+        "created_date": "Ngày tạo"
+      },
+      "button": {
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "close": "Đóng",
+        "lock": "Khóa",
+        "active": "Kích hoạt",
+        "approve": "Phê duyệt",
+        "reject": "Từ chối"
+      },
+      "placeholder": {
+        "userName": "Nhập tên đăng nhập",
+        "fullName": "Nhập họ và tên",
+        "password": "Nhập mật khẩu",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "phone": "Nhập số điện thoại",
+        "email": "Nhập địa chỉ email",
+        "role": "Vai trò",
+        "department": "Chọn đơn vị"
+      },
+      "approval-dialog": {
+        "title": "Xác nhận phê duyệt",
+        "context": "Bạn đồng ý phê duyệt người dùng ",
+        "yes": "Đồng ý",
+        "no": "Hủy"
+      },
+      "reject-approval-dialog": {
+        "title": "Xác nhận từ chối phê duyệt",
+        "context": "Bạn quyết định từ chối phê duyệt người dùng ",
+        "reason": "Lý do từ chối (nếu có)",
+        "yes": "Đồng ý",
+        "no": "Hủy"
+      },
+      "notification": {
+        "edit": {
+          "success": "Yêu cầu cập nhập thông tin người dùng đã được ghi nhận. Vui lòng chờ phê duyệt."
+        },
+        "add": {
+          "success": "Yêu cầu thêm mới người dùng nội bộ đã được ghi nhận. Vui lòng chờ phê duyệt.",
+          "Error_01": "Bạn không có quyền thực hiện hành động! Vui lòng liên hệ ban quản trị",
+          "Error_02": "Trạng thái tài khoản không hợp lệ",
+          "Error_03": "Dữ liệu không đúng định dạng",
+          "Error_04": "Tên đăng nhập đã tồn tại",
+          "Error_06": "Trạng thái không chính xác",
+          "Error_07": "Người dùng không tồn tại",
+          "Error_08": "Thông tin đơn vị không chính xác",
+          "Error_99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+          "Error_09": "Kênh nhận thông tin tài khoản chưa được hỗ trợ.",
+          "Error_10": "Email đã tồn tại",
+          "Error_11": "Số điện thoại đã tồn tại",
+          "Error_88": "Dữ liệu yêu cầu không hợp lệ",
+          "usernameMinLength": "Tên đăng nhập có tối thiểu 4 ký tự",
+          "usernamePattern": "Tên đăng nhập không đúng định dạng"
+        },
+        "approve": {
+          "success": "Phê duyệt người dùng thành công"
+        },
+        "reject": {
+          "success": "Từ chối phê duyệt người dùng thành công"
+        }
+      }
+    },
+    "basicInfo": "Thông tin cơ bản",
+    "lock": {
+      "text1": "Người dùng",
+      "success": "Khóa tài khoản người dùng thành công"
+    },
+    "active": {
+      "success": "Kích hoạt tài khoản người dùng thành công"
+    },
+    "role": {
+      "title": "Nhóm quyền",
+      "view": "Bạn không có quyền xem chi tiết người dùng"
+    },
+    "reset": {
+      "title": "Đặt lại mật khẩu",
+      "confirm": "Xác nhận thông tin",
+      "text1": "Bạn đang thực hiện reset mật khẩu cho người dùng",
+      "notify": "Hệ thống đã gửi thông tin tài khoản gồm Tên đăng nhập và Mật khẩu mới đến email của người dùng"
+    }
+  },
+  "ma-user": {
+    "tab-title": "Quản trị trang Merchant Admin",
+    "merchant": "ĐVCNTT",
+    "type": "Loại",
+    "all-merchant": "Tất cả ĐVCNTT"
+  },
+  "aa-user": {
+    "tab-title": "Quản trị trang Agent Admin",
+    "agency": "Đại lý",
+    "all-agency": "Tất cả đại lý"
+  }
+}

@@ -1,0 +1,174 @@
+@import "./ultilities/_variable.scss";
+@import "./ultilities/_variable.color.scss";
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-drawer-container {
+  background: $bodycolor !important;
+}
+
+html .page-wrapper {
+  height: calc(100vh - 64px);
+  transition: all 300ms ease-in-out;
+
+  .page-content {
+    padding: 0 15px;
+  }
+}
+
+.page-wrapper-open {
+  margin-left: 240px !important;
+}
+
+.page-wrapper-close {
+  margin-left: 80px !important;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/*******************
+Chartistt chart css
+******************/
+.barchrt {
+  .ct-series-a .ct-bar {
+    stroke: $success;
+  }
+
+  .ct-series-b .ct-bar {
+    stroke: $info;
+  }
+}
+
+.piechart {
+  .ct-series-a .ct-slice-donut {
+    stroke: $info
+  }
+
+  .ct-series-b .ct-slice-donut {
+    stroke: $success
+  }
+
+  .ct-series-c .ct-slice-donut {
+    stroke: $purple
+  }
+
+  .ct-series-d .ct-slice-donut {
+    stroke: $light
+  }
+
+  .ct-series-e .ct-slice-donut {
+    stroke: $warning
+  }
+}
+
+/*******************/
+/*social-profile-first*/
+/*******************/
+.little-profile {
+
+  .pro-img,
+  .pro-img:first-child {
+    margin-top: -110px;
+    margin-bottom: 20px;
+
+    img {
+      width: 128px;
+      height: 128px;
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 100%;
+    }
+  }
+}
+
+.button-row button {
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.table-responsive {
+  display: block !important;
+  width: 100% !important;
+}
+
+.table {
+  width: 100% !important;
+  margin-bottom: 1rem !important;
+  color: #23282c !important;
+  overflow-x: scroll !important;
+
+  @media screen and (min-width: 992px) {
+    min-width: 700px;
+  }
+}
+
+.min-width-50 {
+  min-width: 50px !important;
+}
+
+.min-width-150 {
+  min-width: 150px !important;
+}
+
+.mat-title-dialog {
+  font-size: 20px !important;
+}
+
+.form-input-icon {
+  margin-right: 10px;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.bg-main {
+  background-color: $main-color !important;
+  color: white !important;
+}
+
+.link {
+  cursor: pointer !important;
+  word-break: break-all;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.elipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-width-239 {
+  max-width: 239px;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: #949494;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: rgba(0, 0, 0, 0.42) !important;
+}

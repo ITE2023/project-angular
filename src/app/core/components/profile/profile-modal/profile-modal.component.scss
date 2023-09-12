@@ -1,0 +1,18 @@
+.title {
+    position: relative;
+
+    i {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        cursor: pointer;
+    }
+}
+
+button {
+    min-width: 115px;
+
+    &:focus {
+        outline: none;
+    }
+}

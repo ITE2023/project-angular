@@ -1,0 +1,360 @@
+@import "../../../../styles/ultilities/_variable.scss";
+@import "../../../../styles/ultilities/_variable.color.scss";
+
+.input-group input:focus {
+  border: 1px solid #80bdff;
+  outline: none;
+}
+
+.input-group .input-error {
+  border: 1px solid #f44336;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.login-group-form-remember label,
+.login-group-form-remember input {
+  cursor: pointer;
+}
+
+.login-group-form-remember input {
+  display: none;
+}
+
+.login-group-form-remember .check {
+  display: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.login-group-form-remember input:checked~.uncheck {
+  display: none;
+}
+
+.login-group-form-remember input:checked~.check {
+  display: contents;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.form-login {
+  transition: all 0.3s ease-in-out;
+  flex-direction: column;
+}
+
+.form-login label {
+  font-size: 15px;
+}
+
+.form-login small {
+  font-size: 12px;
+}
+
+.form-login a {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.form-login .theme {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-login .description {
+  padding: 2rem;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+  flex-direction: column;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  background-color: #e4e4e4;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  line-height: 12px;
+}
+
+.description-body-radio-group {
+  display: flex;
+  align-items: center;
+}
+
+.description-body-button button {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background-color: $main-color;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.description-footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: 30px;
+  color: $main-color;
+}
+
+.fa-check-circle::before {
+  margin-top: -9px;
+}
+
+.lb-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.lb-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.lb-container:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.lb-container input:checked~.checkmark {
+  background-color: $main-color;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.lb-container input:checked~.checkmark::after {
+  display: block;
+}
+
+.lb-container .checkmark::after {
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.description-body-button .btn-login:hover {
+  background-color: $main-color;
+}
+
+.ipt-group_pw {
+  position: relative;
+}
+
+.pw-icon {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.login-error {
+  margin-bottom: 15px;
+}
+
+.description-footer a {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.description .form-header{
+  font-size: 28px;
+  font-weight: 550;
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    background-color: white;
+  }
+
+  .form-login {
+    border-radius: 0;
+    width: 100%;
+    // min-height: 100vh;
+    box-shadow: none;
+    justify-content: center;
+    color: $main-color;
+  }
+
+  .form-login .theme {
+    display: none;
+  }
+
+  .form-login .description {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    // min-height: 100vh;
+    grid-template-rows: 100px 100px auto;
+  }
+
+  .description .language-des {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+  }
+
+  .description .logo-des {
+    align-items: center;
+  }
+}
+
+img.logo-g {
+  margin: 0 0 -20px -20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .body {
+    background-color: white;
+  }
+
+  .description .language-des {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+  }
+
+  .description .logo-des {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-login {
+    // min-height: 100vh;
+    width: 70%;
+    color: $main-color;
+  }
+
+  .form-login .theme {
+    display: none;
+  }
+
+  .form-login .description {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    // min-height: 100vh;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .form-login {
+    background-color: white;
+    border-radius: none;
+    box-shadow: none;
+    display: flex;
+    width: 100%;
+    color: $main-color;
+  }
+
+  .form-login .theme {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-login .description {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    min-height: 90vh;
+    grid-template-rows: 40px 120px auto;
+    align-content: center;
+  }
+
+  .form-group {
+    display: flex;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  // .body{
+  //     background-color: #42A8A5;
+  // }
+  .form-login {
+    min-height: 90vh;
+    width: 1200px;
+    background-color: white;
+    border-radius: none;
+    //box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px 0px !important;
+    display: flex;
+    color: $main-color;
+  }
+
+  .form-login .theme {
+    display: flex;
+  }
+
+  .form-login .description {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    min-height: 90vh;
+  }
+}

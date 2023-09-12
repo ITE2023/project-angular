@@ -1,0 +1,201 @@
+<div
+  [class.d-none]="sidebarState !== 'open'"
+  class="user-profile"
+  style="
+    background: url(assets/images/dd.jpg) no-repeat;
+    background-size: cover;
+  "
+>
+  <div class="profile-img mx-auto" style="height: 110px">
+    <img
+      [src]="profileImage"
+      alt="user"
+      default="{{ defaultAvatar }}"
+      style="height: 100%; object-fit: cover"
+    />
+  </div>
+  <div class="profile-text font-20 text-center">
+    <a (click)="openProfile()" class="text-capitalize elipsis max-width-239">
+      {{ profileName }}</a
+    >
+  </div>
+  <mat-menu #sdprofile="matMenu" class="mymegamenu">
+    <button mat-menu-item><mat-icon>settings</mat-icon> Settings</button>
+    <button mat-menu-item><mat-icon>account_box</mat-icon> Profile</button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon> Disable notifications
+    </button>
+    <button mat-menu-item><mat-icon>exit_to_app</mat-icon> Sign Out</button>
+  </mat-menu>
+</div>
+<div [class.d-none]="sidebarState === 'open'" class="user-profile-close">
+  <div class="profile-img text-center">
+    <img
+      [src]="profileImage"
+      (click)="openProfile()"
+      alt="user"
+      default="{{ defaultAvatar }}"
+    />
+  </div>
+  <mat-menu #sdprofile="matMenu" class="mymegamenu">
+    <button mat-menu-item><mat-icon>settings</mat-icon> Settings</button>
+    <button mat-menu-item><mat-icon>account_box</mat-icon> Profile</button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon> Disable notifications
+    </button>
+    <button mat-menu-item><mat-icon>exit_to_app</mat-icon> Sign Out</button>
+  </mat-menu>
+</div>
+
+<mat-divider [class.d-none]="sidebarState === 'open'"></mat-divider>
+<mat-nav-list
+  appAccordion
+  class="ct-left-menu"
+  id="menu-item"
+  [ngClass]="{
+    'mat-list-base-open': sidebarState === 'open',
+    'mat-list-base-close px-0': sidebarState !== 'open'
+  }"
+>
+  <div *ngFor="let menuitem of menuItemList; let i = index">
+    <mat-list-item
+      appAccordionLink
+      routerLinkActive="selected"
+      group="{{ menuitem.state }}"
+      [id]="menuitem.id"
+      [class.open]="menuitem.open === true && menuitem.type !== 'link'"
+      [class.text-center]="sidebarState !== 'open'"
+      [class.opened]="sidebarState === 'open'"
+      [class.px-0]="sidebarState !== 'open'"
+    >
+      <a
+        class="max-height-37"
+        appAccordionToggle
+        [routerLink]="[menuitem.state]"
+        *ngIf="menuitem.type === 'link'"
+        (click)="closeAll()"
+        [matTooltip]="menuitem.name | translate"
+        matTooltipPosition="after"
+        [matTooltipDisabled]="sidebarState === 'open'"
+        [class.open]="sidebarState === 'open'"
+        routerLinkActive="active"
+      >
+        <mat-icon
+          [ngClass]="{ 'pr-0 ml-16': sidebarState !== 'open' }"
+          [@iconAnimation]="sidebarState"
+          >{{ menuitem.icon }}
+        </mat-icon>
+        <span [@labelAnimation]="sidebarState" class="menu-item item-name">{{
+          menuitem.name | translate
+        }}</span>
+        <span [@labelAnimation]="sidebarState" class="flex-box" fxFlex></span>
+        <mat-icon *ngIf="menuitem.children && menuitem.children.length > 0">
+          {{
+            menuitem.open === true ? "arrow_drop_down" : "arrow_right"
+          }}</mat-icon
+        >
+      </a>
+      <a
+        class="max-height-37"
+        (click)="toggleSection(i)"
+        *ngIf="menuitem.type !== 'link'"
+        [matTooltip]="menuitem.name | translate"
+        matTooltipPosition="after"
+        [matTooltipDisabled]="sidebarState === 'open'"
+        [class.open]="sidebarState === 'open'"
+        [class.selected-section]="menuitem.open === true"
+      >
+        <mat-icon
+          [ngClass]="{ 'mr-0 ml-16': sidebarState !== 'open' }"
+          [@iconAnimation]="sidebarState"
+          >{{ menuitem.icon }}
+        </mat-icon>
+        <span [@labelAnimation]="sidebarState" class="item-name">{{
+          menuitem.name | translate
+        }}</span>
+        <span [@labelAnimation]="sidebarState" class="flex-box" fxFlex></span>
+        <mat-icon
+          *ngIf="menuitem.children && menuitem.children.length > 0"
+          [ngClass]="{
+            'icon-arrow-enable': sidebarState === 'open',
+            'icon-arrow-disable': sidebarState !== 'open'
+          }"
+        >
+          {{
+            menuitem.open === true ? "arrow_drop_down" : "arrow_right"
+          }}</mat-icon
+        >
+      </a>
+    </mat-list-item>
+    <div
+      *ngIf="
+        menuitem.open === true &&
+        menuitem.children &&
+        menuitem.children.length > 0
+      "
+    >
+      <mat-list-item
+        *ngFor="let menusubitem of menuitem.children"
+        appAccordionLink
+        routerLinkActive="selected"
+        [class.opened]="sidebarState === 'open'"
+        [class.text-center]="sidebarState !== 'open'"
+        [class.px-0]="sidebarState !== 'open'"
+        group="{{ menusubitem.state }}"
+        class="sub-item"
+      >
+        <a
+          class="max-height-32 mb-1 ml-0 child-item"
+          appAccordionToggle
+          [routerLink]="[menusubitem.state]"
+          routerLinkActive="active"
+          *ngIf="menusubitem.type === 'link'"
+        >
+          <mat-icon [@iconAnimation]="sidebarState" class="small-icon">
+            {{ menusubitem.icon }}</mat-icon
+          >
+          <span
+            [@labelAnimation]="sidebarState"
+            class="sub-item-text item-name"
+            title="{{ menusubitem.name | translate }}"
+            >{{ menusubitem.name | translate }}</span
+          >
+          <span class="flex-box" fxFlex></span>
+          <mat-icon
+            [@labelAnimation]="sidebarState"
+            [@iconAnimation]="sidebarState"
+            *ngIf="menusubitem.children && menusubitem.children.length > 0"
+          >
+            {{
+              menusubitem.open === true ? "arrow_drop_down" : "arrow_right"
+            }}</mat-icon
+          >
+        </a>
+      </mat-list-item>
+    </div>
+  </div>
+</mat-nav-list>
+
+<div
+  style="visibility: hidden; position: fixed"
+  [style.left]="contextMenuPosition.x"
+  [style.top]="contextMenuPosition.y"
+  [matMenuTriggerFor]="contextMenu"
+></div>
+<mat-menu
+  #contextMenu="matMenu"
+  class="sub-menu-list status-menu"
+  yPosition="below"
+>
+  <ng-template matMenuContent let-item="item">
+    <button
+      *ngFor="let menu of selectedSubMenu"
+      (click)="navigate(menu.state)"
+      class="sub-menu-item"
+      mat-menu-item
+    >
+      <mat-icon class="small-icon sub-item-icon"> {{ menu.icon }}</mat-icon>
+      {{ menu.name | translate }}
+    </button>
+  </ng-template>
+</mat-menu>

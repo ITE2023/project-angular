@@ -1,0 +1,130 @@
+@import "./ultilities/_variable.scss";
+@import "./ultilities/_variable.color.scss";
+
+
+.mat-toolbar {
+  box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5);
+
+  &.topbar {
+    padding: 0px 30px 0 15px;
+
+    @media screen and (max-width: 767px) {
+      padding-right: 15px;
+    }
+  }
+
+  .navbar-header {
+    text-align: center;
+
+    .navbar-brand {
+      display: flex;
+      line-height: 18px;
+      align-items: center;
+
+      .dark-logo {
+        display: none;
+      }
+
+      b {
+        margin-right: 5px;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+}
+
+/*******************
+ Topbar
+*******************/
+.topbar {
+  position: relative;
+  z-index: 2;
+  // background: linear-gradient(352deg,
+  //     rgba(2, 0, 36, 1) 0%,
+  //     rgba(9, 121, 120, 1) 0%,
+  //     rgba(0, 212, 255, 0.11528361344537819) 66%) !important;
+  background-color: $main-color !important;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.flex-box {
+  flex: 1 1 0%;
+  box-sizing: border-box;
+}
+
+.light-logo {
+  // border-radius: 50% !important;
+  height: 42px !important;
+  margin-top: 3px;
+}
+
+.light-logo-text {
+  // border-radius: 50% !important;
+  height: 30px !important;
+}
+
+.app-title {
+  color: white !important;
+}
+
+.notification .badge {
+  position: absolute;
+  top: 0px;
+  left: 22px;
+  border-radius: 50%;
+  background-color: $color-notification-badge;
+  color: white;
+  min-width: 16px;
+  height: 16px;
+}
+
+.profile .badge {
+  position: absolute;
+  top: 5px;
+  right: -20px;
+  // padding: 5px 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+}
+
+.lang-pic {
+  height: 25px !important;
+  margin-right: 5px;
+}
+
+.no-border-first-item {
+  outline: none !important;
+}
+
+.profile-container {
+  height: 125px !important;
+  min-width: 200px;
+}
+
+.profile-pic-dropdown {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 30, 0.8);
+}
+
+.light-logo {
+  max-height: 50px;
+}

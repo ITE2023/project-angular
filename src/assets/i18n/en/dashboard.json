@@ -1,0 +1,55 @@
+{
+  "dashboard-page": {
+    "mutual": {
+      "title": "Today's business results",
+      "from_date": "From date",
+      "to_date": "To date",
+      "criteria": {
+        "active_wallet": "Total number of active wallets",
+        "online_wallet": "Total number of online wallets",
+        "top_highest_value": "Top 10 wallets with the highest transaction value",
+        "top_highest_number": "Top 10 wallets with the highest number of transactions"
+      }
+    },
+    "circle_chart": {
+      "title_active": "Total number of active wallets",
+      "title_online": "Total number of online wallets",
+
+      "data_table": {
+        "status_col": "Wallet status",
+        "amount_col": "Number of wallets",
+        "scale_col": "Scale",
+        "wallet_status": {
+          "active": {
+            "active": "Active",
+            "block": "Blocked",
+            "delete": "Deleted"
+          },
+          "online": {
+            "online": "Online",
+            "offline": "Offline"
+          }
+        },
+        "total_label": "Total"
+      }
+    },
+    "column_chart": {
+      "combobox": {
+        "top_number": "Number of transactions",
+        "top_value": "Value of transactions"
+      },
+      "time_choose": {
+        "day": "Day",
+        "week": "Week",
+        "month": "Month"
+      },
+      "unit_label_value": "Value of transactions",
+      "unit_label_number": "Number of transactions"
+    },
+    "new_trans": {
+      "title": "Lastest transactions",
+      "see_more": "See more"
+    },
+    "no-statistic": "No data yet"
+  }
+}

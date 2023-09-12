@@ -1,0 +1,129 @@
+{
+  "state_bank_page": {
+    "wallet_balance": {
+      "current_day": {
+        "title": "Current wallet balance report",
+        "selected_title": "At the time of access"
+      },
+      "selected_month": {
+        "title": "Wallet balance report by period",
+        "selected_title": "By period"
+      },
+      "table_data": {
+        "column_data": {
+          "no": "No",
+          "type_wallet": "Wallet type",
+          "status": "Status",
+          "amout_wallet": "Amount of wallets",
+          "bal_wallet": "Balance of wallets"
+        },
+        "wallet_data": {
+          "type_wallet": {
+            "personal": "Personal e-wallet",
+            "organize": "Institutional e-wallet",
+            "merchant": "IT unit e-wallet"
+          },
+          "status_wallet": {
+            "active": "Active",
+            "online": "Online",
+            "release": "Released"
+          },
+          "total": "Total"
+        }
+      }
+    },
+    "guaranteed_balance": {
+      "title": "Guaranteed payment account balance",
+      "column_data": {
+        "no": "No",
+        "date": "Date",
+        "debit": "DEBIT",
+        "credit": "CREDIT",
+        "note": "Note"
+      },
+      "column_mutual": {
+        "quan_trans": "Number of transactions",
+        "val_trans": "Transactions value"
+      },
+      "guaranteed_acc": {
+        "label": "Guaranteed account",
+        "search": "Enter account name"
+      },
+      "basic_info": {
+        "acc_num": "Account number",
+        "bank": "Bank name",
+        "acc_name": "Account name",
+        "acc_balance": "Account balance"
+      }
+    },
+    "type_report": {
+      "title": "Report by transaction type",
+      "column_data": {
+        "no": "No",
+        "date": "Date",
+        "recharge_trans": "Recharge transaction",
+        "withdraw_trans": "Withdrawal transaction",
+        "transfer_trans": "Money transfer transaction",
+        "payment_trans": "Payment transaction",
+        "refund_trans": "Refund transaction",
+        "other_trans": "Other transactions",
+        "total": "Total"
+      },
+      "column_mutual": {
+        "quantity": "Quantity",
+        "value": "Value"
+      }
+    },
+    "top_most": {
+      "title": "Top 10 wallets with the most transactions",
+      "column_data": {
+        "no": "No",
+        "wallet_name": "Name of e-wallet",
+        "first_balance": "Opening balance",
+        "last_balance": "Ending balance",
+        "deposit_withdraw": "Deposit/withdrawal",
+        "payment_transfer": "Payment transaction",
+        "refund": "Refund transaction",
+        "other_trans": "Other transactions",
+        "total": "Total",
+        "deposit": "Deposit",
+        "withdraw": "Withdraw",
+        "bank_name": "Bank name"
+      },
+      "column_mutual": {
+        "quantity": "Quantity",
+        "value": "Value"
+      }
+    },
+    "top_highest": {
+      "title": "Top 10 wallets with the highest transaction value",
+      "detail": {
+        "wallet_info_title": "Wallet transaction information"
+      }
+    },
+    "wallet_volatility": {
+      "title": "Month wallet volatility",
+      "column_data": {
+        "no": "No",
+        "e_wallet": "E-wallet name",
+        "open_balance": "Opening balance",
+        "end_balance": "Ending balance",
+        "volatility_percent": "Wallet volatility (%)",
+        "payment_trans": "Payment transaction",
+        "total": "Total"
+      },
+      "column_mutual": {
+        "quantity": "Quantity",
+        "value": "Value"
+      }
+    },
+    "mutual_text": {
+      "search_term": "Search terms",
+      "month_search": "Report month",
+      "day_search": "Statistical day",
+      "month_placeholder": "Required month",
+      "total_quantity": "Total number of transactions",
+      "total_value": "Total transaction value"
+    }
+  }
+}

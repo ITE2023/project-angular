@@ -1,0 +1,15 @@
+.icon i {
+  color: #28a745;
+  font-size: 40px;
+  margin: 12px 0;
+}
+
+.message {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .data {
+    padding: 0 20px;
+  }
+}

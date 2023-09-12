@@ -1,0 +1,10 @@
+<div class="row mt-4 mb-3 d-flex justify-content-center">
+  <button mat-raised-button color="warn" (click)="onNoClick()" [mat-dialog-close]="false"
+    class="btn-lg float-right btn-cancel ws-120 mr-2">
+    <i class="fa fa-times mr-1"></i>{{ "cancel" | translate }}
+  </button>
+  <button mat-raised-button color="warn" (click)="save()" [disabled]="showButton" [mat-dialog-close]="reloading"
+    class="btn-lg float-right btn-save ws-120 mr-1">
+    <i class="fa fa-save mr-1"></i>{{ "save" | translate }}
+  </button>
+</div>

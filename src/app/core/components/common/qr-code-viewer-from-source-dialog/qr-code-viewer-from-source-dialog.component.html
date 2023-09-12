@@ -1,0 +1,21 @@
+<div class="ct-dialog viewer mt-0">
+  <mat-card-content class="ct-content">
+    <div class="row d-flex justify-content-center dialog-content">
+      <div class="qr-code">
+        <img [src]="mainImageUrl" default="/assets/images/no-image.jpg" alt="image here">
+      </div>
+
+    </div>
+    <div class="row d-flex justify-content-center mt-3">
+      <a (click)="download()" class="text-primary link">
+        {{'commonAction.download'|translate}}
+      </a>
+      <a (click)="copyURL()" class="text-primary link ml-3">
+        {{'commonAction.copyURL'|translate}}
+      </a>
+    </div>
+  </mat-card-content>
+  <div class="btn-close" (click)="cancel()">
+    <i class="material-icons">close</i>
+  </div>
+</div>

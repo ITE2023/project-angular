@@ -1,0 +1,29 @@
+<button mat-icon-button class="notification no-border-first-item" [matMenuTriggerFor]="menu">
+  <i class="material-icons"> notifications</i>
+  <span class="badge" *ngIf="totalUnread > 0 && totalUnread < 99">{{ totalUnread }}</span>
+  <span class="badge" *ngIf="totalUnread >= 99">99+</span>
+</button>
+<mat-menu #menu="matMenu" class="notifications">
+  <div [ngClass]="{'header': notificationList.length}">
+    <div><b *ngIf="totalUnread > 0">{{'notifications.new' | translate}} ({{ totalUnread }})</b></div>
+    <div class="link" (click)="markAllAsRead()" *ngIf="notificationList.length && checkPermission(2110)">{{'notifications.markRead' | translate}}
+    </div>
+  </div>
+  <div class="content" *ngIf="notificationList.length">
+    <div *ngFor="let item of notificationList" class="item">
+      <div class="title pointer" [ngClass]="{'unread': item.status === 'new'}" (click)="viewDetail(item)">
+        <div class="d-flex">
+          {{ multiLangData(item.subject) }}
+        </div>
+      </div>
+      <div class="short-content"><span>{{ multiLangData(item.content) }}</span></div>
+      <div class="time">{{ item.send_date }}</div>
+    </div>
+  </div>
+  <div class="content text-center no-data" *ngIf="!notificationList.length">
+    {{'notifications.noData' | translate}}
+  </div>
+  <div class="footer" *ngIf="checkPermission(2106)">
+    <span (click)="seeAll()" class="link">{{'notifications.seeAll' | translate}}</span>
+  </div>
+</mat-menu>

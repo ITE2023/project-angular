@@ -1,0 +1,81 @@
+<div class="ct-dialog risk-dialog">
+  <mat-card-title class="mat-title-dialog text-center">
+    <div class="text-center title">
+      {{'transaction.refund.update-status.title'|translate}}
+    </div>
+    <div class="btn-close" (click)="cancel()">
+      <i class="material-icons">close</i>
+    </div>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" appFirstFocus>
+      <div class="dialog-content">
+        <div class="row mt-4 mb-2">
+          <div class="col-lg-5">
+            <div class="label">{{'transaction.payment.status'|translate}} <span class="text-danger"> *</span></div>
+          </div>
+          <div class="col-lg-7">
+            <mat-select class="fs-14 form-control form-field" formControlName="status_code"
+              placeholder="{{'transaction.refund.update-status.select'| translate}}" disableOptionCentering
+              panelClass="ct-select-position dialog-select">
+              <mat-option *ngFor="let item of statusList" value="{{item.value}}">
+                {{ 'transaction.refund.update-status.list.' + item.desc | translate }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="!f.status_code.valid && f.status_code.errors.required  && submitted">
+              {{ commonErrorCode.REQUIRED |translate }}
+            </mat-error>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-5">
+            <div class="label">{{'transaction.refund.update-status.trans-id'|translate}} <span class="text-danger">
+                *</span></div>
+          </div>
+          <div class="col-lg-7">
+            <input class="form-control fs-14 form-field" type="text"
+              [placeholder]="'transaction.refund.update-status.enter-id' | translate" formControlName="txn_reference" />
+            <mat-error *ngIf="!f.txn_reference.valid && f.txn_reference.errors.required  && submitted">
+              {{ commonErrorCode.REQUIRED |translate }}
+            </mat-error>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-5">
+            <div class="label">{{'transaction.refund.payment-info.code'|translate}} <span class="text-danger"> *</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <input class="form-control fs-14 form-field" type="text"
+              [placeholder]="'transaction.refund.update-status.enter-code' | translate"
+              formControlName="txn_certificate" />
+            <mat-error *ngIf="!f.txn_certificate.valid && f.txn_certificate.errors.required  && submitted">
+              {{ commonErrorCode.REQUIRED |translate }}
+            </mat-error>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-lg-5">
+            <div class="label">{{'transaction.refund.payment-info.note'|translate}} <span class="text-danger"> *</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <textarea class="form-control fs-14 form-field" type="text"
+              [placeholder]="'transaction.refund.update-status.enter-note' | translate" formControlName="txn_desc">
+            </textarea>
+            <mat-error *ngIf="!f.txn_desc.valid && f.txn_desc.errors.required  && submitted">
+              {{ commonErrorCode.REQUIRED |translate }}
+            </mat-error>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mt-4">
+        <button type="button" [mat-dialog-close]="true" mat-raised-button class="btn-cancel text-white mr-2"
+          (click)="cancel()"><i class="material-icons">close</i>&nbsp;{{'title_no'|translate}}</button>
+        <button mat-raised-button class="btn-save text-white button-submit"><i
+            class="material-icons">save</i>&nbsp;{{'user.add-edit-detail.button.save'|translate}} </button>
+      </div>
+    </form>
+  </mat-card-content>
+</div>

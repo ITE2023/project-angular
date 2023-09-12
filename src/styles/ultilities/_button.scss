@@ -1,0 +1,12 @@
+@import "./ultilities/_variable.scss";
+@import "./ultilities/_variable.color.scss";
+
+button.btn-action {
+  background-color: $main-color;
+  color: #fff;
+  min-width: 115px;
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "user": {
+    "tab-title": "Inside user",
+    "list": {
+      "title": "User Management",
+      "add": "Add user",
+      "header": {
+        "userName": "Username",
+        "avatar": "Avatar",
+        "name": "First and last name",
+        "email": "Email",
+        "phone": "Phone number",
+        "department": "Unit",
+        "action": "Action"
+      },
+      "total": "Total number of users",
+      "tooltip": {
+        "view": "User details",
+        "edit": "Update user details",
+        "delete": "Delete user"
+      },
+      "search": {
+        "content": "Search",
+        "placeholder": {
+          "key-search": "Enter search information",
+          "centre": "Unit",
+          "status": "Status"
+        }
+      },
+      "account-status": {
+        "Inactive": "Locked",
+        "Active": "Active",
+        "PendingApproval": "Waiting for approval",
+        "Rejected": "Refused to Approve"
+      },
+      "filename": "User_",
+      "filename_ma": "Merchant-admin-user_",
+      "filename_aa": "Agent-admin-user_"
+    },
+    "add-edit-detail": {
+      "edit-title": "Update user information",
+      "add-title": "Add new internal user",
+      "detail-title": "User information",
+      "label": {
+        "userName": "Username",
+        "name": "First and last name",
+        "phone": "Phone number",
+        "email": "Email",
+        "role": "Role",
+        "department": "Unit",
+        "status": "Status",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "sendLoginInfo": "Send login information to",
+        "sendLoginInfoRadioButton": {
+          "byEmail": "Email address",
+          "byPhone": "Phone number"
+        },
+        "created_date": "Date created"
+      },
+      "button": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "close": "Close",
+        "lock": "Lock",
+        "active": "Activate",
+        "approve": "Approve",
+        "reject": "Reject"
+      },
+      "placeholder": {
+        "userName": "Enter username",
+        "fullName": "Enter first and last name",
+        "password": "Enter password",
+        "confirmPassword": "Confirm Password",
+        "phone": "Enter phone number",
+        "email": "Enter email address",
+        "role": "Role",
+        "department": "Select units"
+      },
+      "approval-dialog": {
+        "title": "Confirm Approval",
+        "context": "You agree to approve the user",
+        "yes": "agree",
+        "no": "Cancel"
+      },
+      "reject-approval-dialog": {
+        "title": "Confirm Approval Denial",
+        "context": "You decided to refuse user approval",
+        "reason": "Reason for refusal (if any)",
+        "yes": "agree",
+        "no": "Cancel"
+      },
+      "notification": {
+        "edit": {
+          "success": "User information update request has been received. Please wait for approval."
+        },
+        "add": {
+          "success": "A request to add a new internal user has been received. Please wait for approval.",
+          "Error_01": "You do not have permission to take action! Please contact admin",
+          "Error_02": "Invalid account status",
+          "Error_03": "Invalid data format",
+          "Error_04": "Username already exists",
+          "Error_06": "Incorrect status",
+          "Error_07": "User does not exist",
+          "Error_08": "Incorrect unit information",
+          "Error_99": "The system is temporarily down. Please contact the administrator.",
+          "Error_09": "The channel to receive account information is not supported yet.",
+          "Error_10": "Email already exists",
+          "Error_11": "Phone number already exists",
+          "Error_88": "Invalid request data",
+          "usernameMinLength": "Username must be at least 4 characters",
+          "usernamePattern": "Invalid username"
+        },
+        "approve": {
+          "success": "User approval successful"
+        },
+        "reject": {
+          "success": "Successfully denied user approval"
+        }
+      }
+    },
+    "basicInfo": "Basic Info",
+    "lock": {
+      "text1": "User",
+      "success": "Successfully locked user account"
+    },
+    "active": {
+      "success": "User account activation successful"
+    },
+    "role": {
+      "title": "Permission Group",
+      "view": "You do not have permission to view user details"
+    },
+    "reset": {
+      "title": "Reset Password",
+      "confirm": "Confirm information",
+      "text1": "You are performing a password reset for the user",
+      "notify": "The system has sent account information including Username and New Password to the user's email"
+    }
+  },
+  "ma-user": {
+    "tab-title": "Merchant Admin Site Administration",
+    "merchant": "Merchant",
+    "type": "Type",
+    "all-merchant": "All merchants"
+  },
+  "aa-user": {
+    "tab-title": "Agent Admin Site Administration",
+    "agency": "Agent",
+    "all-agency": "All agencies"
+  }
+}

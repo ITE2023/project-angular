@@ -1,0 +1,150 @@
+{
+  "wallet-account-page": {
+    "title": "Manage wallet accounts",
+    "list": {
+      "header": {
+        "no": "No",
+        "name": "Fullname",
+        "userName": "Username",
+        "identity": "Identity",
+        "email": "Email",
+        "phone": "Phone number",
+        "status": "Status",
+        "balance": "Balance",
+        "created_date": "Created Time",
+        "action": "Action"
+      },
+      "total": "Total number of users",
+      "tooltip": {
+        "view": "User details",
+        "edit": "Update user details",
+        "delete": "Delete user"
+      },
+      "search": {
+        "content": "Search",
+        "placeholder": {
+          "key-search": "Enter search information",
+          "centre": "Unit",
+          "status": "Status"
+        }
+      },
+      "account-status": {
+        "block": "Locked",
+        "active": "Active",
+        "pendingApproval": "Waiting for approval",
+        "rejected": "Refused to Approve"
+      },
+      "filename": "Wallet-account_",
+      "filename_ma": "Merchant-admin-user_",
+      "filename_aa": "Agent-admin-user_"
+    },
+    "add-edit-detail": {
+      "edit-title": "Update wallet account information",
+      "add-title": "Add new internal user",
+      "detail-title": "User information",
+      "label": {
+        "userName": "Username",
+        "name": "First and last name",
+        "phone": "Phone number",
+        "email": "Email",
+        "role": "Role",
+        "department": "Unit",
+        "status": "Status",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "sendLoginInfo": "Send login information to",
+        "sendLoginInfoRadioButton": {
+          "byEmail": "Email address",
+          "byPhone": "Phone number"
+        },
+        "created_date": "Date created",
+        "user_created": "User created"
+      },
+      "button": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "close": "Close",
+        "lock": "Lock",
+        "active": "Activate",
+        "approve": "Approve",
+        "agree": "Agree",
+        "reject": "Reject",
+        "return": "Return"
+      },
+      "placeholder": {
+        "userName": "Enter username",
+        "fullName": "Enter first and last name",
+        "password": "Enter password",
+        "confirmPassword": "Confirm Password",
+        "phone": "Enter phone number",
+        "email": "Enter email address",
+        "role": "Role",
+        "department": "Select units"
+      },
+      "approval-dialog": {
+        "title": "Confirm Approval",
+        "context": "You agree to approve the user",
+        "yes": "agree",
+        "no": "Cancel"
+      },
+      "reject-approval-dialog": {
+        "title": "Confirm Approval Denial",
+        "context": "You decided to refuse user approval",
+        "reason": "Reason for refusal (if any)",
+        "yes": "agree",
+        "no": "Cancel"
+      },
+      "notification": {
+        "edit": {
+          "success": "User information update request has been received. Please wait for approval."
+        },
+        "add": {
+          "success": "A request to add a new internal user has been received. Please wait for approval.",
+          "Error_01": "You do not have permission to take action! Please contact admin",
+          "Error_02": "Invalid account status",
+          "Error_03": "Invalid data format",
+          "Error_04": "Username already exists",
+          "Error_06": "Incorrect status",
+          "Error_07": "User does not exist",
+          "Error_08": "Incorrect unit information",
+          "Error_99": "The system is temporarily down. Please contact the administrator.",
+          "Error_09": "The channel to receive account information is not supported yet.",
+          "Error_10": "Email already exists",
+          "Error_11": "Phone number already exists",
+          "Error_88": "Invalid request data",
+          "usernameMinLength": "Username must be at least 4 characters",
+          "usernamePattern": "Invalid username"
+        },
+        "approve": {
+          "success": "User approval successful"
+        },
+        "reject": {
+          "success": "Successfully denied user approval"
+        }
+      }
+    },
+    "basicInfo": "Basic Info",
+    "lock": {
+      "title": "Confirm account lock",
+      "text1": "Wallet account",
+      "text2": "will be locked. ",
+      "text3": "Are you sure?",
+      "success": "Successfully locked wallet account"
+    },
+    "active": {
+      "title": "Account activation confirmation",
+      "text2": "will be activated. ",
+      "success": "Wallet account activation successful"
+    },
+    "role": {
+      "title": "Permission Group",
+      "view": "You do not have permission to view user details"
+    },
+    "reset": {
+      "title": "Reset Password",
+      "confirm": "Confirm information",
+      "text1": "You are performing a password reset for the user",
+      "notify": "The system has sent account information including Username and New Password to the user's email"
+    }
+  }
+}

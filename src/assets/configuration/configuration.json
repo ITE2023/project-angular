@@ -1,0 +1,23 @@
+{
+  "API_ENDPOINTS": {
+    "NO_AUTH_API_URL": "",
+    "AUTH_API_URL": "",
+    "SKIP_LOADER": "Skip-Loader",
+    "CHANGE_AVATAR_API_URL": "/profile/edit-avatar",
+    "CHANGE_PM_LOGO": "/payment-method/edit-logo",
+    "CHANGE_ISSUER_LOGO": "/issuer/edit-logo",
+    "ADD_ISSUER": "/issuer/addnew",
+    "EDIT_ISSUER": "/issuer/edit-basic-info",
+    "EDIT_ISSUER_CONTRACT": "/issuer/edit-contract",
+    "EDIT_MERCHANT_ADDITIONAL_INFO": "/merchant/edit-additional-info",
+    "EDIT_MERCHANT_CONTRACT_INFO": "/merchant/edit-contract",
+    "ADD_NEW_MERCHANT": "/merchant/addnew",
+    "EDIT_AGENCY_CONTRACT": "/agency/edit-contract",
+    "ADD_RISK": "/risk/addnew",
+    "REFUND_IMPORT": "/refund/update-status-file",
+    "REFUND_IMPORT_2": "/refund/send-issuer/update-status-file",
+    "ADD_RISK_WHITELIST": "/risk/white-list/addnew",
+    "EDIT_RECONCILE_ISSUER": "/reconcile/issuer/update",
+    "EDIT_RECONCILE_merchant": "/reconcile/merchant/update"
+  }
+}

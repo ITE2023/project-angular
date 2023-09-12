@@ -1,0 +1,74 @@
+.error-page {
+  background-image: url('/assets/images/error/Artboard_1.svg');
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.error-code {
+  text-align: center;
+  color: #00918d;
+  font-weight: bolder;
+  font-size: 90px;
+}
+
+.action {
+  text-align: center;
+}
+
+.action-button {
+  background-color: #00918d;
+}
+
+.detail {
+  font-size: 30px;
+  position: absolute;
+  background: transparent;
+  color: black;
+  top: 25vh;
+}
+
+@media only screen and (max-width: 1199px) {
+  .detail {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-size: 30px;
+  }
+
+  .error-code {
+    font-size: 90px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 5px 16px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+
+  .detail {
+    font-size: 18px;
+  }
+
+  .error-code {
+    font-size: 70px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .detail {
+    left: 100px;
+  }
+
+  .image {
+    height: 100vh;
+  }
+}

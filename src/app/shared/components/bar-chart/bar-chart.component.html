@@ -1,0 +1,5 @@
+<div style="display: block;" *ngIf="!loading && chartData.length > 0">
+  <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [plugins]="barChartPlugins"
+    [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors">
+  </canvas>
+</div>

@@ -1,0 +1,330 @@
+<mat-card class="example-card common-management" *ngIf="!loading">
+  <mat-card-title class="fs-16 mb-0 row d-flex">
+    <div class="col-md-8">
+      <div>
+        {{
+          "transaction.payment.detail_info.trans_payment_mutual_info"
+            | translate
+        }}
+      </div>
+      <div class="mb-3 d-flex align-items-center">
+        <span class="fs-18 total-amount">
+          {{ data?.amount | number : "1.0-2" }} VND
+        </span>
+        <span
+          class="item-status"
+          [ngClass]="{
+            'bg-success': data?.status === '00',
+            'bg-danger': data?.status === '01',
+            'bg-warning': data?.status === '02'
+          }"
+          >{{
+            "transaction.refund.statusList." + data?.status | translate
+          }}</span
+        >
+      </div>
+    </div>
+    <div class="col-md-4 text-right buttons mb-3">
+      <button
+        *ngIf="data?.statusCode === '07' && checkPermission(20209)"
+        mat-raised-button
+        class="button-plus"
+        (click)="approveRefund()"
+      >
+        <i class="material-icons">done</i>
+        {{ "issuer.statusList.Approval" | translate }}
+      </button>
+      <button
+        *ngIf="data?.statusCode === '05'"
+        mat-raised-button
+        class="button-plus"
+        (click)="transactionQuery()"
+      >
+        <i class="material-icons">update</i>
+        {{ "transaction.refund.action.trans-query" | translate }}
+      </button>
+      <button
+        *ngIf="
+          (data?.statusCode === '01' && checkPermission(20206)) ||
+          (data?.statusCode === '02' && checkPermission(20204))
+        "
+        mat-raised-button
+        class="button-plus ml-2"
+        (click)="updateStatus()"
+      >
+        <i class="material-icons">edit</i>
+        {{ "transaction.refund.action.update-status" | translate }}
+      </button>
+
+      <button mat-raised-button class="button-plus" (click)="returnMain()">
+        <i class="material-icons">keyboard_return</i>
+        {{ "transaction.payment.buttons.return" | translate }}
+      </button>
+    </div>
+  </mat-card-title>
+  <mat-card-content class="header">
+    <div class="">
+      <mat-card-footer class="basic-info">
+        <div class="row m-0">
+          <div class="col-md-6 col-lg-3 item">
+            <span class="text-secondary">{{
+              "transaction.refund.search.time" | translate
+            }}</span>
+            <span>{{ data?.createdAt | date : "dd/MM/yyyy HH:mm" }}</span>
+          </div>
+          <!-- <div class="col-md-6 col-lg-3 item">
+            <span class="text-secondary">{{
+              "transaction.payment.merchant-id" | translate
+            }}</span>
+            <span>14889</span>
+          </div>
+          <div class="col-md-6 col-lg-3 item">
+            <span class="text-secondary">Tên ĐVCNTT</span>
+            <span>Đơn vị VIRAC</span>
+          </div>
+          <div class="col-md-6 col-lg-3 item">
+            <span class="text-secondary">{{
+              "transaction.refund.search.payment-issuer" | translate
+            }}</span>
+            <span>Đơn vị VIRAC</span>
+          </div> -->
+        </div>
+      </mat-card-footer>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- Them vao -->
+<mat-card
+  class="wallet-management common-management mt-3 trans-info"
+  *ngIf="!loading"
+>
+  <mat-card-title class="w-100 title-container">
+    <div class="row header ml-0 mr-0">
+      <div class="col-6 p-0">
+        <span class="title">{{
+          "transaction.payment.detail_info.trans_payment_info" | translate
+        }}</span>
+      </div>
+      <!-- <div class="col-6 pr-0 text-right">
+        <button
+          mat-raised-button
+          class="button-plus"
+          (click)="edit()"
+          *ngIf="wallet?.status === 'rejected' || wallet?.status === 'active'"
+        >
+          <i class="material-icons">edit</i>
+          {{ "commonAction.update" | translate }}
+        </button>
+      </div> -->
+    </div>
+  </mat-card-title>
+  <mat-card-content class="content-container">
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.trans_id" | translate }}:
+      </div>
+      <div class="data">{{ data?.id }}</div>
+    </div>
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.amount" | translate }}:
+      </div>
+      <div class="data">{{ data?.amount | number : "1.0-2" }} VND</div>
+    </div>
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.origin_trans_id" | translate }}:
+      </div>
+      <div class="data">{{ data?.transactionInfo?.id }}</div>
+    </div>
+
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.source_acc" | translate }}:
+      </div>
+      <div class="data">
+        {{ data?.sourceInfo?.username }}
+      </div>
+    </div>
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.source_name" | translate }}:
+      </div>
+      <div class="data">
+        {{ data?.sourceInfo?.fullname }}
+      </div>
+    </div>
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.receive_acc" | translate }}:
+      </div>
+      <div class="data">
+        {{ data?.receiverInfo?.username }}
+      </div>
+    </div>
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.receive_name" | translate }}:
+      </div>
+      <div class="data">
+        {{ data?.receiverInfo?.fullname }}
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.content" | translate }}:
+      </div>
+      <div class="data">{{ data?.content }}</div>
+    </div>
+
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.trans_status" | translate }}:
+      </div>
+      <div class="data">
+        <span
+          class="item-status"
+          [ngClass]="{
+            'bg-success': data?.status === '00',
+            'bg-danger': data?.status === '01',
+            'bg-warning': data?.status === '02'
+          }"
+          >{{
+            "transaction.refund.statusList." + data?.status | translate
+          }}</span
+        >
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="label text-secondary">
+        {{ "transaction.refund.data_table.created_date" | translate }}:
+      </div>
+      <div class="data">{{ data?.createdAt | date : "dd/MM/yyyy HH:mm" }}</div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- <div class="mt-3" *ngIf="!loading">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{ "transaction.payment.transaction-information" | translate }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.trans_id" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.id }}
+              </div>
+            </div>
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.amount" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.amount | number : "1.0-2" }} VND
+              </div>
+            </div>
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{
+                  "transaction.refund.data_table.origin_trans_id" | translate
+                }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.origintransactionId }}
+              </div>
+            </div>
+
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.source_acc" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.sourceInfo?.username }}
+              </div>
+            </div>
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.source_name" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.sourceInfo?.fullname }}
+              </div>
+            </div>
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.receive_acc" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.receiverInfo?.username }}
+              </div>
+            </div>
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.receive_name" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.receiverInfo?.fullname }}
+              </div>
+            </div>
+
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.trans_status" | translate }}:
+              </div>
+              <div class="col-md-8">
+                <span
+                  class="item-status"
+                  [ngClass]="{
+                    'bg-success': data?.status === '00',
+                    'bg-danger': data?.status === '01',
+                    'bg-warning': data?.status === '02'
+                  }"
+                  >{{
+                    "transaction.refund.statusList." + data?.status | translate
+                  }}</span
+                >
+              </div>
+            </div>
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.data_table.content" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.content }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dash"></div>
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="row trans-info">
+              <div class="col-md-4 text-secondary">
+                {{ "transaction.refund.search.amount" | translate }}:
+              </div>
+              <div class="col-md-8">
+                {{ data?.amount | number : "1.0-2" }}
+                <span *ngIf="data?.amount">{{
+                  data?.currency | uppercase
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div> -->

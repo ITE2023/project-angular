@@ -1,0 +1,92 @@
+[
+    {
+        "mcc_type": "tổ chức vừa vừa",
+        "mcc_code": "Mohandas",
+        "group_mcc": "Millington",
+        "date": "2019-11-14T05:54:18Z",
+        "form_of_handling": "cảnh báo",
+        "account": "Margo",
+        "price": 534201,
+        "sl": 378
+    },
+    {
+        "mcc_type": "buôn bán nhỏ",
+        "mcc_code": "Marys",
+        "group_mcc": "Pym",
+        "date": "2020-02-29T07:44:56Z",
+        "form_of_handling": "cảnh báo",
+        "account": "Lorin",
+        "price": 614389,
+        "sl": 273
+    },
+    {
+        "mcc_type": "tổ chức to",
+        "mcc_code": "Catherina",
+        "group_mcc": "Beevor",
+        "date": "2019-01-16T18:05:59Z",
+        "form_of_handling": "chặn giao dịch",
+        "account": "Waly",
+        "price": 712128,
+        "sl": 303
+    },
+    {
+        "mcc_type": "tổ chức vừa vừa",
+        "mcc_code": "Brittni",
+        "group_mcc": "Wybron",
+        "date": "2019-10-02T08:31:57Z",
+        "form_of_handling": "cảnh báo",
+        "account": "Jeremie",
+        "price": 947536,
+        "sl": 123
+    },
+    {
+        "mcc_type": "tổ chức nhỏ",
+        "mcc_code": "Suellen",
+        "group_mcc": "Sheal",
+        "date": "2019-07-27T04:56:35Z",
+        "form_of_handling": "cảnh báo",
+        "account": "Rupert",
+        "price": 667700,
+        "sl": 446
+    },
+    {
+        "mcc_type": "buôn bán vừa vừa",
+        "mcc_code": "Vite",
+        "group_mcc": "Saunders",
+        "date": "2018-11-02T03:39:45Z",
+        "form_of_handling": "cảnh báo",
+        "account": "Gaby",
+        "price": 891925,
+        "sl": 385
+    },
+    {
+        "mcc_type": "tổ chức vừa vừa",
+        "mcc_code": "Moshe",
+        "group_mcc": "Campling",
+        "date": "2018-08-20T00:03:22Z",
+        "form_of_handling": "chặn giao dịch",
+        "account": "Aristotle",
+        "price": 789845,
+        "sl": 332
+    },
+    {
+        "mcc_type": "buôn bán to",
+        "mcc_code": "Martin",
+        "group_mcc": "Stokey",
+        "date": "2018-08-13T18:10:13Z",
+        "form_of_handling": "chặn giao dịch",
+        "account": "Evaleen",
+        "price": 696712,
+        "sl": 63
+    },
+    {
+        "mcc_type": "buôn bán nhỏ",
+        "mcc_code": "Lay",
+        "group_mcc": "Asbrey",
+        "date": "2019-08-25T00:20:00Z",
+        "form_of_handling": "chặn giao dịch",
+        "account": "Bradan",
+        "price": 806673,
+        "sl": 162
+    }
+]

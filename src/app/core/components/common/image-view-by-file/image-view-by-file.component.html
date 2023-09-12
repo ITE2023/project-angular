@@ -1,0 +1,19 @@
+<div class="ct-dialog">
+  <mat-card-title class="dialog-title">
+    {{imageFile.name}}
+  </mat-card-title>
+  <mat-card-content class="ct-content">
+    <div class="row d-flex justify-content-center dialog-content border">
+      <img [src]="imageUrl" class="w-100" alt="image here">
+    </div>
+    <div class="text-center mt-4">
+      <button type="button" class="btn-cancel text-white" (click)="close()" mat-raised-button>
+        <i class="material-icons">close</i>
+        {{ 'commonAction.close' | translate }}
+      </button>
+    </div>
+  </mat-card-content>
+  <div class="btn-close" (click)="close()">
+    <i class="material-icons">close</i>
+  </div>
+</div>

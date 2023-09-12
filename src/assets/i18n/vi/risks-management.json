@@ -1,0 +1,274 @@
+{
+  "risks-management": {
+    "title-main": "Quản lý Rủi ro",
+    "success": "thành công",
+    "dialog": {
+      "placeholder": {
+        "file": "Chọn tệp tải lên",
+        "ip": "Nhập địa chỉ IP",
+        "bin": "Nhập dải BIN thẻ",
+        "business": "Tên MCC tương ứng",
+        "account": "Nhập số tài khoản/ví điện tử",
+        "card": "Nhập số thẻ ngân hàng",
+        "date": "Nhập/chọn ngày áp dụng",
+        "sl": "Nhập số lượng",
+        "price": "Nhập giá trị",
+        "issuer": "Chọn tổ chức phát hành",
+        "method": "Chọn hình thức xử lý",
+        "upload": "Chọn tệp tải lên",
+        "mcc": "Chọn MCC",
+        "search": "Nhập thông tin tìm kiếm",
+        "nation": "Nhập tên quốc gia"
+      }
+    },
+    "button": {
+      "add": "Thêm mới",
+      "export": "Xuất file",
+      "close": "Đóng",
+      "search": "Tìm kiếm",
+      "edit": "Cập nhật",
+      "delete": "Xóa"
+    },
+    "card": {
+      "title": "Danh sách thẻ hạn chế",
+      "title_add": "Thêm mới thẻ hạn chế",
+      "title_edit": "Cập nhật thẻ hạn chế",
+      "title_delete": "Xóa thẻ hạn chế",
+      "file_name": "Danh-sách-thẻ-hạn-chế",
+      "search": {
+        "number": "Số thẻ ngân hàng",
+        "dv": "Tổ chức phát hành",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "name_list": "Danh sách thẻ"
+      },
+      "list": {
+        "no": "STT",
+        "number": "Số thẻ",
+        "dv": "Tổ chức phát hành",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "menu": "Tác vụ",
+        "account": "Tài khoản tạo"
+      }
+    },
+    "account": {
+      "title": "Danh sách tài khoản/ví điện tử hạn chế",
+      "title_add": "Thêm mới tài khoản/ví điện tử hạn chế",
+      "title_edit": "Cập nhật tài khoản/ví điện tử hạn chế",
+      "title_delete": "Xóa tài khoản/ví điện tử hạn chế",
+      "file_name": "Danh-sách-tài-khoản-ví-điện-tử-hạn-chế",
+      "search": {
+        "number": "Số tài khoản/ví",
+        "dv": "Tổ chức phát hành",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "name_list": "Danh sách tài khoản/ví"
+      },
+      "list": {
+        "no": "STT",
+        "number": "Số tài khoản/ví",
+        "dv": "Tổ chức phát hành",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "menu": "Tác vụ",
+        "account": "Tài khoản tạo"
+      }
+    },
+    "bin": {
+      "title": "Danh sách dải BIN thẻ hạn chế",
+      "title_add": "Thêm mới dải BIN thẻ hạn chế",
+      "title_edit": "Cập nhật dải BIN thẻ hạn chế",
+      "title_delete": "Xóa dải BIN thẻ hạn chế",
+      "file_name": "Danh-sách-dải-BIN-thẻ-hạn-chế",
+      "search": {
+        "number": "Dải BIN thẻ",
+        "dv": "Tổ chức phát hành",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "name_list": "Danh sách dải BIN thẻ"
+      },
+      "list": {
+        "no": "STT",
+        "number": "Dải BIN thẻ",
+        "dv": "Tổ chức phát hành",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "menu": "Tác vụ",
+        "account": "Tài khoản tạo"
+      },
+      "minlength": "Dải BIN thẻ có tối thiểu 4 ký tự"
+    },
+    "transaction": {
+      "title": "Danh sách giao dịch nghi ngờ",
+      "file_name": "Danh-sách-giao-dịch-nghi-ngờ",
+      "search": {
+        "dv": "Mã ĐVCNTT",
+        "status": "Trạng thái",
+        "date": "Thời gian",
+        "action": "Hình thức thanh toán",
+        "from": "Giao dịch từ ngày",
+        "to": "Đến ngày"
+      },
+      "status": {
+        "1": "Thành công",
+        "0": "Không thành công"
+      },
+      "list": {
+        "dv": "Mã ĐVCNTT",
+        "date": "Thời gian",
+        "code": "Mã GD",
+        "price": "Giá trị (VND)",
+        "type": "Hình thức",
+        "action": "Hình thức xử lý",
+        "menu": "Tác vụ",
+        "status": "Trạng thái",
+        "reason": "Nguyên nhân",
+        "warning-type": "Loại cảnh báo"
+      },
+      "risk-type": {
+        "account": "Tài khoản/ví điện",
+        "card": "Thẻ ngân hàng",
+        "card_bin": "Dải BIN thẻ",
+        "ip": "Địa chỉ IP",
+        "mcc": "Loại hình kinh doanh",
+        "timeout": "Không xác định"
+      }
+    },
+    "business": {
+      "title": "Danh sách loại hình kinh doanh hạn chế",
+      "title_add": "Thêm mới loại hình kinh doanh hạn chế",
+      "title_edit": "Cập nhật loại hình kinh doanh hạn chế",
+      "title_delete": "Xóa loại hình kinh doanh hạn chế",
+      "file_name": "Danh-sách-loại-hình-kinh-doanh-hạn-chế",
+      "search": {
+        "mcc": "Mã MCC",
+        "nameDv": "Loại hình kinh doanh MCC",
+        "group": "Group MCC",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "name_list": "Danh sách loại KD",
+        "sl": "SLGD/ngày",
+        "price": "Giá trị/GD (VND)"
+      },
+      "list": {
+        "no": "STT",
+        "dv": "Loại hình kinh doanh MCC",
+        "mcc": "Mã MCC",
+        "group": "Group MCC",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "menu": "Tác vụ",
+        "account": "Tài khoản tạo",
+        "amount": "SLGD/ngày",
+        "value": "Giá trị/GD (VND)",
+        "mcc_name": "Tên MCC"
+      }
+    },
+    "ip": {
+      "title": "Danh sách địa chỉ IP hạn chế",
+      "title_add": "Thêm mới địa chỉ IP hạn chế",
+      "title_edit": "Cập nhật địa chỉ IP hạn chế",
+      "title_delete": "Xóa địa chỉ IP hạn chế",
+      "file_name": "Danh-sách-địa-chỉ-IP-hạn-chế",
+      "search": {
+        "number": "Địa chỉ IP",
+        "dv": "Quốc gia",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "name_list": "Danh sách địa chỉ IP"
+      },
+      "list": {
+        "no": "STT",
+        "number": "Địa chỉ IP",
+        "dv": "Quốc gia",
+        "date": "Ngày áp dụng",
+        "action": "Hình thức xử lý",
+        "menu": "Tác vụ",
+        "account": "Tài khoản tạo"
+      }
+    },
+    "methodList": {
+      "block": "Chặn giao dịch",
+      "warning": "Cảnh báo rủi ro",
+      "timeout": "GD chưa được kiểm tra rủi ro"
+    },
+    "all": {
+      "issuer": "Tất cả TCPH",
+      "method": "Tất cả hình thức",
+      "nation": "Tất cả quốc gia",
+      "status": "Tất cả trạng thái",
+      "object": "Tất cả đối tượng",
+      "warning_type": "Tất cả loại cảnh báo"
+    },
+    "errors": {
+      "03": "Trạng thái không hợp lệ",
+      "05": "Đã tồn tại thông tin Quản lý rủi ro với",
+      "06": "Thông tin Quản lý rủi ro không chính xác",
+      "11": "Ngày áp dụng phải lớn hơn ngày hiện tại",
+      "13": "Thông tin ngày tháng không đúng",
+      "88": "Dữ liệu yêu cầu không hợp lệ",
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+      "upload": "Dữ liệu không hợp lệ ở dòng thứ",
+      "upload-again": "Vui lòng kiểm tra và tải lại file"
+    },
+    "date": {
+      "from": "Áp dụng từ ngày",
+      "to": "Đến ngày"
+    },
+    "undefined": "Không xác định",
+    "object": "Đối tượng áp dụng",
+    "system": "Hệ thống",
+    "active": {
+      "account": "Tài khoản",
+      "card": "Thẻ",
+      "bin": "Dải BIN",
+      "ip": "Địa chỉ IP",
+      "mcc": "Loại hình kinh doanh",
+      "success": "Chuyển trạng thái thành công"
+    },
+    "history": {
+      "title": "Lịch sử cập nhật",
+      "ADD": "đã thêm mới thông tin",
+      "EDIT": "đã cập nhật thông tin",
+      "CHANGE_STATUS": "đã chuyển trạng thái thành",
+      "noData": "Chưa có lịch sử cập nhật"
+    },
+    "statusList": {
+      "active": "Hiệu lực",
+      "inactive": "Không hiệu lực"
+    },
+    "template": "Tải file template",
+    "here": "tại đây"
+  },
+  "risks-whitelist": {
+    "card": {
+      "title": "Danh sách thẻ ưu tiên",
+      "title_add": "Thêm mới thẻ ưu tiên",
+      "title_edit": "Cập nhật thẻ ưu tiên",
+      "title_delete": "Xóa thẻ ưu tiên",
+      "file_name": "Danh-sách-thẻ-ưu-tiên"
+    },
+    "account": {
+      "title": "Danh sách tài khoản/ví điện tử ưu tiên",
+      "title_add": "Thêm mới tài khoản/ví điện tử ưu tiên",
+      "title_edit": "Cập nhật tài khoản/ví điện tử ưu tiên",
+      "title_delete": "Xóa tài khoản/ví điện tử ưu tiên",
+      "file_name": "Danh-sách-tài-khoản-ví-điện-tử-ưu-tiên"
+    },
+    "bin": {
+      "title": "Danh sách dải BIN thẻ ưu tiên",
+      "title_add": "Thêm mới dải BIN thẻ ưu tiên",
+      "title_edit": "Cập nhật dải BIN thẻ ưu tiên",
+      "title_delete": "Xóa dải BIN thẻ ưu tiên",
+      "file_name": "Danh-sách-dải-BIN-thẻ-ưu-tiên"
+    },
+    "ip": {
+      "title": "Danh sách địa chỉ IP ưu tiên",
+      "title_add": "Thêm mới địa chỉ IP ưu tiên",
+      "title_edit": "Cập nhật địa chỉ IP ưu tiên",
+      "title_delete": "Xóa địa chỉ IP ưu tiên",
+      "file_name": "Danh-sách-địa-chỉ-IP-ưu-tiên"
+    }
+  }
+}

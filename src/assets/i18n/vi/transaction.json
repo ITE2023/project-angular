@@ -1,0 +1,341 @@
+{
+  "transaction": {
+    "payment": {
+      "data_table": {
+        "no": "STT",
+        "trans_id": "Mã giao dịch",
+        "amount": "Số tiền",
+        "partner_ref": "Mã giao dịch đối tác",
+
+        "receive_acc": "Tài khoản ví nhận",
+        "receive_name": "Tên người nhận",
+        "source_acc": "Tài khoản ví gửi",
+        "source_name": "Tên người gửi",
+
+        "trans_status": "Trạng thái giao dịch",
+        "content": "Nội dung",
+        "created_date": "Ngày giao dịch"
+      },
+
+      "statusList": {
+        "00": "Thành công",
+        "01": "Thất bại",
+        "02": "Chờ",
+
+        "03": "Không thành công",
+        "04": "Chờ xác thực OTP",
+        "05": "OTP không đúng",
+        "06": "Chờ xác thực",
+        "07": "Bị chặn",
+        "10": "Khởi tạo giao dịch",
+        "19": "Khác"
+      },
+
+      "detail_info": {
+        "trans_payment_mutual_info": "Thông tin chung",
+        "trans_payment_info": "Thông tin chi tiết giao dịch"
+      },
+
+      "buttons": {
+        "return": "Trở về"
+      },
+
+      "bizname": "Tên ĐVCNTT",
+      "tid": "Ter ID",
+      "transaction_ref": "Giao dịch liên quan",
+      "title": "Quản lý giao dịch thanh toán",
+      "detail-route": "Chi tiết",
+      "trans-id": "Mã giao dịch",
+      "transaction-information": "Thông tin giao dịch",
+      "order-id": "Mã đơn hàng",
+      "from-date": "Từ ngày",
+      "to-date": "Đến ngày",
+      "transaction-status": "Trạng thái giao dịch",
+      "payment-method": "Phương thức thanh toán",
+      "card-no": "Số thẻ",
+      "account-no": "Số tài khoản",
+      "phone": "Số điện thoại",
+      "transaction-channel": "Kênh giao dịch",
+      "sub-merchant": "ĐVCNTT con",
+      "no": "STT",
+      "merchant-name": "ĐVCNTT",
+      "merchant-id": "Mã ĐVCNTT",
+      "type-pos": "MID-POS (Type)",
+
+      "amount": "Số tiền",
+      "transaction-content": "Nội dung giao dịch",
+      "trans-day": "Ngày giao dịch",
+      "trans-time": "Ngày giao dịch",
+      "file-name": "Giao-dịch-thanh-toán_",
+      "payment-information": "Thông tin thanh toán",
+      "transaction-payment-information": "Thông tin chung",
+      "refund": "Hoàn tiền",
+      "promotion": "Khuyến mãi",
+      "trans-fee": "Phí xử lý giao dịch",
+      "summary": "Tổng tiền",
+      "customer-name": "Tên khách hàng",
+      "issue-by": "Tổ chức phát hành",
+      "expired-date": "Ngày hiệu lực",
+      "transaction-history": "Lịch sử giao dịch",
+      "refund-history": "Lịch sử hoàn tiền",
+      "refund-transaction-id": "Mã GD hoàn",
+      "detail": "Nội dung",
+      "status": "Trạng thái",
+      "time": "Thời gian",
+      "reason": "Lý do",
+      "maximum-refund-amount": "Số tiền hoàn tối đa",
+      "refund-amount": "Số tiền hoàn",
+      "remaining-amount": "Số tiền còn lại",
+      "reason-refund": "Nhập lý do hoàn tiền",
+      "view-refund-history": "Xem lịch sử hoàn tiền",
+      "enter-amount": "Nhập số tiền",
+      "transaction-refund": "Hoàn trả giao dịch",
+      "according-customer": "Theo yêu cầu khách hàng",
+      "error-damaged": "Sản phẩm lỗi/hỏng/đổi trả",
+      "more": "Khác",
+      "not-product": "Không đủ sản phẩm cung cấp",
+      "required": "Đây là trường bắt buộc nhập",
+      "valid-number": "Chỉ nhập số",
+      "required-select": "Đây là trường bắt buộc chọn",
+      "awaitingpayment": "Chờ thanh toán",
+      "fail": "Không thành công",
+      "success": "Thành công",
+      "tranType": "Loại giao dịch",
+
+      "pendingapproval": "Chờ phê duyệt",
+      "inland-card": "Thẻ nội địa",
+      "international-card": "Thẻ quốc tế",
+      "documentNumber": "Mã chứng từ",
+      "merchant": "ĐVCNTT",
+      "name": "Tên",
+      "defaultTranType": "Giao dịch thanh toán",
+      "fareBaseCode": "Mã cơ sở giá vé",
+      "reference-code-RRN": "Mã tham chiếu RRN",
+      "mid_pos": "MID",
+      "tid_pos": "TID",
+      "type-card": "Loại thẻ",
+      "transaction-value-money": "Số tiền giao dịch",
+      "transaction-type-money": "Loại tiền giao dịch",
+      "fee-MDR": "Phí MDR",
+      "vat": "VAT",
+      "enter_document_number": "Nhập mã chứng từ",
+      "all": {
+        "merchant": "Tất cả ĐVCNTT",
+        "sub-merchant": "Tất cả ĐVCNTT con",
+        "status": "Tất cả TTGD",
+        "payment-method": "Tất cả PTTT",
+        "channel": "Tất cả KGD",
+        "refund-type": "Tất cả loại hoàn tiền",
+        "refund-status": "Tất cả TTHT",
+        "agency": "Tất cả đại lý",
+        "issuer": "Tất cả TCPH"
+      },
+
+      "no-refund-trans": "Chưa có giao dịch hoàn tiền nào",
+      "refund-success": "Yêu cầu hoàn tiền của bạn đã được ghi nhận",
+      "card": "Số thẻ/tài khoản thanh toán",
+      "search": {
+        "order": "Mã đơn hàng, hóa đơn",
+        "account": "Số thẻ, tài khoản thanh toán",
+        "agency": "Đại lý",
+        "issuer": "Tổ chức phát hành",
+        "bill-id": "Mã hóa đơn",
+        "pay-account": "Tài khoản thanh toán"
+      },
+      "detail-page": {
+        "paygate-error": "Mã lỗi CTT",
+        "issuer-error": "Mã lỗi TCPH",
+        "token-error": "Mã lỗi Token",
+        "risk-error": "Mã lỗi QLRR",
+        "agency": "Đại lý/CTV"
+      },
+      "merchant-info": "Thông tin ĐVCNTT",
+      "fee-info": "Thông tin phí",
+      "refund-reason": {
+        "customer_request": "Theo yêu cầu khách hàng",
+        "error_product": "Hàng lỗi/hỏng/đổi trả",
+        "not_support": "Không có SPDV cung cấp",
+        "other": "Khác"
+      },
+      "fee-detail": {
+        "fee-merchant": "Phí thu ĐVCNTT (VND)",
+        "fee-issuer": "Phí trả TCPH (VND)",
+        "fee-agency": "Phí trả Đại lý/CTV (VND)",
+        "revenue": "Doanh thu CTT (VND)",
+        "sum": "TỔNG",
+        "vat": "VAT",
+        "sum-vat": "TỔNG (VAT)",
+        "no-data": "Chưa có thông tin phí",
+        "pay": "Phí thanh toán",
+        "agency_share": "Phí chia sẻ dịch vụ",
+        "handling": "Phí xử lý giao dịch",
+        "handling_tokenization": "Phí xử lý giao dịch tokenization",
+        "handling_risk": "Phí xử lý giao dịch QLRR"
+      }
+    },
+
+    "refund": {
+      "data_table": {
+        "no": "STT",
+        "trans_id": "Mã giao dịch hoàn trả",
+        "amount": "Số tiền",
+        "origin_trans_id": "Mã giao dịch gốc",
+        "receive_acc": "Tài khoản ví nhận",
+        "receive_name": "Tên người nhận",
+        "source_acc": "Tài khoản ví gửi",
+        "source_name": "Tên người gửi",
+        "trans_status": "Trạng thái hoàn tiền",
+        "content": "Nội dung",
+        "created_date": "Ngày giao dịch"
+      },
+      "search": {
+        "time": "Thời gian giao dịch",
+        "trans_id": "Mã giao dịch hoàn trả",
+        "all_status": "Tất cả TTHT",
+        "source_name": "Tên người gửi",
+        "source_mobile": "SĐT người gửi",
+        "receive_name": "Tên người nhận",
+        "receive_mobile": "SĐT người nhận"
+      },
+      "statusList": {
+        "title": "Trạng thái hoàn tiền",
+        "00": "Thành công",
+        "01": "Thất bại",
+        "02": "Chờ",
+
+        "03": "Không thành công tại TCPH",
+        "04": "TCPH đã ghi nhận",
+        "05": "Không xác định",
+        "06": "Không thành công tại CTT",
+        "07": "Chờ phê duyệt tại CTT",
+        "100": "Khởi tạo giao dịch",
+        "19": "Khác"
+      },
+
+      "title": "Quản lý giao dịch hoàn trả",
+      "detail": "Chi tiết",
+      "refund-type": "Loại hoàn tiền",
+      "refund-transaction-id": "Mã giao dịch hoàn trả",
+      "original-transaction-id": "Mã giao dịch gốc",
+      "transaction-refund-information": "Thông tin giao dịch hoàn",
+      "total-refund": "Hoàn tiền 1 phần",
+      "intergral-refund": "Hoàn tiền toàn phần",
+      "createdUser": "Người tạo",
+
+      "trans-id": "Mã giao dịch hoàn trả",
+      "trans-time": "Thời gian hoàn trả",
+
+      "import": {
+        "title": "Import trạng thái giao dịch hoàn trả Thủ công",
+        "select": "Chọn file",
+        "password": "Vui lòng nhập mật khẩu để xác nhận",
+        "type": {
+          "title": "Chọn loại import file",
+          "0": "Chuyển TT sang Đã gửi yêu cầu cho TCPH",
+          "1": "Chuyển TT sang Thành công/Không thành công"
+        },
+        "success": "Chuyển trạng thái giao dịch hoàn trả thành công"
+      },
+      "refund-content": "Nội dung hoàn trả",
+      "payment-info": {
+        "money": "Nguồn tiền thanh toán",
+        "note": "Ghi chú",
+        "payment-merchant": "Phương thức hoàn đầu ĐVCNTT",
+        "trans-id-issuer": "ID giao dịch đầu TCPH",
+        "code": "Mã chứng từ",
+        "update-user": "Người cập nhật",
+        "error-code": "Mã lỗi giao dịch hoàn",
+        "error-des": "Mô tả mã lỗi"
+      },
+      "related-trans": {
+        "title": "Giao dịch liên quan",
+        "trans-type": "Loại giao dịch",
+        "refund-method": "Phương thức hoàn"
+      },
+      "action": {
+        "update-status": "Cập nhật trạng thái",
+        "trans-query": "Truy vấn giao dịch"
+      },
+      "update-status": {
+        "title": "Cập nhật trạng thái",
+        "select": "Chọn trạng thái",
+        "trans-id": "ID giao dịch đầu TCPH",
+        "enter-id": "Nhập ID",
+        "enter-code": "Nhập mã chứng từ",
+        "enter-note": "Nhập ghi chú",
+        "confirm-title": "Xác nhận",
+        "confirm-text": "Bạn chắc chắn muốn chuyển trạng thái giao dịch về",
+        "confirm-fail": "Sau khi chuyển trạng thái, hệ thống sẽ hoàn lại tiền cho ĐVCNTT.",
+        "success": "Cập nhật trạng thái giao dịch thành công",
+        "list": {
+          "success": "Thành công",
+          "fail": "Không thành công"
+        }
+      },
+      "refund-methods": {
+        "api": "API",
+        "file": "File",
+        "manual": "Thủ công"
+      },
+      "related-transaction": {
+        "refund": "Hoàn trả",
+        "transaction": "Thanh toán",
+        "no-trans": "Không có giao dịch liên quan nào"
+      },
+      "file-name": "Giao-dịch-hoàn-trả_",
+      "approve-refund": "Bạn chắc chắn muốn phê duyệt yêu cầu hoàn tiền này?",
+      "approve-refund-success": "Phê duyệt yêu cầu hoàn tiền thành công"
+    },
+
+    "pos": {
+      "payment": {
+        "title": "Quản lí giao dịch thanh toán POS"
+      },
+      "realtime": {
+        "title": "Tra cứu giao dịch thanh toán POS - realtime"
+      }
+    },
+    "placeholder": {
+      "merchant": "Nhập tên ĐVCNTT",
+      "sub-merchant": "Nhập tên ĐVCNTT con",
+      "reason": "Chọn lý do",
+      "agency": "Nhập tên đại lý",
+      "issuer": "Nhập tên TCPH",
+      "rrn": "Nhập mã tham chiếu RRN",
+
+      "tid": "Nhập TID",
+      "type-pos": "Nhập MID-POS"
+    },
+    "errors": {
+      "01": "ĐVCNTT không tồn tại",
+      "04": "Giao dịch không tồn tại",
+      "07": "Thông tin người dùng không hợp lệ",
+      "10": "Thông tin ngày tháng không đúng",
+      "88": "Dữ liệu yêu cầu không hợp lệ",
+      "91": "Chữ ký không hợp lệ",
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+      "106": "Số tiền hoàn phải lớn hơn 0 và nhỏ hơn giá trị tối đa",
+      "41": "Refund Id không tồn tại",
+      "42": "Trạng thái giao dịch hoàn trả không hợp lệ",
+      "43": "Số thự tự không hợp lệ",
+      "44": "ĐVCNTT không có giao dịch hợp lệ nào trong phiên thực hiện yêu cầu hoàn tiền",
+      "45": "Merchant Id không hợp lệ",
+      "46": "Ghi chú không hợp lệ",
+      "47": "Mã giao dịch thanh toán gốc không hợp lệ",
+      "48": "Thời gian hoàn trả không hợp lệ",
+      "49": "Số tiền hoàn trả không hợp lệ",
+      "50": "Đồng tiền hoàn trả không hợp lệ",
+      "51": "Ngày hoàn trả của TCPH không hợp lệ",
+      "52": "Mã TCPH không hợp lệ",
+      "53": "Trạng thái hoàn trả của TCPH không hợp lệ",
+      "54": "Mã tham chiếu của TCPH không hợp lệ",
+      "55": "Mã chứng từ không hợp lệ",
+      "56": "Ghi chú của TCPH không hợp lệ",
+      "57": "Thông tin giao dịch hoàn trả không hợp lệ"
+    },
+    "role": {
+      "view": "Bạn không có quyền xem chi tiết giao dịch"
+    },
+    "no-history": "Chưa có lịch sử giao dịch"
+  }
+}

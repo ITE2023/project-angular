@@ -1,0 +1,211 @@
+@import "../../../../styles/ultilities/_variable.scss";
+@import "../../../../styles/ultilities/_variable.color.scss";
+
+$green: #96be11;
+
+@mixin inline {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+
+.description {
+  padding-left: 15px;
+  border-left: 2px solid #000;
+
+  h3 {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0px;
+    color: #000;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 10px;
+    font-weight: 300;
+  }
+}
+
+.wrapper {
+  margin: 50px;
+}
+
+.bc-icon {
+  height: 18px;
+}
+
+ol.breadcrumbs {
+  margin: 25px 0px 0px;
+  padding: 0px;
+  font-size: 0px;
+  line-height: 0px;
+  @include inline;
+  height: 40px;
+
+  li {
+    position: relative;
+    margin: 0px 0px;
+    padding: 0px;
+    list-style: none;
+    list-style-image: none;
+    @include inline;
+    border-left: 1px solid #ccc;
+    transition: 0.3s ease;
+
+    &:hover {
+      &:before {
+        border-left: 10px solid $green;
+      }
+
+      a {
+        color: #000;
+        background: $green;
+      }
+
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: -9px;
+      top: -1px;
+      z-index: 20;
+      border-left: 10px solid #fff;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      transition: 0.3s ease;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: -1px;
+      z-index: 10;
+      border-left: 10px solid #ccc;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+    }
+
+
+    &.active {
+
+      a {
+        color: #000;
+        background: $green;
+      }
+    }
+
+    &.first {
+      border-left: none;
+
+      a {
+        font-size: 18px;
+        padding-left: 20px;
+        border-radius: 5px 0px 0px 5px;
+      }
+    }
+
+    &.last {
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      a {
+        padding-right: 20px;
+        border-radius: 0px 40px 40px 0px;
+      }
+    }
+
+    a {
+      display: block;
+      font-size: 12px;
+      line-height: 40px;
+      color: #757575;
+      padding: 0px 15px 0px 25px;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #ddd;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+/* Breadcrumbs ================================= */
+.breadcrumb {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  background-color: transparent;
+  margin-bottom: 0;
+  padding: 15px 1rem 15px 0;
+}
+
+.breadcrumb li a {
+  color: #444;
+  text-decoration: none;
+}
+
+.breadcrumb li a .material-icons {
+  font-size: 18px;
+  position: relative;
+  top: 4px;
+}
+
+.breadcrumb li .material-icons {
+  font-size: 18px;
+  position: relative;
+  top: 4px;
+}
+
+.breadcrumb>li+li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: ">\00a0";
+}
+
+.breadcrumb-col-teal li a {
+  color: $main-color !important;
+  font-weight: bold;
+}
+
+.breadcrumb-bg-teal {
+  background-color: cyan !important;
+}
+
+.breadcrumb-bg-teal li {
+  color: #fff !important;
+}
+
+.breadcrumb-bg-teal li a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.breadcrumb-bg-teal li a .material-icons {
+  padding-bottom: 8px;
+}
+
+.breadcrumb-bg-teal li+li:before {
+  color: #fff;
+}
+
+.body {
+  font-size: 14px;
+  color: #555;
+}
+
+.breadcrumb>.active {
+  color: #777 !important;
+}

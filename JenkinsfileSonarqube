@@ -1,0 +1,16 @@
+node ('sonarqube-node-paygate-frontend') {
+    try {
+        stage('Build') {
+            checkout scm
+            sh 'npm install'
+            sh 'xvfb-run -a npm run test'
+            sh 'xvfb-run -a npm run sonar'
+        }
+    }catch (e) {
+        currentBuild.result = 'FAILED'
+        throw e
+    } finally {
+    }
+}   
+
+   

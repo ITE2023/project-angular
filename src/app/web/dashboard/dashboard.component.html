@@ -1,0 +1,402 @@
+<mat-card class="common-management mt-2">
+  <mat-card-title class="dashboard-title mb-3">
+    {{ "dashboard-page.mutual.title" | translate }}
+  </mat-card-title>
+  <mat-card-content>
+    <div class="grid-layout">
+      <div class="row top">
+        <div class="col-xl-6 left mb-2">
+          <mat-card>
+            <mat-card-header
+              class="item-1 d-flex flex-xl-row flex-xs-row justify-content-xl-between justify-content-xs-between flex-column"
+            >
+              <mat-card-title>
+                {{
+                  selectedColChart === 0
+                    ? ("dashboard-page.mutual.criteria.top_highest_number"
+                      | translate)
+                    : ("dashboard-page.mutual.criteria.top_highest_value"
+                      | translate)
+                }}
+              </mat-card-title>
+              <mat-card-actions class="text-right m-0">
+                <button
+                  class="btn btn-sm"
+                  [class.border-btn]="isDay"
+                  (click)="changeColChart('day')"
+                >
+                  {{
+                    "dashboard-page.column_chart.time_choose.day" | translate
+                  }}
+                </button>
+                <button
+                  class="btn btn-sm"
+                  [class.border-btn]="isWeek"
+                  (click)="changeColChart('week')"
+                >
+                  {{
+                    "dashboard-page.column_chart.time_choose.week" | translate
+                  }}
+                </button>
+                <button
+                  class="btn btn-sm"
+                  [class.border-btn]="isMonth"
+                  (click)="changeColChart('month')"
+                >
+                  {{
+                    "dashboard-page.column_chart.time_choose.month" | translate
+                  }}
+                </button>
+              </mat-card-actions>
+            </mat-card-header>
+
+            <div class="text-left mb-3">
+              <mat-select
+                class="fs-14 form-control select-period"
+                [value]="selectedColChart"
+                (selectionChange)="changeColChartSection($event)"
+                disableOptionCentering
+                panelClass="ct-select-position dialog-select"
+              >
+                <mat-option
+                  *ngFor="let item of colChartList"
+                  [value]="item.index"
+                >
+                  {{
+                    item.index === 0
+                      ? ("dashboard-page.column_chart.combobox.top_number"
+                        | translate)
+                      : ("dashboard-page.column_chart.combobox.top_value"
+                        | translate)
+                  }}
+                </mat-option>
+              </mat-select>
+            </div>
+
+            <mat-card-content>
+              <ite-bar-chart
+                *ngIf="topWalletChartData.length"
+                [chartLabels]="topWalletChartLabel"
+                [chartData]="topWalletChartData"
+                [loading]="loading"
+                [barChartType]="'bar'"
+              >
+              </ite-bar-chart>
+              <div *ngIf="!topWalletChartData.length && !loading">
+                {{ "dashboard-page.no-statistic" | translate }}
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col-xl-6 right mb-2">
+          <mat-card>
+            <mat-card-header
+              class="d-flex justify-content-between align-items-baseline"
+            >
+              <mat-card-title class="d-flex newest-trans">
+                <span>{{ "dashboard-page.new_trans.title" | translate }}</span>
+              </mat-card-title>
+              <span
+                (click)="seeMore()"
+                class="ct-link"
+                *ngIf="lstTrans.length > 0 && !transLoading"
+                >{{ "dashboard-page.new_trans.see_more" | translate }}</span
+              >
+            </mat-card-header>
+            <mat-card-content class="common-management">
+              <div class="table-responsive table-hover mb-3">
+                <table class="management-table table">
+                  <thead>
+                    <tr>
+                      <th class="col-name">
+                        {{
+                          "transaction.payment.data_table.trans_id" | translate
+                        }}
+                      </th>
+                      <th class="col-name">
+                        {{
+                          "transaction.payment.data_table.partner_ref"
+                            | translate
+                        }}
+                      </th>
+                      <th class="col-name">
+                        {{
+                          "transaction.payment.data_table.trans_status"
+                            | translate
+                        }}
+                      </th>
+                      <th class="col-name">
+                        {{
+                          "transaction.payment.data_table.amount" | translate
+                        }}
+                        (VND)
+                      </th>
+                      <th class="col-name">
+                        {{
+                          "transaction.payment.data_table.created_date"
+                            | translate
+                        }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="text-center"
+                      *ngIf="!lstTrans.length && !transLoading"
+                    >
+                      <td colspan="5">
+                        {{ "dashboard-page.no-statistic" | translate }}
+                      </td>
+                    </tr>
+                    <tr *ngFor="let item of lstTrans">
+                      <td class="text-center col-name">
+                        {{ item.id }}
+                      </td>
+                      <td class="text-center col-name">
+                        {{ item.partnerReference }}
+                      </td>
+                      <td class="text-center col-name">
+                        <span
+                          class="item-status"
+                          [ngClass]="{
+                            'bg-success': item?.status === '00',
+                            'bg-danger': item?.status === '01',
+                            'bg-warning': item?.status === '02'
+                          }"
+                          >{{
+                            "transaction.payment.statusList." + item.status
+                              | translate
+                          }}</span
+                        >
+                      </td>
+                      <td class="text-right col-name">
+                        {{ item.amount | number : "1.0-2" }}
+                      </td>
+                      <td class="text-center col-name">
+                        {{ item.createdAt | date : "dd/MM/yyyy HH:mm" }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Bieu do vi active tron -->
+        <div class="col-xl-6 left mb-2">
+          <mat-card>
+            <mat-card-header
+              class="item-1 d-flex flex-xl-row flex-xs-row justify-content-xl-between justify-content-xs-between flex-column"
+            >
+              <mat-card-title>
+                {{ "dashboard-page.mutual.criteria.active_wallet" | translate }}
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-12 mb-3 mt-4">
+                  <ite-pie-chart
+                    [chartLabels]="activeWalletLabel"
+                    [chartData]="activeWalletData"
+                    [loading]="activeLoading"
+                  >
+                  </ite-pie-chart>
+                </div>
+                <div class="col-12 mb-3">
+                  <div class="table-responsive table-hover">
+                    <table class="management-table table">
+                      <thead>
+                        <tr>
+                          <th class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.status_col"
+                                | translate
+                            }}
+                          </th>
+                          <th class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.amount_col"
+                                | translate
+                            }}
+                          </th>
+                          <th class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.scale_col"
+                                | translate
+                            }}
+                            (%)
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        *ngIf="activeWalletTable && activeWalletTable.length"
+                      >
+                        <tr
+                          *ngFor="let item of activeWalletTable; let i = index"
+                        >
+                          <td class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.wallet_status.active." +
+                                item.status | translate
+                            }}
+                          </td>
+                          <td class="text-right">
+                            {{ item.total | number : "1.0-2" }}
+                          </td>
+                          <td class="text-right">
+                            {{ item.ratio | number : "1.0-2" }}
+                          </td>
+                        </tr>
+
+                        <tr class="fw-600">
+                          <td class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.total_label"
+                                | translate
+                            }}
+                          </td>
+                          <td class="text-right">
+                            {{ total_active_wallet | number : "1.0-2" }}
+                          </td>
+                          <td class="text-right">100</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="col-12"
+                  *ngIf="!activeWalletData.length && !activeLoading"
+                >
+                  {{ "dashboard-page.no-statistic" | translate }}
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <!-- Het Bieu do vi active tron -->
+
+        <!-- Bieu do vi online tron -->
+        <div class="col-xl-6 right mb-2">
+          <mat-card>
+            <mat-card-header
+              class="item-1 d-flex flex-xl-row flex-xs-row justify-content-xl-between justify-content-xs-between flex-column"
+            >
+              <mat-card-title>
+                {{ "dashboard-page.mutual.criteria.online_wallet" | translate }}
+              </mat-card-title>
+              <!-- <mat-card-actions class="text-right m-0">
+                <button
+                  class="btn btn-sm"
+                  [class.border-btn]="isrDay"
+                  (click)="changeRefundChart('day')"
+                >
+                  Ngày
+                </button>
+                <button
+                  class="btn btn-sm"
+                  [class.border-btn]="isrWeek"
+                  (click)="changeRefundChart('week')"
+                >
+                  Tuần
+                </button>
+                <button
+                  class="btn btn-sm"
+                  [class.border-btn]="isrMonth"
+                  (click)="changeRefundChart('month')"
+                >
+                  Tháng
+                </button>
+              </mat-card-actions> -->
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-12 mb-3 mt-4">
+                  <ite-pie-chart
+                    [chartLabels]="onlineWalletLabel"
+                    [chartData]="onlineWalletData"
+                    [loading]="onlineLoading"
+                  >
+                  </ite-pie-chart>
+                </div>
+                <div class="col-12 mb-3">
+                  <div class="table-responsive table-hover">
+                    <table class="management-table table">
+                      <thead>
+                        <tr>
+                          <th class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.status_col"
+                                | translate
+                            }}
+                          </th>
+                          <th>
+                            {{
+                              "dashboard-page.circle_chart.data_table.amount_col"
+                                | translate
+                            }}
+                          </th>
+                          <th>
+                            {{
+                              "dashboard-page.circle_chart.data_table.scale_col"
+                                | translate
+                            }}
+                            (%)
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        *ngIf="onlineWalletTable && onlineWalletTable.length"
+                      >
+                        <tr
+                          *ngFor="let item of onlineWalletTable; let i = index"
+                        >
+                          <td class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.wallet_status.online." +
+                                item.status | translate
+                            }}
+                          </td>
+                          <td class="text-right">
+                            {{ item.total | number : "1.0-2" }}
+                          </td>
+                          <td class="text-right">
+                            {{ item.ratio | number : "1.0-2" }}
+                          </td>
+                        </tr>
+
+                        <tr class="fw-600">
+                          <td class="">
+                            {{
+                              "dashboard-page.circle_chart.data_table.total_label"
+                                | translate
+                            }}
+                          </td>
+                          <td class="text-right">
+                            {{ total_online_wallet | number : "1.0-2" }}
+                          </td>
+                          <td class="text-right">100</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="col-12"
+                  *ngIf="!onlineWalletData.length && !onlineLoading"
+                >
+                  {{ "dashboard-page.no-statistic" | translate }}
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <!-- Het Bieu do vi online tron -->
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

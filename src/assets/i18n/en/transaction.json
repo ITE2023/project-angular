@@ -1,0 +1,336 @@
+{
+  "transaction": {
+    "payment": {
+      "data_table": {
+        "no": "No",
+        "trans_id": "Transaction ID",
+        "amount": "Amount",
+        "partner_ref": "Partner reference",
+
+        "receive_acc": "Received wallet account",
+        "receive_name": "Received name",
+        "source_acc": "Source wallet account",
+        "source_name": "Source name",
+
+        "trans_status": "Transaction status",
+        "content": "Content",
+        "created_date": "Transaction date"
+      },
+      "statusList": {
+        "00": "Success",
+        "01": "Fail",
+        "02": "Wait",
+
+        "03": "Failed",
+        "04": "Waiting for confirm OTP",
+        "05": "OTP is incorrect",
+        "07": "Blocked",
+        "10": "Initiate Transaction",
+        "19": "Other"
+      },
+
+      "detail_info": {
+        "trans_payment_mutual_info": "General information",
+        "trans_payment_info": "Transaction detail information"
+      },
+      "buttons": {
+        "return": "Return"
+      },
+
+      "bizname": "Merchant Bizname",
+      "tid": "Ter ID",
+      "transaction_ref": "Transaction ref",
+      "title": "Payment transaction management",
+      "detail-route": "Detail",
+      "trans-id": "Transaction ID",
+      "order-id": "Order ID",
+      "from-date": "From date",
+      "to-date": "To date",
+      "transaction-status": "Transaction status",
+      "payment-method": "Payment method",
+      "card-no": "Card No",
+      "account-no": "Account No",
+      "phone": "Phone",
+      "transaction-channel": "Transaction channel",
+      "sub-merchant": "Sub merchant",
+      "no": "No",
+      "merchant-name": "Merchant name",
+      "merchant-id": "Merchant ID",
+      "type-pos": "MID-POS (Type)",
+
+      "amount": "Amount",
+      "transaction-content": "Transaction content",
+      "trans-time": "Transaction Time",
+      "trans-day": "Transaction day",
+      "file-name": "Transaction-payment_",
+      "payment-information": "Payment information",
+      "transaction-payment-information": "Transaction Payment Information",
+      "transaction-information": "Transaction Information",
+      "refund": "Refund",
+      "promotion": "Promotion",
+      "trans-fee": "Transaction processing fee",
+      "summary": "Summary",
+      "customer-name": "Customer's name",
+      "issue-by": "Issue by",
+      "expired-date": "Expired date",
+      "transaction-history": "Transaction history",
+      "refund-history": "Refund history",
+      "refund-transaction-id": "Refund transaction Id",
+      "detail": "Detail",
+      "status": "Status",
+      "time": "Transaction time",
+      "reason": "Reason",
+      "maximum-refund-amount": "Maximum refund amount",
+      "refund-amount": "Refund amount",
+      "reason-refund": "Enter reason refund...",
+      "view-refund-history": "View refund history",
+      "enter-amount": "Enter amount",
+      "transaction-refund": "Transaction Refund",
+      "according-customer": "According to request from customer",
+      "error-damaged": "Product error/damaged",
+      "more": "More",
+      "not-product": "Not enough products provided",
+      "required": "This is required field",
+      "valid-number": "Enter only number",
+      "required-select": "This is required select",
+      "awaitingpayment": "Awaiting payment",
+      "fail": "Failed",
+      "success": "Success",
+      "pendingapproval": "Pendding Approval",
+      "inland-card": "Card inland",
+      "international-card": "Card international",
+      "documentNumber": "Document number",
+      "merchant": "Merchant",
+      "name": "Name",
+      "tranType": "Transaction type",
+      "defaultTranType": "Payment transaction",
+      "fareBaseCode": "Fare base code",
+      "reference-code-RRN": "Reference code RRN",
+      "mid_pos": "MID",
+      "tid_pos": "TID",
+      "type-card": "Type card",
+      "transaction-value-money": "Transaction amount",
+      "transaction-type-money": "Transaction currency",
+      "fee-MDR": "Fee MDR",
+      "vat": "VAT",
+      "enter_document_number": "Enter document number",
+      "remaining-amount": "Remaining amount",
+      "all": {
+        "merchant": "All Merchants",
+        "sub-merchant": "All merchants",
+        "status": "All transaction status",
+        "payment-method": "All payment methods",
+        "channel": "All KGD",
+        "refund-type": "All refunds",
+        "refund-status": "All TTHT",
+        "agency": "All agents",
+        "issuer": "Issuers"
+      },
+
+      "no-refund-trans": "There have been no refunds yet",
+      "refund-success": "Your refund request has been recorded",
+      "card": "Payment card/account",
+      "search": {
+        "order": "Order code, invoice",
+        "account": "Card number, payment account",
+        "agency": "Agent",
+        "issuer": "Issuer",
+        "bill-id": "Bill ID",
+        "pay-account": "Payment account"
+      },
+      "detail-page": {
+        "paygate-error": "Paygate error code",
+        "issuer-error": "Issuer error code",
+        "token-error": "Token error code",
+        "risk-error": "Risk management error code",
+        "agency": "Agency"
+      },
+      "merchant-info": "Merchant information",
+      "fee-info": "Fee information",
+      "refund-reason": {
+        "customer_request": "According to customer request",
+        "error_product": "Error / damaged / return item",
+        "not_support": "No SPDV supplied",
+        "other": "Other"
+      },
+      "fee-detail": {
+        "fee-merchant": "Fee for Merchant Merchant (VND)",
+        "fee-issuer": "Fee for issuing issuers (VND)",
+        "fee-agency": "Fee to pay Agent / CTV (VND)",
+        "revenue": "Revenue CTT (VND)",
+        "sum": "TOTAL",
+        "vat": "VAT",
+        "sum-vat": "TOTAL (VAT)",
+        "no-data": "No fee information yet",
+        "pay": "Payment fee",
+        "agency_share": "Service sharing fee",
+        "handling": "Transaction processing fee",
+        "handling_tokenization": "Tokenization transaction processing fee",
+        "handling_risk": "Handling fee management risk"
+      }
+    },
+
+    "refund": {
+      "data_table": {
+        "no": "No",
+        "trans_id": "Refund transaction ID",
+        "amount": "Amount",
+        "origin_trans_id": "Origin transaction ID",
+
+        "receive_acc": "Received wallet account",
+        "receive_name": "Received name",
+        "source_acc": "Source wallet account",
+        "source_name": "Source name",
+
+        "trans_status": "Transaction status",
+        "content": "Content",
+        "created_date": "Transaction date"
+      },
+      "search": {
+        "time": "Transaction time",
+        "trans_id": "Refund transaction ID",
+        "all_status": "All refund status",
+        "source_name": "Source name",
+        "source_mobile": "Source phone",
+        "receive_name": "Received name",
+        "receive_mobile": "Received phone"
+      },
+      "statusList": {
+        "title": "Refund status",
+        "00": "Success",
+        "01": "Failed",
+        "02": "Waiting",
+
+        "03": "Failed at issuer",
+        "04": "Recognized by issuer",
+        "05": "Unknown",
+        "06": "Failed at paygate",
+        "07": "Waiting approval at paygate",
+        "100": "Initiate Transaction",
+        "19": "Other"
+      },
+
+      "title": "Refund transaction management",
+      "detail": "Details",
+      "refund-type": "Refund type",
+      "refund-transaction-id": "Refund transaction code",
+      "original-transaction-id": "Original transaction code",
+      "transaction-refund-information": "Transaction refund information",
+      "total-refund": "Partial refund",
+      "integral-refund": "Full refund",
+      "createdUser": "Created user",
+
+      "trans-id": "Refund transaction code",
+      "trans-time": "Return time",
+      "import": {
+        "title": "Import return transaction status Manually",
+        "select": "Select file",
+        "password": "Please enter password to confirm",
+        "type": {
+          "title": "Select file import type",
+          "0": "Convert status to Sent request to issuer",
+          "1": "Convert status to Success/Failure"
+        },
+        "success": "Transaction status has returned successfully"
+      },
+      "refund-content": "Refund content",
+      "payment-info": {
+        "money": "Source of payment",
+        "note": "Note",
+        "payment-merchant": "Method of payment of merchant",
+        "trans-id-issuer": "issuer Head Transaction ID",
+        "code": "voucher code",
+        "update-user": "Updater",
+        "error-code": "Transaction refund error code",
+        "error-des": "Describe the error code"
+      },
+      "related-trans": {
+        "title": "Related transaction",
+        "trans-type": "Transaction type",
+        "refund-method": "Refund method"
+      },
+      "action": {
+        "update-status": "Update status",
+        "trans-query": "Transaction query"
+      },
+      "update-status": {
+        "title": "Update status",
+        "select": "Select state",
+        "trans-id": "issuer Head Transaction ID",
+        "enter-id": "Enter ID",
+        "enter-code": "Enter voucher code",
+        "enter-note": "Enter a note",
+        "confirm-title": "Confirm",
+        "confirm-text": "Are you sure you want to revert the transaction status",
+        "confirm-fail": "After changing the status, the system will refund the merchant.",
+        "success": "Transaction status update successful",
+        "list": {
+          "success": "Success",
+          "fail": "Failed"
+        }
+      },
+      "refund-methods": {
+        "api": "API",
+        "file": "File",
+        "manual": "Manual"
+      },
+      "related-transaction": {
+        "refund": "Refund",
+        "transaction": "Payment",
+        "no-trans": "No related transactions"
+      },
+      "file-name": "Transaction-Refund_",
+      "approve-refund": "Are you sure you want to approve this refund request?",
+      "approve-refund-success": "Refund request approved successfully"
+    },
+    "pos": {
+      "payment": {
+        "title": "POS transaction management"
+      },
+      "realtime": {
+        "title": "Look up POS payment transactions - realtime"
+      }
+    },
+    "placeholder": {
+      "merchant": "Enter the name of the merchant",
+      "sub-merchant": "Enter the name of the child merchant",
+      "reason": "Choose a reason",
+      "agency": "Enter agent name",
+      "issuer": "Enter issuer name",
+      "rrn": "Enter the reference code RRN",
+      "tid": "Enter TID",
+      "type-pos": "Enter MID-POS"
+    },
+    "errors": {
+      "01": "Merchant does not exist",
+      "04": "Transaction does not exist",
+      "07": "Invalid user information",
+      "10": "The date information is incorrect",
+      "88": "Invalid request data",
+      "91": "Invalid signature",
+      "99": "The system is temporarily down. Please contact the administrator.",
+      "106": "Refund amount must be greater than 0 and less than maximum value",
+      "41": "Refund Id does not exist",
+      "42": "Invalid return transaction status",
+      "43": "Invalid character number",
+      "44": "The merchant has no valid transactions in the refund request session",
+      "45": "Invalid Merchant Id",
+      "46": "Invalid Note",
+      "47": "Invalid original payment transaction code",
+      "48": "Invalid return period",
+      "49": "Invalid refund amount",
+      "50": "Invalid refund currency",
+      "51": "Invalid issuer's return date",
+      "52": "Invalid issuer Code",
+      "53": "issuer's return status is invalid",
+      "54": "issuer's reference code is invalid",
+      "55": "Invalid voucher code",
+      "56": "Invalid issuer's note",
+      "57": "Invalid return transaction information"
+    },
+    "role": {
+      "view": "You do not have permission to view transaction details"
+    },
+    "no-history": "No transaction history"
+  }
+}

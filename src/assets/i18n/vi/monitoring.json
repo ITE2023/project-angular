@@ -1,0 +1,55 @@
+{
+  "monitoring": {
+    "title": "Công cụ giám sát",
+    "moni-service": "Giám sát dịch vụ",
+    "moni-system": "Giám sát hệ thống",
+    "period": {
+      "title": "Khoảng thời gian",
+      "5": "5 phút",
+      "15": "15 phút",
+      "30": "30 phút",
+      "60": "1 giờ",
+      "360": "6 giờ",
+      "720": "12 giờ",
+      "1440": "1 ngày",
+      "4320": "3 ngày"
+    },
+    "select-period": "Chọn khoảng thời gian",
+    "number-of-transation-chart": "Biểu đồ số lượng giao dịch theo PTTT",
+    "number-of-risk-chart": "Biểu đồ số lượng giao dịch rủi ro",
+    "table-data": "Bảng dữ liệu chi tiết",
+    "success-rate-chart": "Biểu đồ tỉ lệ giao dịch thành công theo PTTT",
+    "date": "Ngày",
+    "hour": "Giờ/phút",
+    "from": "Từ",
+    "to": "Đến",
+    "total": "Tổng số",
+    "status": {
+      "success": "Thành công",
+      "fail": "Thất bại",
+      "wait": "Chờ xử lý"
+    },
+    "risk-transaction": "Giao dịch rủi ro",
+    "payment-method": {
+      "320": "Ví điện tử",
+      "321": "Thẻ nội địa",
+      "322": "Thẻ quốc tế",
+      "323": "Thanh toán trả góp",
+      "324": "Thanh toán QR",
+      "330": "Tài khoản ngân hàng",
+      "331": "Thẻ Quốc tế (Giả Lập)"
+    },
+    "number-of-transation-chart-by-period": "Biểu đồ số lượng giao dịch theo khoảng thời gian",
+    "success-rate-chart-by-period": "Biểu đồ tỉ lệ giao dịch thành công",
+    "issuer-response-time-ratio-chart": "Biểu đồ tỉ lệ thời gian phản hồi (t) của TCPH",
+    "response-time": {
+      "lessThan15Seconds": "t <= 15 giây",
+      "lessThan5Minutes": "15 giây < t <= 5 phút",
+      "largerThan5Minutes": "t > 5 phút",
+      "total": "Tổng số thành công"
+    },
+    "service-file-name": "Giám-sát-dịch-vụ_",
+    "system-file-name": "Giám-sát-hệ-thống_",
+    "select": "Chọn"
+  }
+}

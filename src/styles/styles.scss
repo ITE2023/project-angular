@@ -1,0 +1,412 @@
+@import "./ultilities/_variable.scss";
+@import "./ultilities/button";
+@import "./ultilities/_variable.color.scss";
+@import "./ultilities/variable_2.scss";
+@import "./layout/pages.scss";
+@import "./layout/responsive.scss";
+@import "./layout/header.scss";
+@import "./layout/layout.scss";
+@import "./layout/sidebar.scss";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber";
+@import "./app/custom-bootstrap.scss";
+@import "../../node_modules/font-awesome/css/font-awesome.css";
+@import "./app/common.scss";
+@import "./app/custom-material-theme.scss";
+@import "./app/custom-style.scss";
+@import "./layout/loading.scss";
+@import "./icons/material-design-iconic-font/css/materialdesignicons.min.css";
+@import "~ngx-toastr/toastr";
+
+body {
+  background: $color-page-background !important;
+  font-size: 13px !important;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+// custom sidebar
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #f2f2f2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  // background-image: -webkit-linear-gradient(45deg,
+  //     rgba(255, 255, 255, 0.2) 25%,
+  //     transparent 25%,
+  //     transparent 50%,
+  //     rgba(255, 255, 255, 0.2) 50%,
+  //     rgba(255, 255, 255, 0.2) 75%,
+  //     transparent 75%,
+  //     transparent);
+}
+
+
+// custom datepicker
+.mat-calendar-body-selected {
+  background-color: $main-color;
+}
+
+.mat-calendar-previous-button:focus,
+.mat-calendar-next-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+// custom material: input readonly
+.ct-view.mat-form-field-appearance-standard .mat-form-field-ripple {
+  height: 1px;
+  opacity: 0 !important;
+}
+
+.ct-view input.mat-input-element {
+  cursor: auto;
+}
+
+// custom select dropdown
+.ct-select-position {
+  margin-top: 25px !important;
+  margin-left: -18px !important;
+  max-width: 0 !important;
+}
+
+.mat-pseudo-checkbox.mat-pseudo-checkbox-checked,
+.mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate {
+  background: $main-color;
+}
+
+@keyframes dropdown-animation {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.ct-select-position.dialog-select {
+  margin-top: 29px !important;
+  margin-left: 3px !important;
+  // min-width: calc(100% + 25px) !important;
+}
+
+.ct-select-position.mat-select-panel .mat-option {
+  line-height: 32px;
+  height: 32px;
+}
+
+.ct-select-position.merchant-select {
+  margin-top: 40px !important;
+  margin-left: 3px !important;
+}
+
+// custom checkbox
+.ct-checkbox.mat-checkbox-disabled .mat-checkbox-label {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+.ct-checkbox-value {
+  word-break: break-word;
+  -ms-word-break: break-all;
+}
+
+// custom bsDatepicker
+.bs-datepicker {
+  margin-top: 12px;
+}
+
+.bs-datepicker-head,
+.bs-datepicker-body table td span.selected {
+  background-color: $main-color !important;
+}
+
+.bs-datepicker-body table td.week span {
+  color: $main-color !important;
+}
+
+.bs-datepicker-head button {
+  min-width: 0 !important;
+}
+
+.custom-today-class {
+  background-color: #ddd;
+}
+
+.common-management:not(.risk-dialog) .custom-datepicker {
+  @media screen and (min-width: 768px) and (max-width: 1550px) {
+    left: 40px;
+  }
+}
+
+.btn:not(.btn-upload):focus,
+button:focus,
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+// custom col-action
+.btn-view .mat-button-wrapper {
+  padding: 7px 0;
+  line-height: 18px !important;
+  height: 32px;
+}
+
+.button-view-detail {
+  &:hover {
+    color: white !important;
+  }
+
+  .mat-button-wrapper {
+    padding: 4px 0 !important;
+  }
+}
+
+.item-refuse {
+  display: none !important;
+}
+
+.status-menu {
+  min-height: 0 !important;
+  border: 1px solid #ccc;
+  font-size: 13px;
+
+  .mat-menu-item {
+    height: 32px;
+    line-height: 32px;
+
+    &:hover {
+      background-color: $main-color;
+      color: #fff;
+    }
+  }
+}
+
+.col-action .btn-view {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.col-action .btn-view[disabled] {
+  opacity: 0.4;
+}
+
+.mat-input-element,
+.mat-select-value {
+  height: 18px;
+  caret-color: initial !important;
+}
+
+.mat-form-field-label {
+  height: 19px;
+}
+
+// custom field-invalid
+// .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+//   background-color: #949494 !important;
+// }
+
+// .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+//   color: rgba(0, 0, 0, 0.42) !important;
+// }
+
+.mat-form-field.mat-form-field-invalid .mat-select-arrow {
+  color: rgba(0, 0, 0, 0.42) !important;
+}
+
+.mat-form-field-appearance-standard .mat-form-field-ripple,
+.mat-form-field-appearance-legacy .mat-form-field-ripple {
+  height: 1px !important;
+  transition: none !important;
+}
+
+// combobox: dropdown with search
+.mat-select-panel.mat-select-search-panel {
+  border: 1px solid #ccc;
+
+  &.ct-combobox {
+    transform: translateY(3px) !important;
+    animation-name: dropdown-animation !important;
+    animation-duration: 0.3s !important;
+    margin-left: 20px;
+  }
+
+  &.ct-merchant-combobox {
+    margin-left: 32px;
+  }
+
+  &.ct-add-merchant-combobox {
+    margin-left: 21px;
+  }
+
+  &.ct-mcc-combobox {
+    margin-top: 4px;
+
+    .mat-select-search-inner {
+      margin-top: 4px !important;
+    }
+  }
+
+  &.ct-merchant-trans {
+    margin-top: 2px;
+    transform: translateX(20px) !important;
+  }
+
+  .mat-select-search-clear {
+    top: -1px !important;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.mat-select-search-panel .mat-option:not(.mat-select-search-no-entries-found) {
+  height: 32px !important;
+  line-height: 32px !important;
+
+  &:nth-child(2) {
+    margin-top: 10px;
+  }
+}
+
+.cdk-overlay-pane-select-search {
+  transform: translateX(-34px) translateY(26px) !important;
+}
+
+// datepicker
+.ct-datepicker {
+  &.mat-focused {
+    border: 1px solid #80bdff;
+  }
+
+  .mat-form-field-flex {
+    height: 33px;
+    align-items: center;
+  }
+
+  .mat-form-field-infix {
+    border: none;
+    font-size: 14px;
+    display: flex;
+    position: relative;
+    line-height: 23px;
+    height: 34px;
+  }
+
+  .mat-icon-button {
+    min-width: 0 !important;
+    background-color: #fff !important;
+    color: rgb(0, 0, 0) !important;
+    height: initial !important;
+    padding: 0 !important;
+  }
+
+  .mat-datepicker-toggle-default-icon {
+    width: 18px !important;
+  }
+
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  &.mat-form-field.mat-focused .mat-form-field-label {
+    color: inherit !important;
+  }
+
+  .mat-input-element {
+    color: #495057;
+    height: 23px;
+  }
+
+  .ct-date-icon {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    cursor: pointer;
+  }
+}
+
+.common-management .search-form .form-control.ct-datepicker {
+  padding: 0 12px;
+}
+
+.mat-sort-header-button {
+  background: 0 0 !important;
+  color: inherit !important;
+  height: initial !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+
+.mat-dialog-container {
+  padding-top: 12px !important;
+  padding-bottom: 16px !important;
+}
+
+.ml-3 {
+  margin-left: 10px !important;
+}
+
+.text-danger {
+  color: #f44336 !important;
+}
+
+small.text-danger {
+  font-size: 10.5px;
+  padding-top: 5px;
+}
+
+.management-table th {
+  text-align: center !important;
+}
+
+.download-link {
+  padding-top: 5px;
+}
+
+.download-link a {
+  text-decoration: underline !important;
+  font-style: italic;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none !important;
+  }
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}

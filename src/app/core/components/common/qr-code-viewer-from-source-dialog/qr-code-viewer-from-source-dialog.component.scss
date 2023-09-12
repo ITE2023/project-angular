@@ -1,0 +1,50 @@
+// @import "./ultilities/_variable.scss";
+@import "../../../../../styles/ultilities/variable";
+// @import "./ultilities/_variable.color.scss";
+@import "../../../../../styles/ultilities/variable.color";
+
+.ct-content {
+  margin-top: 10px;
+}
+
+.ct-dialog.viewer .btn-close {
+  top: -20px;
+}
+
+.qr-code {
+  width: 350px;
+  height: 350px;
+  background: #fff;
+  position: relative;
+  border: 2px solid $main-color;
+  margin: 20px auto;
+}
+
+.qr-code img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.qr-code::before,
+.qr-code::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #fff;
+}
+
+.qr-code::before {
+  top: -0.3em;
+  bottom: -0.3em;
+  left: 1em;
+  right: 1em;
+}
+
+.qr-code::after {
+  left: -0.3em;
+  right: -0.3em;
+  top: 1em;
+  bottom: 1em;
+}

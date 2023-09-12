@@ -1,0 +1,24 @@
+<div class="ct-dialog pdf-viewer d-flex flex-column" *ngIf="isLoading">
+  <mat-card-title class="dialog-title">
+    {{fileName}}
+  </mat-card-title>
+  <mat-card-content class="ct-content">
+    <div class="row d-flex justify-content-center dialog-content border">
+      <div class="col-12 px-0">
+        <pdf-viewer *ngIf="!error && docType==='pdf'" (error)="changeError()" class="w-100" [src]="docUrl"
+          [original-size]="false"></pdf-viewer>
+        <img *ngIf="!error && docType!=='pdf'" class="w-100" [src]="docUrl" alt="image here">
+        <img *ngIf="error" class="w-100" src="/assets/images/no-file.png" alt="image here">
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button type="button" class="btn-cancel text-white" (click)="close()" mat-raised-button>
+        <i class="material-icons">close</i>
+        {{ 'commonAction.close' | translate }}
+      </button>
+    </div>
+  </mat-card-content>
+  <div class="btn-close" (click)="close()">
+    <i class="material-icons">close</i>
+  </div>
+</div>

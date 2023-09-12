@@ -1,0 +1,67 @@
+<div class="ct-dialog common-management">
+  <mat-card-title class="mat-title-dialog text-center">
+    {{ 'transaction.refund.import.title' | translate }}
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content class="mb-0">
+    <div class="mt-4">
+      <form [formGroup]="form" class="search-form" appFirstFocus>
+        <div class="col-12 p-0 mb-4">
+          <mat-select class="fs-14 form-control form-field" formControlName="type"
+            placeholder="{{'transaction.refund.import.type.title'| translate}}" disableOptionCentering
+            panelClass="ct-select-position dialog-select" (selectionChange)="changeType($event)">
+            <mat-option *ngFor="let item of types" value="{{item.value}}">
+              {{ 'transaction.refund.import.type.' + item.value | translate }}
+            </mat-option>
+          </mat-select>
+          <mat-error class="text-error" *ngIf="!f.type.valid && f.type.errors.required  && submitted">
+            {{ commonErrorCode.REQUIRED |translate }}
+          </mat-error>
+        </div>
+        <div class="input-group col-12 p-0">
+          <input id="upload" type='file' accept=".xlsx, .xls" (change)="onSelectFileDocument($event)" class="d-none">
+          <input type="text" class="form-control input-upload" readonly [value]="fileName"
+            (click)="chooseDocument($event)">
+          <div class="input-group-append text-tiny">
+            <div class="input-group-text small-suffix border-left-0 text-suffix cursor-pointer"
+              (click)="chooseDocument($event)">
+              {{'transaction.refund.import.select'| translate}}
+            </div>
+          </div>
+        </div>
+        <mat-error class="text-error" *ngIf="submitted && f.file.invalid && f.file.errors.required && !uploadError">
+          {{ commonErrorCode.REQUIRED | translate }}
+        </mat-error>
+        <mat-error class="text-error" *ngIf="uploadError">
+          {{ uploadError | translate }}
+        </mat-error>
+        <div class="form-group row mt-4 ml-0 mr-0" *ngIf="isPassword">
+          <div class="col-md-7 pl-0">
+            <span class="label">
+              {{ "transaction.refund.import.password" | translate }}
+            </span>
+          </div>
+          <div class="col-md-5 p-0">
+            <input type="password" class="form-control fs-14" formControlName="password" />
+            <mat-error class="text-error" *ngIf="submitted && f.password.invalid && f.password.errors.required">
+              {{ commonErrorCode.REQUIRED | translate }}
+            </mat-error>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row d-flex justify-content-center mt-4">
+      <button type="button" class="btn-cancel text-white common-button" (click)="cancel()" mat-raised-button>
+        <i class="material-icons">close</i>
+        {{ 'mcc.delete.cancel' | translate }}
+      </button>
+      <button type="button" class="btn-save text-white ml-3 common-button" (click)="agree()" mat-raised-button>
+        <i class="material-icons">save</i>
+        {{ 'changePassword.confirm' | translate }}
+      </button>
+    </div>
+  </mat-card-content>
+  <div class="btn-close" (click)="cancel()">
+    <i class="material-icons">close</i>
+  </div>
+</div>
