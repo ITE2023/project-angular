@@ -3,13 +3,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { LayoutComponent } from "../layout/layout.component";
 import { LoginComponent } from "../components/login/login.component";
 import { FirstLoginComponent } from "../components/login/first-login/first-login.component";
-import { RegisterComponent } from "../components/register/register.component";
 import { TitleConstants } from "../constants";
 import { AuthGuardService } from "@core/authentication/auth-guard.service";
 import { ForgotPasswordComponent } from "@core/components/forgot-password/forgot-password.component";
-import { ResetPasswordComponent } from "@core/components/reset-password/reset-password.component";
 import { ErrorForbiddenPageComponent } from "@core/components/error-forbidden-page/error-forbidden-page.component";
 import { PageNotFoundComponent } from "@core/components/page-not-found/page-not-found.component";
+import { RegisterComponent } from "@core/components/register/register.component";
+import { ResetPasswordComponent } from "@core/components/reset-password/reset-password.component";
 
 const routes: Routes = [
   {

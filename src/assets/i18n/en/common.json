@@ -69,6 +69,7 @@
   "breadcrumb": {
     "dashboard": "Dashboard",
     "usermanage": "User Management",
+    "manage-job-post": "Manage J Post",
     "wallet": "Wallet management",
     "department": "Department",
     "profile": "User account management",
@@ -104,8 +105,18 @@
     "unit": "Unit",
     "username": "Username",
     "fullName": "First and last name",
+    "firstName": "First Name",
+    "lastName": "Last Name",
     "createdDate": "Created Date",
+    "gender": {
+      "title": "Gender",
+      "value": {
+        "male": "Male",
+        "female": "Female"
+      }
+    },
     "edit": "Update",
+    "changePassword": "Change password",
     "defaultLanguage": "Default display language",
     "history": "Activity history",
     "seeMore": "See more",
@@ -204,6 +215,8 @@
   },
   "left-menu": {
     "dashboard": "Dashboard",
+    "manage-post": "Manage post",
+    "manage-job-post": "Manage job post",
     "transaction": {
       "manager": "Transaction",
       "payment": "Payment",

@@ -47,6 +47,15 @@ const routes: Routes = [
           ).then((m) => m.TransactionRefundModule),
         data: { preload: true },
       },
+      // job post
+      {
+        path: "job-post",
+        loadChildren: () =>
+          import(
+            "./job-post/job-post.module"
+          ).then((m) => m.JobPostModule),
+        data: { preload: true },
+      },
     ],
   },
   {

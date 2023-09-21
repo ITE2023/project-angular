@@ -50,7 +50,6 @@
                   autocomplete="off"
                   (ngModelChange)="dateChange('from_date')"
                   (change)="isInvalidDate($event, 'from_date')"
-                  maxlength="10"
                 />
               </mat-form-field>
               <mat-form-field
@@ -63,23 +62,22 @@
                   [attr.aria-expanded]="dp2.isOpen"
                 ></i>
                 <input
-                  matInput
-                  type="text"
-                  [placeholder]="'transaction.payment.to-date' | translate"
-                  formControlName="to_date"
-                  maxlength="10"
-                  bsDatepicker
-                  container=""
-                  placement="auto"
-                  #dp2="bsDatepicker"
-                  [maxDate]="maxToDate"
-                  [minDate]="minToDate"
-                  [bsConfig]="dateConfig"
-                  (keypress)="keyPressDate($event)"
-                  autocomplete="off"
-                  (ngModelChange)="dateChange('to_date')"
-                  (change)="isInvalidDate($event, 'to_date')"
-                  maxlength="10"
+                type="text"
+                matInput
+                [placeholder]="'transaction.payment.to-date' | translate"              
+                formControlName="to_date"
+                maxlength="10"
+                container=""
+                [maxDate]="maxToDate"
+                [minDate]="minToDate"
+                bsDatepicker
+                [bsConfig]="dateConfig"
+                autocomplete="off"
+                (keypress)="keyPressDate($event)"
+                placement="auto"
+                #dp2="bsDatepicker"
+                (ngModelChange)="dateChange('to_date')"
+                (change)="isInvalidDate($event, 'to_date')"
                 />
               </mat-form-field>
 

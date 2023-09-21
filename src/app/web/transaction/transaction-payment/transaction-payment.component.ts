@@ -285,7 +285,7 @@ export class TransactionPaymentComponent implements OnInit, OnDestroy {
   }
 
   keyPressDate(event) {
-    const k = event.keyCode;
+    const k = event.keyCdateChangeode;
     return k === 8 || k === 191 || (k >= 47 && k <= 57);
   }
 

@@ -1,0 +1,12 @@
+{
+  "job-post": {
+    "title": "Quản lí tin tuyền dụng",
+    "data_table": {
+      "no": "STT",
+      "title": "Vị trí tuyển dụng",
+      "expired-At": "Hết hạn vào",
+      "content": "Nội dung",
+      "status" : "Trạng thái"
+    }
+  }
+}

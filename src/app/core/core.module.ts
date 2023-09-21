@@ -7,7 +7,6 @@ import { TopbarComponent } from "./layout/topbar/topbar.component";
 import { SharedModule } from "../shared/shared/shared.module";
 import { SidebarComponent } from "./layout/sidebar/sidebar.component";
 import { LoginComponent } from "./components/login/login.component";
-import { RegisterComponent } from "./components/register/register.component";
 import { FormsModule } from "@angular/forms";
 import { DirectivesModule } from "./directives/directives.module";
 import { BreadcrumbComponent } from "./layout/breadcrumb/breadcrumb.component";
@@ -21,7 +20,6 @@ import { QrCodeViewerFromSourceDialogComponent } from "./components/common/qr-co
 import { ForgotPasswordComponent } from "./components/forgot-password/forgot-password.component";
 import { NotificationComponent } from "./layout/topbar/notification/notification.component";
 import { TranslateModule } from "@ngx-translate/core";
-import { ResetPasswordComponent } from "./components/reset-password/reset-password.component";
 import { SuccessDialogComponent } from "./components/forgot-password/success-dialog/success-dialog/success-dialog.component";
 import { PdfViewerModule } from "ng2-pdf-viewer";
 import { DocumentViewerComponent } from "./components/common/document-viewer/document-viewer.component";
@@ -29,6 +27,9 @@ import { NotificationDialogComponent } from "./components/notification-dialog/no
 import { FirstLoginComponent } from "./components/login/first-login/first-login.component";
 import { ErrorForbiddenPageComponent } from './components/error-forbidden-page/error-forbidden-page.component';
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { ResetPasswordComponent } from "./components/reset-password/reset-password.component";
+import { ChangePasswordModalComponent } from './components/profile/change-password-modal/change-password-modal.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,6 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
     ImageViewByFileComponent,
     QrCodeViewerDialogComponent,
     QrCodeViewerFromSourceDialogComponent,
-    RegisterComponent,
     ForgotPasswordComponent,
     NotificationComponent,
     ResetPasswordComponent,
@@ -55,7 +55,8 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
     NotificationDialogComponent,
     FirstLoginComponent,
     ErrorForbiddenPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ChangePasswordModalComponent
   ],
   imports: [
     CommonModule,
@@ -70,6 +71,7 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
     ChangePasswordComponent,
     ChangeAvatarModalComponent,
     ProfileModalComponent,
+    ChangePasswordModalComponent
   ],
   exports: [
     AppComponent,

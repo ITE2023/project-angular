@@ -25,4 +25,10 @@ export const LeftMenuKeyConfig = [
     url: "/admin/transaction-refund",
     icon: "keyboard_return",
   },
+  {
+    menuId: 4,
+    menuKey: "left-menu.manage-job-post",
+    url: "/admin/job-post",
+    icon: "list_alt",
+  },
 ];

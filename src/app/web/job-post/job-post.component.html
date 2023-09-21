@@ -1,0 +1,104 @@
+<mat-card class="transaction-management common-management mb-3">
+  <mat-card-content>
+    <mat-card-title class="w-100 mb-4">
+
+      <div class="row header mr-0">
+        <div class="col-md-6">
+          <span class="title page-title">{{
+            "job-post.title" | translate
+          }}</span>
+        </div>
+      </div>
+
+      <div class="search-form mt-4" *ngIf="checkPermission(20101)">
+        <form [formGroup]="searchForm" (ngSubmit)="searchData()">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container">
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-1"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp1.toggle()"
+                  [attr.aria-expanded]="dp1.isOpen"
+                ></i>
+                <input
+                  type="text"
+                  matInput
+                  formControlName="from_date"
+                  maxlength="10"
+                  container=""
+                  bsDatepicker
+                  autocomplete="off"
+                  [maxDate]="maxFromDate"
+                  (keypress)="keyPressDate($event)"
+                  placement="auto"
+                  [bsConfig]="dateConfig"
+                  #dp1="bsDatepicker"
+                  (ngModelChange)="dateChange('from_date')"
+                  (change)="isInvalidDate($event, 'from_date')"                 
+                />
+              </mat-form-field>
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-1"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp2.toggle()"
+                  [attr.aria-expanded]="dp2.isOpen"
+                ></i>
+                <input
+                  type="text"
+                  matInput             
+                  formControlName="to_date"
+                  maxlength="10"
+                  container=""
+                  [maxDate]="maxToDate"
+                  [minDate]="minToDate"
+                  bsDatepicker
+                  [bsConfig]="dateConfig"
+                  autocomplete="off"
+                  (keypress)="keyPressDate($event)"
+                  placement="auto"
+                  #dp2="bsDatepicker"
+                  (ngModelChange)="dateChange('to_date')"
+                  (change)="isInvalidDate($event, 'to_date')"
+                />
+              </mat-form-field>
+              <input type="text" class="form-control item-5" />
+            </div>
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button mat-raised-button class="button-search">
+                {{ "commonAction.search" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+
+    <div class="table-responsive table-hover">
+      <table class="management-table table">
+        <thead>
+          <tr>
+            <th class="col-no">
+              {{ 'job-post.data_table.no'  | translate}}
+            </th>
+            <th class="col-name">
+              {{ 'job-post.data_table.title' | translate}}
+            </th>
+            <th class="col-name">
+              {{ 'job-post.data_table.expired-At' | translate}}
+            </th>
+            <th class="col-name">
+              {{ 'job-post.data_table.content' | translate}}
+            </th>
+            <th class="col-name">
+              {{ 'job-post.data_table.status' | translate}}
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

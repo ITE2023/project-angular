@@ -15,6 +15,7 @@ import { Profile } from "@core/models/App/profile/profile.model";
 import { Subscription } from "rxjs";
 import { ToastrService } from "ngx-toastr";
 import { TranslateService } from "@ngx-translate/core";
+import { ChangePasswordModalComponent } from "./change-password-modal/change-password-modal.component";
 
 @Component({
   selector: "ite-profile",
@@ -60,19 +61,15 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getDetailProfile();
-    // this.profile = {
-    //   fullname: "Nguyễn Huy Hùng",
-    //   username: "Hung Nguyen",
-    //   phone: "0335483669",
-    //   email: "hung@gmail.com",
-    //   address: "Hanoi",
-    //   created_date: "07/04/2023",
-    //   centre_name: "ITE",
-    //   centre_id: "",
-    //   avatar: "",
-    //   language: "vi",
-    // };
-    // this.language = "Việt Nam";
+    this.profile = {
+      firstName: "Hải",
+      lastName: "Nguyễn Văn",
+      username: "Hung Nguyen",
+      phone: "0335483669",
+      email: "hung@gmail.com",
+      gender: 1
+    };
+    this.language = "Việt Nam";
   }
 
   public get profileImage(): string {
@@ -110,6 +107,25 @@ export class ProfileComponent implements OnInit {
 
   public editProfile(): void {
     const dialogRef = this.dialog.open(ProfileModalComponent, {
+      width: "400px",
+      disableClose: true,
+      data: {
+        profile: this.profile,
+        langs: this.langs,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.page = 1;
+        this.history = [];
+        this.isSeeMore = false;
+        this.getDetailProfile();
+      }
+    });
+  }
+
+  public editPassword(): void {
+    const dialogRef = this.dialog.open(ChangePasswordModalComponent, {
       width: "400px",
       disableClose: true,
       data: {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, ViewChild } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, ValidatorFn, ValidationErrors } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { ToastrService } from "ngx-toastr";
 import { BackgroundLoader, ProfileShare } from "@core/services";
@@ -13,16 +13,22 @@ import {
 } from "@core/constants";
 import { UserInformationModel } from "@core/models";
 import { FormValidators } from "src/app/shared/validators";
+import { ProfileModalComponent } from "../profile-modal/profile-modal.component";
 interface Food {
   value: number;
   viewValue: string;
 }
+export const confirmPasswordValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
+  const newPassword = control.get('newPassword');
+  const confirm = control.get('confirmPassword');
+  return newPassword && confirm && newPassword.value === confirm.value ? null : { 'passwordMismatch': true };
+};
 @Component({
-  selector: "ite-profile-modal",
-  templateUrl: "./profile-modal.component.html",
-  styleUrls: ["./profile-modal.component.scss"],
+  selector: 'ite-change-password-modal',
+  templateUrl: './change-password-modal.component.html',
+  styleUrls: ['./change-password-modal.component.scss']
 })
-export class ProfileModalComponent implements OnInit {
+export class ChangePasswordModalComponent implements OnInit {
   public user: any;
   public profileForm: FormGroup;
   public isLoading: boolean;
@@ -49,33 +55,19 @@ export class ProfileModalComponent implements OnInit {
   ];
   ngOnInit(): void {
     this.profileForm = this.fb.group({
-      firstName: this.fb.control("", [
-        Validators.required,
-        FormValidators.nameSpace,
-      ]),
-      lastName: this.fb.control("", [
-        Validators.required,
-        FormValidators.nameSpace,
-      ]),
-      username: this.fb.control({ value: "", disabled: true }),
-      email: this.fb.control("", [
-        Validators.required,
-        Validators.pattern(EMAIL_REGEX),
-      ]),
-      phone: this.fb.control("", [
+      oldPassword: this.fb.control("", [
         Validators.required,
         Validators.pattern(PHONE_REGEX),
       ]),
-      gender: this.fb.control(0, [
+      newPassword: this.fb.control("", [
         Validators.required,
+        Validators.pattern(PHONE_REGEX),
       ]),
-      // language: this.fb.control(""),
+      confirmPassword: this.fb.control("", [
+        Validators.required,
+        Validators.pattern(PHONE_REGEX),
+      ]),
     });
-    if (Object.keys(this.user).length > 0) {
-      this.profileForm.patchValue(this.user);
-      console.log(this.user);
-      console.log(this.profileForm.value);
-    }
   }
 
   get f() {

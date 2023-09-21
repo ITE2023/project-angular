@@ -71,6 +71,8 @@
         "userName": "Nhập tên đăng nhập",
         "fullName": "Nhập họ và tên",
         "password": "Nhập mật khẩu",
+        "lastName": "Nhập họ",
+        "firstName": "Nhập tên",
         "confirmPassword": "Xác nhận mật khẩu",
         "phone": "Nhập số điện thoại",
         "email": "Nhập địa chỉ email",

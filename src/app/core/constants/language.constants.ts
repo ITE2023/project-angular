@@ -15,4 +15,5 @@ export const LANGUAGE_FILE = [
   "notification",
   "state-bank",
   "wallet-acc",
+  "job-post",
 ];

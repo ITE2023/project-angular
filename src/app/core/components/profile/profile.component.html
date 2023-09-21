@@ -1,4 +1,4 @@
-<div>
+<div class="">
   <mat-card class="mb-3">
     <mat-card-content>
       <div class="profile-management">
@@ -6,23 +6,18 @@
           <div class="col-12 col-sm-8 col-lg-10 pl-0">
             <div class="row ml-0">
               <div class="avatar-container" (click)="openChangeImg()">
-                <img
-                  class="avatar"
-                  [src]="profileImage"
-                  alt="user"
-                  default="{{ defaultAvatar }}"
-                />
+                <img class="avatar" [src]="profileImage" alt="user" default="{{ defaultAvatar }}" />
                 <i class="fa fa-2x fa-camera img-upload" aria-hidden="true"></i>
               </div>
 
               <div class="profile-detail d-flex flex-column">
-                <div class="fullname">{{ profile?.full_name }}</div>
+                <div class="fullname">{{ profile?.lastName }} {{ profile?.firstName }}</div>
 
                 <div class="info">
                   <div class="col-title text-secondary">
                     {{ "profileAccount.username" | translate }}:
                   </div>
-                  <div class="col-info">
+                  <div class="col-info ml-2">
                     {{ profile?.username }}
                   </div>
                 </div>
@@ -30,88 +25,41 @@
                   <div class="col-title text-secondary">
                     {{ "profileAccount.email" | translate }}:
                   </div>
-                  <div class="col-info">
+                  <div class="col-info ml-2">
                     {{ profile?.email }}
                   </div>
                 </div>
                 <div class="info">
                   <div class="col-title text-secondary">
-                    {{ "profileAccount.address" | translate }}:
+                    {{ "profileAccount.gender.title" | translate }}:
                   </div>
-                  <div class="col-info">
-                    {{ profile?.address }}
+                  <div class="col-info ml-2">
+                    {{ profile?.gender }}
                   </div>
                 </div>
                 <div class="info">
                   <div class="col-title text-secondary">
                     {{ "profileAccount.phone" | translate }}:
                   </div>
-                  <div class="col-info">
+                  <div class="col-info ml-2">
                     {{ profile?.phone }}
                   </div>
                 </div>
-                <!-- <div class="info">
-                  <div class="col-title text-secondary">
-                    {{ "profileAccount.createdDate" | translate }}:
-                  </div>
-                  <div class="col-info">
-                    {{ profile?.created_date }}
-                  </div>
-                </div> -->
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-4 col-lg-2 pl-0 pr-0 edit-profile">
+          <div class="col-12 col-sm-4 col-lg-2 pl-0 pr-0 edit-profile flex-column">
             <button mat-raised-button class="btn-edit" (click)="editProfile()">
               <i class="material-icons">edit</i>
               {{ "profileAccount.edit" | translate }}
+            </button>
+            <button mat-raised-button class="btn-edit mt-3 ml-2" (click)="editPassword()">
+              <i class="material-icons">edit</i>
+              {{ "profileAccount.changePassword" | translate }}
             </button>
           </div>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
-
-  <!-- <mat-card class="mb-3">
-    <div class="language-container">
-      <mat-card-title>
-        {{ "language" | translate }}
-      </mat-card-title>
-      <mat-card-content class="">
-        <div>{{ "profileAccount.defaultLanguage" | translate }}</div>
-        <div class="language" *ngIf="language">{{ language | translate }}</div>
-      </mat-card-content>
-    </div>
-  </mat-card>
-
-  <mat-card class="mb-3">
-    <div class="history-container">
-      <mat-card-title>
-        {{ "profileAccount.history" | translate }}
-      </mat-card-title>
-      <mat-card-content class="content">
-        <div
-          *ngFor="let item of history; let odd = odd; let even = even"
-          class="history"
-        >
-          <div class="dot" [ngClass]="{ 'bg-odd': odd, 'bg-even': even }"></div>
-          <div class="history-content">
-            <div
-              class="action-time"
-              [ngClass]="{ 'bg-odd': odd, 'bg-even': even }"
-            >
-              {{ item?.action_time }}
-            </div>
-            <div class="action-name">
-              {{ multiLangData(item?.action_name) }}
-            </div>
-          </div>
-        </div>
-        <div class="see-more ct-link" *ngIf="isSeeMore" (click)="seeMore()">
-          {{ "profileAccount.seeMore" | translate }}
-        </div>
-      </mat-card-content>
-    </div>
-  </mat-card>
-</div> -->
 </div>

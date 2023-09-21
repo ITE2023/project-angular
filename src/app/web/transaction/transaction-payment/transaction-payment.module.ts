@@ -38,14 +38,14 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
   ],
 })
 export class TransactionPaymentModule {
-  constructor(
-    private bsLocaleService: BsLocaleService,
-    private translate: TranslateService
-  ) {
-    const lang = localStorage.getItem(LocalStorageType.CurrentLanguage);
-    this.bsLocaleService.use(lang);
-    this.translate.onLangChange.subscribe((data) => {
-      this.bsLocaleService.use(data.lang);
-    });
-  }
+    constructor(
+      private bsLocaleService: BsLocaleService,
+      private translate: TranslateService
+    ) {
+      const lang = localStorage.getItem(LocalStorageType.CurrentLanguage);
+      this.bsLocaleService.use(lang);
+      this.translate.onLangChange.subscribe((data) => {
+        this.bsLocaleService.use(data.lang);
+      });
+    }
 }

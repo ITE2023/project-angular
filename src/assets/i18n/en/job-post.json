@@ -1,0 +1,12 @@
+{
+  "job-post": {
+    "title": "Manage job post",
+    "data_table": {
+      "no": "STT",
+      "title": "Vacancies",
+      "expired-At": "Expired At",
+      "content": "Content",
+      "status" : "Status"
+    }
+  }
+}

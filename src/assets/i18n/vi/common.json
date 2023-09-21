@@ -68,7 +68,9 @@
   },
   "breadcrumb": {
     "dashboard": "Bảng điều khiển",
+    "manage-job-post": "Quản lí tin tuyển dụng",
     "usermanage": "Quản lý người dùng",
+    "manage-post": "Quản lý bài viết",
     "wallet": "Quản lý tài khoản ví",
     "department": "Quản lý đơn vị",
     "profile": "Quản lý tài khoản người dùng",
@@ -103,9 +105,18 @@
     "address": "Địa chỉ",
     "unit": "Đơn vị",
     "username": "Tên đăng nhập",
-    "fullName": "Họ và tên",
+    "gender": {
+      "title": "Giới tính",
+      "value": {
+        "male": "Nam",
+        "female": "Nữ"
+      }
+    },
+    "firstName": "Tên",
+    "lastName": "Họ",
     "createdDate": "Ngày tạo",
     "edit": "Cập nhật",
+    "changePassword": "Đổi mật khẩu",
     "defaultLanguage": "Ngôn ngữ hiển thị mặc định",
     "history": "Lịch sử hoạt động",
     "seeMore": "Xem thêm",
@@ -204,6 +215,8 @@
   },
   "left-menu": {
     "dashboard": "Bảng điều khiển",
+    "manage-post": "Quản lí bài viết",
+    "manage-job-post": "Quản lí tin tuyển dụng",
     "transaction": {
       "manager": "Quản lý giao dịch",
       "payment": "Thanh toán",

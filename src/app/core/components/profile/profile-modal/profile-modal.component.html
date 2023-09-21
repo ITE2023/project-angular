@@ -13,15 +13,15 @@
         <div class="row">
           <div class="col-12">
             <mat-form-field class="w-100" appearance="standard">
-              <mat-label>{{ "profileAccount.fullName" | translate }}</mat-label>
+              <mat-label>{{ "profileAccount.firstName" | translate }}</mat-label>
               <mat-icon class="form-input-icon" matPrefix>face</mat-icon>
               <textarea
                 class="ct-textarea form-field"
                 matInput
-                formControlName="full_name"
+                formControlName="firstName"
                 appNoSpecialCharacter
                 placeholder="{{
-                  'user.add-edit-detail.placeholder.fullName' | translate
+                  'user.add-edit-detail.placeholder.firstName' | translate
                 }}"
                 maxlength="50"
                 cdkTextareaAutosize
@@ -32,8 +32,8 @@
               ></textarea>
               <mat-error
                 *ngIf="
-                  !f.full_name.valid &&
-                  (f.full_name.errors.required || f.full_name.errors.nameSpace)
+                  !f.firstName.valid &&
+                  (f.firstName.errors.required || f.firstName.errors.nameSpace)
                 "
               >
                 {{ commonErrorCode.REQUIRED | translate }}
@@ -41,7 +41,37 @@
             </mat-form-field>
           </div>
         </div>
-
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="w-100" appearance="standard">
+              <mat-label>{{ "profileAccount.lastName" | translate }}</mat-label>
+              <mat-icon class="form-input-icon" matPrefix>face</mat-icon>
+              <textarea
+                class="ct-textarea form-field"
+                matInput
+                formControlName="lastName"
+                appNoSpecialCharacter
+                placeholder="{{
+                  'user.add-edit-detail.placeholder.lastName' | translate
+                }}"
+                maxlength="50"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+                (keydown.enter)="enter($event)"
+              ></textarea>
+              <mat-error
+                *ngIf="
+                  !f.lastName.valid &&
+                  (f.lastName.errors.required || f.lastName.errors.nameSpace)
+                "
+              >
+                {{ commonErrorCode.REQUIRED | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12">
             <mat-form-field class="w-100" appearance="standard">
@@ -77,18 +107,6 @@
         <div class="row">
           <div class="col-12">
             <mat-form-field class="w-100" appearance="standard">
-              <mat-label>{{ "profileAccount.address" | translate }}</mat-label>
-              <mat-icon class="form-input-icon" matPrefix
-                >add_location</mat-icon
-              >
-              <input matInput formControlName="address" class="form-field" />
-            </mat-form-field>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <mat-form-field class="w-100" appearance="standard">
               <mat-label>{{ "profileAccount.phone" | translate }}</mat-label>
               <mat-icon class="form-input-icon" matPrefix>smartphone</mat-icon>
               <input
@@ -116,7 +134,18 @@
             </mat-form-field>
           </div>
         </div>
-
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="w-100"  appearance="standard">
+              <mat-label>{{ "profileAccount.gender.title" | translate }}</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{ 'profileAccount.gender.value.' + food.viewValue | translate }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
         <!-- <div class="row">
           <div class="col-12">
             <mat-form-field class="w-100" appearance="standard">
