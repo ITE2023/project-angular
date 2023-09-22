@@ -89,8 +89,8 @@ export class AuthenticationInterceptor implements HttpInterceptor {
         .append("Access-Control-Allow-Origin", "*")
         .append("Cache-Control", "no-store")
         .append("Expires", "0")
-        .append("Pragma", "no-cache");
-
+        .append("Pragma", "no-cache")
+        .append( "Content-Type", "application/json; charset=UTF-8");
       newRequest = req.clone({
         headers: headers,
         body: {

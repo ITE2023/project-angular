@@ -8,6 +8,7 @@ export const TitleConstants = {
   FISRTLOGIN: `${baseTitle} | Change password`,
   DASHBOARD: `${baseTitle} | Home`,
   MANAGE_JOP_POST: `${baseTitle} | Manage job post`,
+  EDIT_JOP_POST: `${baseTitle} | Edit job post`,
   PROFILE: `${baseTitle} | Profile`,
   USER: `${baseTitle} | User`,
   REGISTER: `${baseTitle} | Register`,

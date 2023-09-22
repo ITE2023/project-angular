@@ -8,6 +8,9 @@ import { SharedModule } from 'src/app/shared/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { IConfig } from 'ngx-mask';
+import { EditJobPostComponent } from './edit-job-post/edit-job-post.component';
+import { routing } from "./job-post.routing";
+import { QuillModule } from 'ngx-quill';
 
 
 defineLocale("vi", viLocale);
@@ -17,29 +20,21 @@ defineLocale("en", enGbLocale);
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
-const routes: Routes = [
-  {
-    path: "",
-    resolve: {},
-    children: [
-      {
-        path: "",
-        component: JobPostComponent,
-        data: {
-          title: TitleConstants.MANAGE_JOP_POST,
-        },
-      },
-    ],
-  },
-];
 @NgModule({
-  declarations: [JobPostComponent],
+  declarations: [JobPostComponent, EditJobPostComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routing),
     SharedModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
+    QuillModule.forRoot({
+      modules: {
+        imageResize: {
+          displaySize: true,
+        },
+      },
+    }),
   ]
 })
 export class JobPostModule {

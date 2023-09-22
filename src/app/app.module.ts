@@ -23,7 +23,7 @@ import { FormValidatorModule } from "./shared/validators";
 import { MultiTranslateHttpLoader } from "@core/language/multi-language";
 import { LANGUAGE_FILE } from "@core/constants/language.constants";
 import { ConfigService } from "@core/services/configuration/configuration.service";
-
+import { QuillModule } from 'ngx-quill';
 import { defineLocale } from "ngx-bootstrap/chronos";
 import { viLocale, enGbLocale } from "ngx-bootstrap/locale";
 
@@ -61,6 +61,7 @@ export const configFactory = (configService: ConfigService) => {
       positionClass: "toast-bottom-right",
       preventDuplicates: true,
     }),
+    QuillModule.forRoot(),
   ],
   providers: [
     {

@@ -35,30 +35,15 @@ export class AuthGuardService implements CanActivateChild {
   }
 
   checkSessionTimeout() {
-    const currentTime = moment().toDate().getTime();
     const userInformation = JSON.parse(
       localStorage.getItem(LocalStorageType.UserInformation)
     );
 
-    const loginTime = moment(userInformation.lastLoginDate).toDate().getTime();
-    const sessionTime = Number(
-      localStorage.getItem(LocalStorageType.ExpiredTime)
-    );
-
-    if (currentTime - loginTime > sessionTime * 1000) {
-      const remember = localStorage.getItem(LocalStorageType.RememberMe);
-      localStorage.clear();
-      if (remember != null) {
-        localStorage.setItem(LocalStorageType.RememberMe, remember);
-      }
-      this.dialogRef.closeAll();
-      this.authService.clearPermissionAndURLList();
-      this.toastr.error(this.translate.instant("session-timeout"));
-
-      return false;
-    } else {
-      localStorage.setItem(LocalStorageType.SessionTimeOut, currentTime + "");
+    if(userInformation.userRole == "admin") {
       return true;
+    }else
+    {
+      return false;
     }
   }
 }

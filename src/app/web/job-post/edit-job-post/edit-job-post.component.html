@@ -1,0 +1,16 @@
+<mat-card class="transaction-management common-management mb-3">
+  <mat-card-content>
+    <mat-card-title class="w-100 mb-4 text-center">
+      <div class="header mr-0 w-100 text-center">
+          <span class="title page-title">Câp nhập thông tin</span>
+      </div>
+      <div>
+        <form action="">
+          <quill-editor [styles]="editorStyle" placeholder="Enter Text"
+                formControlName="yourCtrlname"  [modules]="editorModules"  (onEditorCreated)="onEditorCreated($event)" required>
+            </quill-editor>
+        </form>
+      </div>
+    </mat-card-title>
+  </mat-card-content>
+</mat-card>

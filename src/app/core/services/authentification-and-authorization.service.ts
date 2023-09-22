@@ -45,14 +45,6 @@ export class AuthenticationAndAuthorizationService {
         menu_title: "Payment Details",
       },
       {
-        menu_id: 34,
-        url: "payment-details",
-        menu_icon: "payment-details",
-        mapped_url: "/payment-details",
-        menu_level: 1,
-        menu_title: "Payment Details",
-      },
-      {
         menu_id: 31,
         url: "user-info",
         menu_icon: "home",
@@ -67,6 +59,14 @@ export class AuthenticationAndAuthorizationService {
         mapped_url: "/admin/manage-post",
         menu_level: 1,
         menu_title: "Dashboard",
+      },
+      {
+        menu_id: 5,
+        url: "admin/edit-job-post/:id",
+        menu_icon: "admin/edit-post",
+        mapped_url: "/admin/manage-post",
+        menu_level: 1,
+        menu_title: "Edit job post",
       },
       {
         menu_id: 2,
@@ -139,6 +139,7 @@ export class AuthenticationAndAuthorizationService {
       full_name: "Nguyễn Huy Hùng",
       phone: "0335463606",
       email: "hung@gmail.com",
+      role: "admin"
     },
     error_code: "00",
     error_message: "Success",

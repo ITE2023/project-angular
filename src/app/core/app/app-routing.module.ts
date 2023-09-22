@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: "",
     component: LayoutComponent,
-    // canActivateChild: [AuthGuardService],
+    canActivateChild: [AuthGuardService],
     loadChildren: () =>
       import("src/app/web/web.module").then((m) => m.WebModule),
     data: { preload: true },
@@ -80,5 +80,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [AuthGuardService],
 })
 export class AppRoutingModule {}
