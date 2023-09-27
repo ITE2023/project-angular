@@ -11,7 +11,7 @@ import { IConfig } from 'ngx-mask';
 import { EditJobPostComponent } from './edit-job-post/edit-job-post.component';
 import { routing } from "./job-post.routing";
 import { QuillModule } from 'ngx-quill';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 defineLocale("vi", viLocale);
 defineLocale("en", enGbLocale);
@@ -35,6 +35,7 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
         },
       },
     }),
+    NgxPaginationModule,
   ]
 })
 export class JobPostModule {

@@ -26,7 +26,7 @@ import { ConfigService } from "@core/services/configuration/configuration.servic
 import { QuillModule } from 'ngx-quill';
 import { defineLocale } from "ngx-bootstrap/chronos";
 import { viLocale, enGbLocale } from "ngx-bootstrap/locale";
-
+import { NgxPaginationModule } from 'ngx-pagination';
 defineLocale("vi", viLocale);
 defineLocale("en", enGbLocale);
 export const configFactory = (configService: ConfigService) => {
@@ -62,6 +62,7 @@ export const configFactory = (configService: ConfigService) => {
       preventDuplicates: true,
     }),
     QuillModule.forRoot(),
+    NgxPaginationModule,
   ],
   providers: [
     {

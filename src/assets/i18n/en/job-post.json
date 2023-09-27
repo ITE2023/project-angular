@@ -5,8 +5,13 @@
       "no": "STT",
       "title": "Vacancies",
       "expired-At": "Expired At",
-      "content": "Content",
+      "salary": "Salary",
       "status" : "Status"
+    },
+    "statusList": {
+      "0": "Lock",
+      "1": "Activate",
+      "2": "Expired"
     }
   }
 }

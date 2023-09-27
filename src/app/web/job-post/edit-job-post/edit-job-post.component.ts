@@ -1,5 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DATE_CONFIG } from '@core/constants';
+import { JobTypeService } from '@core/services';
 import { QuillEditorComponent } from 'ngx-quill';
 @Component({
   selector: 'ite-edit-job-post',
@@ -8,15 +10,28 @@ import { QuillEditorComponent } from 'ngx-quill';
 })
 export class EditJobPostComponent implements OnInit {
   @ViewChild('editor') editor!: QuillEditorComponent;
-  constructor( ) {
+
+  public jobTypeForm: FormGroup;
+  public minToDate: any;
+  public firstDay: any;
+  public dateConfig = DATE_CONFIG;
+  public data: any;
+  
+  constructor( private jobTypeService: JobTypeService ) {
+    this.minToDate = this.firstDay;
+    this.data = this.jobTypeService.getJobTypeAll().subscribe(
+      (data) => {
+        this.data = data.result;
+         console.log(this.data);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );;    
   }
   editorForm: FormGroup;
 
   editorInstance: any;
-
-  onEditorCreated(editorInstance: any) {
-    this.editorInstance = editorInstance;
-  }
   ngOnInit() {
     this.editorForm = new FormGroup({
       'editor': new FormControl(null)
@@ -40,6 +55,5 @@ export class EditJobPostComponent implements OnInit {
         ['link', 'image']
       ]
     },
-    imageResize: true
   };
 }

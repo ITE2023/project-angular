@@ -1,7 +1,6 @@
 <mat-card class="transaction-management common-management mb-3">
   <mat-card-content>
     <mat-card-title class="w-100 mb-4">
-
       <div class="row header mr-0">
         <div class="col-md-6">
           <span class="title page-title">{{
@@ -36,7 +35,7 @@
                   [bsConfig]="dateConfig"
                   #dp1="bsDatepicker"
                   (ngModelChange)="dateChange('from_date')"
-                  (change)="isInvalidDate($event, 'from_date')"                 
+                  (change)="isInvalidDate($event, 'from_date')"
                 />
               </mat-form-field>
               <mat-form-field
@@ -49,7 +48,7 @@
                 ></i>
                 <input
                   type="text"
-                  matInput             
+                  matInput
                   formControlName="to_date"
                   maxlength="10"
                   container=""
@@ -82,23 +81,64 @@
         <thead>
           <tr>
             <th class="col-no">
-              {{ 'job-post.data_table.no'  | translate}}
+              {{ "job-post.data_table.no" | translate }}
             </th>
             <th class="col-name">
-              {{ 'job-post.data_table.title' | translate}}
+              {{ "job-post.data_table.title" | translate }}
             </th>
             <th class="col-name">
-              {{ 'job-post.data_table.expired-At' | translate}}
+              {{ "job-post.data_table.expired-At" | translate }}
             </th>
             <th class="col-name">
-              {{ 'job-post.data_table.content' | translate}}
+              {{ "job-post.data_table.salary" | translate }}
             </th>
             <th class="col-name">
-              {{ 'job-post.data_table.status' | translate}}
+              {{ "job-post.data_table.status" | translate }}
             </th>
           </tr>
         </thead>
+        <tbody *ngIf="data && data.length">
+          <tr
+          *ngFor="let item of data | paginate: { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }; let i = index"
+            (click)="viewDetail(item)"
+            class="pointer"
+          >
+            <td class="col-no">
+              {{ i + 1 }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.title }}
+            </td>
+            <td class="col-name text-right">
+              {{ item.expiredAt | date : "dd/MM/yyyy" }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.salary }}
+            </td>
+
+            <td class="col-name text-center">
+              <span
+              class="item-status" 
+                [ngStyle]="{
+                  'background-color':
+                    item?.isActive == 0
+                      ? ''
+                      : item?.isActive == 1
+                      ? 'green'
+                      : item?.isActive == 2
+                      ? 'red'
+                      : 'gray'
+                }"
+                >{{ "job-post.statusList." + item.isActive | translate }}</span
+              >
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
+    <div class="d-flex justify-content-center mt-4">
+      <pagination-controls id='listing_pagination' maxSize = 5 directionLink="true" (pageChange)="page = $event"></pagination-controls>
+    </div>
+
   </mat-card-content>
 </mat-card>

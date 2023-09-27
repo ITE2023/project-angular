@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { DATE_CONFIG } from '@core/constants';
-import { AuthenticationAndAuthorizationService } from '@core/services';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { PageEvent } from "@angular/material/paginator";
+import { CommonConstants, DATE_CONFIG } from "@core/constants";
+import { AuthenticationAndAuthorizationService } from "@core/services";
+import { JobPostService } from "@core/services/app/job-post/job-post.service";
 
 @Component({
-  selector: 'ite-job-post',
-  templateUrl: './job-post.component.html',
-  styleUrls: ['./job-post.component.scss']
+  selector: "ite-job-post",
+  templateUrl: "./job-post.component.html",
+  styleUrls: ["./job-post.component.scss"],
 })
 export class JobPostComponent implements OnInit {
   [x: string]: any;
@@ -18,33 +20,52 @@ export class JobPostComponent implements OnInit {
   public maxDate: Date;
   public currentDay: any;
   public dateConfig = DATE_CONFIG;
+  public data: any;
+  public page = 1;
+  public totalRecords: any;
+  public pageSize = 10;
+  public pageSizes = CommonConstants.DEFAULT_PAGE_SIZE_OPTION;
+
   checkPermission(key) {
     return this.authService.checkPermission(key);
   }
   constructor(
     private authService: AuthenticationAndAuthorizationService,
     private formBuilder: FormBuilder,
-    ) {
-      this.maxDate = new Date();
-      this.maxFromDate = new Date();   
-      this.maxToDate = new Date();
-      const y = this.maxDate.getFullYear();
-      const m = this.maxDate.getMonth();
-      this.firstDay = new Date(y, 0, 1);
-      this.currentDay = new Date();
-      this.minToDate = this.firstDay;
-      this.searchForm = this.formBuilder.group({
-        from_date: [this.firstDay],
-        to_date: [this.currentDay],
-      });
-     }
+    private jobPostService: JobPostService
+  ) {
+    this.maxDate = new Date();
+    this.maxFromDate = new Date();
+    this.maxToDate = new Date();
+    const y = this.maxDate.getFullYear();
+    const m = this.maxDate.getMonth();
+    this.firstDay = new Date(y, 0, 1);
+    this.currentDay = new Date();
+    this.minToDate = this.firstDay;
+    this.searchForm = this.formBuilder.group({
+      from_date: [this.firstDay],
+      to_date: [this.currentDay],
+    });
+  }
+
   ngOnInit(): void {
+    this.data = this.jobPostService
+      .getJobPostByUserId("7e66d61f-1514-5b34-8e7d-ab61ee0f1163")
+      .subscribe(
+        (data) => {
+          this.data = data.result;
+          this.totalRecords = data.result.length;
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
   }
   public searchData() {
     const form = this.searchForm.value;
   }
+  getJobPostByUserId;
 
-    
   keyPressDate(event) {
     const k = event.keyCdateChangeode;
     return k === 8 || k === 191 || (k >= 47 && k <= 57);
@@ -58,7 +79,7 @@ export class JobPostComponent implements OnInit {
   get f() {
     return this.searchForm.controls;
   }
-  
+
   dateChange(field) {
     if (field === "from_date") {
       this.minToDate = this.searchForm.value.from_date;
@@ -83,4 +104,6 @@ export class JobPostComponent implements OnInit {
       this.maxFromDate = new Date();
     }
   }
+
+
 }

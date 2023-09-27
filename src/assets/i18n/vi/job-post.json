@@ -5,8 +5,17 @@
       "no": "STT",
       "title": "Vị trí tuyển dụng",
       "expired-At": "Hết hạn vào",
-      "content": "Nội dung",
+      "salary": "Lương",
       "status" : "Trạng thái"
+    },
+    "statusList": {
+      "0": "Bị chặn",
+      "1": "Hoạt động",
+      "2": "Hết hạn"
+    },
+    "form": {
+      "title":"Vị trí tuyển dụng",
+      "jobType": "Loại công việc"
     }
   }
 }

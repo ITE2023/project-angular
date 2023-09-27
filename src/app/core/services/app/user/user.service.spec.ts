@@ -1,37 +1,30 @@
-import { TestBed } from "@angular/core/testing";
+import { HttpClient } from "@angular/common/http";
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from "@angular/common/http/testing";
-import {
-  TranslateModule,
-  TranslateFakeLoader,
-  TranslateService,
-  TranslateLoader,
-} from "@ngx-translate/core";
-import { HttpClient } from "@angular/common/http";
-import {
-  MockTranslateService,
-  MockTranslateLoader,
-} from "src/app/shared/mockData/mockCommon";
+import { TestBed } from "@angular/core/testing";
 import { MatDialog } from "@angular/material/dialog";
+import {
+  TranslateFakeLoader,
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from "@ngx-translate/core";
+import {
+  MockTranslateLoader,
+  MockTranslateService,
+} from "src/app/shared/mockData/mockCommon";
 import { MatDialogMock } from "src/app/shared/mockData/mockDialog";
-import { of } from "rxjs";
 
 import { AUTH_API_URL } from "@core/constants";
+import { ToastrModule } from "ngx-toastr";
 import {
-  MockPaymenMethod,
-  MockBank,
-  MockTrans,
-  MockUnit,
-  MockUsers,
   MockOutputUsers,
   MockRole,
+  MockUsers
 } from "src/app/shared/mockData/mockCommonService";
-import { MockServiceStatus } from "src/app/web/merchant-management/merchant-edit-dialogs/merchant-contract-info-edit/merchant-contract-info-edit.component.spec";
 import { UserService } from "./user.service";
-import { MockUserInfo } from "src/app/shared/mockData/mockAuthService";
-import { ToastrModule } from "ngx-toastr";
 
 describe("UserManagement Service", () => {
   beforeEach(async () => {
