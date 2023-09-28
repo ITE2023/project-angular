@@ -13,4 +13,5 @@ export * from './app/role/role-management.service';
 export * from './app/reconciliation/reconciliation.service';
 export * from './app/merchant/merchant.service';
 export * from './app/jobType/job-type.service';
+export * from './app/job-post-location/job-post-location.service';
 

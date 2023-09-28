@@ -15,7 +15,18 @@
     },
     "form": {
       "title":"Vị trí tuyển dụng",
-      "jobType": "Loại công việc"
+      "jobType": "Loại công việc",
+      "salary": "Lương",
+      "expiredAt": "Ngày kết thúc",
+      "country": "Quốc gia",
+      "district": "Huyện",
+      "city": "Thành phố",
+      "ward": "Phường",
+      "street": "Đường",
+      "description": "Mô tả",
+      "save": "Lưu",
+      "cancel": "Hủy bỏ",
+      "edit" : "Sửa"
     }
   }
 }

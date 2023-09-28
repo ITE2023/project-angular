@@ -5,9 +5,9 @@
         <span class="title page-title">Câp nhập thông tin</span>
       </div>
       <div>
-        <form [formGroup]="jobTypeForm">
+        <form [formGroup]="jobTypeForm" (ngSubmit)="onSubmit()" [ngClass]="{ 'disabled-form': isDisabled }">
           <mat-form-field class="w-100" appearance="standard">
-            <mat-label style="font-size: 14px">Title</mat-label>
+            <mat-label style="font-size: 14px">{{ 'job-post.form.title' | translate  }}</mat-label>
             <textarea
               style="font-size: 14px"
               class="ct-textarea form-field"
@@ -21,61 +21,140 @@
               cdkAutosizeMaxRows="2"
             ></textarea>
           </mat-form-field>
-          <mat-form-field class="w-100" appearance="standard">
-            <mat-label style="font-size: 14px">Lương</mat-label>
-            <textarea
-              style="font-size: 14px"
-              class="ct-textarea form-field"
-              matInput
-              formControlName="Lương"
-              appNoSpecialCharacter
-              maxlength="50"
-              cdkTextareaAutosize
-              #autosize="cdkTextareaAutosize"
-              cdkAutosizeMinRows="1"
-              cdkAutosizeMaxRows="2"
-            ></textarea>
-          </mat-form-field>
-          <mat-form-field
-          class="ct-datepicker custom-position form-control item-1"
-        >
-          <i
-            class="fa fa-calendar ct-date-icon"
-            (click)="dp1.toggle()"
-            [attr.aria-expanded]="dp1.isOpen"
-          ></i>
-          <input
-            type="text"
-            matInput
-            maxlength="10"
-            container=""
-            bsDatepicker
-            [minDate]="minToDate"
-            autocomplete="off"
-            placement="auto"
-            [bsConfig]="dateConfig"
-            #dp1="bsDatepicker"
-          />
-        </mat-form-field>
-        
-          <mat-form-field class="w-100" appearance="standard">
-            <mat-label style="font-size: 14px">{{
-              "profileAccount.gender.title" | translate
-            }}</mat-label>
-            <mat-select formControlName="gender" style="font-size: 14px">
-              <mat-option *ngFor="let item of data" [value]="item.id">
-                {{ item.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          
+          <div class="d-flex justify-content-between align-items-center">
+            <mat-form-field style="width: 45%;" appearance="standard">
+              <mat-label style="font-size: 14px">{{ 'job-post.form.salary' | translate  }}</mat-label>
+              <textarea
+                style="font-size: 14px"
+                class="ct-textarea form-field"
+                matInput
+                formControlName="salary"
+                appNoSpecialCharacter
+                maxlength="50"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+              ></textarea>
+            </mat-form-field>
+            <mat-form-field style="width: 45%;" appearance="standard">
+              <mat-label style="font-size: 14px">{{ 'job-post.form.jobType' | translate  }}</mat-label>
+              <mat-select formControlName="idJobType"  style="font-size: 14px">
+                <mat-option *ngFor="let item of data" [value]="item.id">
+                  {{ item.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <mat-form-field style="width: 45%;" >
+              <mat-label style="font-size: 14px"> {{ 'job-post.form.expiredAt' | translate  }}</mat-label>
+              <input matInput formControlName="expiredAt" [matDatepicker]="picker" style="font-size: 14px">
+              <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+              <mat-datepicker #picker ></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field style="width: 45%;" appearance="standard">
+              <mat-label style="font-size: 14px">{{ 'job-post.form.country' | translate  }}</mat-label>
+              <textarea
+                style="font-size: 14px"
+                class="ct-textarea form-field"
+                matInput
+                formControlName="country"
+                appNoSpecialCharacter
+                maxlength="50"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+              ></textarea>
+            </mat-form-field>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <mat-form-field style="width: 45%;" appearance="standard">
+              <mat-label style="font-size: 14px">{{ 'job-post.form.district' | translate  }}</mat-label>
+              <textarea
+                style="font-size: 14px"
+                class="ct-textarea form-field"
+                matInput
+                formControlName="district"
+                appNoSpecialCharacter
+                maxlength="50"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+              ></textarea>
+            </mat-form-field>
+            <mat-form-field style="width: 45%;" appearance="standard">
+              <mat-label style="font-size: 14px">{{ 'job-post.form.city' | translate  }}</mat-label>
+              <textarea
+                style="font-size: 14px"
+                class="ct-textarea form-field"
+                matInput
+                formControlName="city"
+                appNoSpecialCharacter
+                maxlength="50"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <mat-form-field style="width: 45%;" appearance="standard">
+              <mat-label style="font-size: 14px">{{ 'job-post.form.ward' | translate  }}</mat-label>
+              <textarea
+                style="font-size: 14px"
+                class="ct-textarea form-field"
+                matInput
+                formControlName="ward"
+                appNoSpecialCharacter
+                maxlength="50"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+              ></textarea>
+            </mat-form-field>
+            <mat-form-field style="width: 45%;" appearance="standard">
+              <mat-label style="font-size: 14px">{{ 'job-post.form.street' | translate  }}</mat-label>
+              <textarea
+                style="font-size: 14px"
+                class="ct-textarea form-field"
+                matInput
+                formControlName="street"
+                appNoSpecialCharacter
+                maxlength="50"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+              ></textarea>
+            </mat-form-field>
+          </div>
           <quill-editor
             [styles]="editorStyle"
             placeholder="Enter Text"
+            formControlName="description"
             [modules]="editorModules"
             required
           >
           </quill-editor>
+          <div *ngIf="!isDisabled" class="mt-2">
+            <button mat-raised-button color="primary">
+              {{ 'job-post.form.save' | translate }}
+            </button>
+            <button class="ml-2" mat-raised-button (click)="toggleForm()">
+              {{ 'job-post.form.cancel' | translate }}
+            </button>
+          </div>
         </form>
+        <div *ngIf="isDisabled" class="mt-2">
+          <button mat-raised-button color="primary" (click)="toggleForm()">{{ 'job-post.form.edit' | translate }}</button>
+        </div>
       </div>
     </mat-card-title>
   </mat-card-content>

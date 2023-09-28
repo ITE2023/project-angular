@@ -1,4 +1,9 @@
 .ql-editor img {
   max-width: 100%; /* Điều chỉnh kích thước tối đa của hình ảnh */
   height: auto; /* Giữ tỷ lệ khung hình khi thay đổi kích thước */
+
+}
+
+.disabled-form {
+  pointer-events: none;
 }

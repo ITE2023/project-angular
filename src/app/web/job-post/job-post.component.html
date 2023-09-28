@@ -100,8 +100,8 @@
         <tbody *ngIf="data && data.length">
           <tr
           *ngFor="let item of data | paginate: { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }; let i = index"
-            (click)="viewDetail(item)"
             class="pointer"
+            routerLink="edit/{{item.id}}"
           >
             <td class="col-no">
               {{ i + 1 }}

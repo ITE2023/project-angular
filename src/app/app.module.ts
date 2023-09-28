@@ -11,6 +11,7 @@ import {
   registerLocaleData,
   CommonModule,
   APP_BASE_HREF,
+  DatePipe
 } from "@angular/common";
 import localeFr from "@angular/common/locales/vi";
 import { ServicesModule } from "./shared/shared/services.module";
@@ -65,6 +66,7 @@ export const configFactory = (configService: ConfigService) => {
     NgxPaginationModule,
   ],
   providers: [
+    DatePipe,
     {
       provide: APP_INITIALIZER,
       useFactory: configFactory,

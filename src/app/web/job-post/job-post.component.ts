@@ -38,7 +38,6 @@ export class JobPostComponent implements OnInit {
     this.maxFromDate = new Date();
     this.maxToDate = new Date();
     const y = this.maxDate.getFullYear();
-    const m = this.maxDate.getMonth();
     this.firstDay = new Date(y, 0, 1);
     this.currentDay = new Date();
     this.minToDate = this.firstDay;

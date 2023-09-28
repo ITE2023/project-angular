@@ -12,6 +12,21 @@
       "0": "Lock",
       "1": "Activate",
       "2": "Expired"
+    },
+    "form": {
+      "title":"Vacancies",
+      "jobType": "Type of work",
+      "salary": "Salary",
+      "expiredAt": "Expired At",
+      "country": "Country",
+      "district": "District",
+      "city": "City",
+      "ward": "Walk",
+      "street": "Street",
+      "description": "Description",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit" : "Edit"
     }
   }
 }
