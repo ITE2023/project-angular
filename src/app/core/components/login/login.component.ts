@@ -15,6 +15,7 @@ import { TranslateService } from "@ngx-translate/core";
 import { MatDialog } from "@angular/material/dialog";
 import { ChangePasswordComponent } from "@core/layout/topbar/change-password/change-password.component";
 import { NotificationDialogComponent } from "../notification-dialog/notification-dialog.component";
+import { ProfileService } from "@core/services/app/profile/profile.service";
 
 @Component({
   selector: "ite-login",
@@ -42,12 +43,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
   constructor(
     private loader: BackgroundLoader,
     private activatedRoute: ActivatedRoute,
+    private profileService: ProfileService,
     private route: Router,
     private authService: AuthenticationAndAuthorizationService,
     protected browserInfoService: BrowserAndLocationInformationService,
     public fb: FormBuilder,
     public translate: TranslateService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private routeActive: ActivatedRoute
   ) {
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || "/";
     //this.authService.logOut();
@@ -69,7 +72,21 @@ export class LoginComponent implements OnInit, AfterViewInit {
     }
   }
 
+
   ngOnInit() {
+    const accessToken = this.routeActive.snapshot.queryParamMap.get('accessToken');
+    const refreshToken = this.routeActive.snapshot.queryParamMap.get('refreshToken'); 
+    const userId = this.routeActive.snapshot.queryParamMap.get('userId');
+    if(accessToken != null){
+      localStorage.setItem(LocalStorageType.Token, accessToken);
+    }
+    if(userId != null){
+      this.profileService.getUserById(userId).subscribe((user) => {
+        console.log(user.data);
+        localStorage.setItem(LocalStorageType.UserInformation, JSON.stringify(user.data));
+        this.admin()
+      })
+    }
     if (this.authService.checkLogin()) {
       this.route.navigateByUrl(this.returnUrl);
       return;
@@ -186,7 +203,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
   register() {
     this.route.navigate(["forgot-password"]);
   }
-
+  admin() {
+    this.route.navigate(["admin"]);
+  }
   redirect() {
     this.route.navigate(["forgot-password"]);
   }

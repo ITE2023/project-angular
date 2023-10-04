@@ -24,7 +24,6 @@ import { SuccessDialogComponent } from "./components/forgot-password/success-dia
 import { PdfViewerModule } from "ng2-pdf-viewer";
 import { DocumentViewerComponent } from "./components/common/document-viewer/document-viewer.component";
 import { NotificationDialogComponent } from "./components/notification-dialog/notification-dialog.component";
-import { FirstLoginComponent } from "./components/login/first-login/first-login.component";
 import { ErrorForbiddenPageComponent } from './components/error-forbidden-page/error-forbidden-page.component';
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { RegisterComponent } from "./components/register/register.component";
@@ -53,7 +52,6 @@ import { ChangePasswordModalComponent } from './components/profile/change-passwo
     SuccessDialogComponent,
     DocumentViewerComponent,
     NotificationDialogComponent,
-    FirstLoginComponent,
     ErrorForbiddenPageComponent,
     PageNotFoundComponent,
     ChangePasswordModalComponent

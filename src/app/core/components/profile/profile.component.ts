@@ -5,7 +5,7 @@ import {
   ProfileShare,
 } from "../../services";
 import { UserInformationModel } from "@core/models";
-import { DefaultAvatar } from "@core/constants";
+import { DefaultAvatar, LocalStorageType } from "@core/constants";
 import { MatDialog } from "@angular/material/dialog";
 import { ProfileModalComponent } from "./profile-modal/profile-modal.component";
 import { ChangeAvatarModalComponent } from "./change-avatar-modal/change-avatar-modal.component";
@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
   page = 1;
   pageSize = 5;
   subscription: Subscription;
-
+  idUser: any;
   constructor(
     private userService: AuthenticationAndAuthorizationService,
     private profileService: ProfileService,
@@ -50,6 +50,8 @@ export class ProfileComponent implements OnInit {
     private commonService: CommonService
   ) {
     this.user = this.userService.getUserInformation();
+    this.idUser = JSON.parse(localStorage.getItem(LocalStorageType.UserInformation));
+    console.log(this.idUser);
     this.subscription = this.profileShareService
       .getProfileInfo()
       .subscribe((profile) => {
@@ -61,14 +63,14 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getDetailProfile();
-    this.profile = {
-      firstName: "Hải",
-      lastName: "Nguyễn Văn",
-      username: "Hung Nguyen",
-      phone: "0335483669",
-      email: "hung@gmail.com",
-      gender: 1
-    };
+    // this.profile = {
+    //   firstName: "Hải",
+    //   lastName: "Nguyễn Văn",
+    //   username: "Hung Nguyen",
+    //   phone: "0335483669",
+    //   email: "hung@gmail.com",
+    //   gender: 1
+    // };
     this.language = "Việt Nam";
   }
 
@@ -82,9 +84,11 @@ export class ProfileComponent implements OnInit {
 
   public getDetailProfile() {
     // this.loader.show();
-    this.profileService.detailProfile().subscribe((data) => {
+    this.profileService.getUserById(this.idUser.id).subscribe((data) => {
       // if (value.error_code === "00") {
-      this.profile = data;
+      this.profile = data.data;
+      console.log(this.profile);
+      
       // this.profile = value.data;
       // this._profileImage = this.profile.avatar
       //   ? this.profile.avatar

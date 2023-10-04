@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { LayoutComponent } from "../layout/layout.component";
 import { LoginComponent } from "../components/login/login.component";
-import { FirstLoginComponent } from "../components/login/first-login/first-login.component";
 import { TitleConstants } from "../constants";
 import { AuthGuardService } from "@core/authentication/auth-guard.service";
 import { ForgotPasswordComponent } from "@core/components/forgot-password/forgot-password.component";
@@ -24,14 +23,6 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent,
-    data: {
-      title: TitleConstants.LOGIN,
-    },
-    canActivate: [],
-  },
-  {
-    path: "change-password-login",
-    component: FirstLoginComponent,
     data: {
       title: TitleConstants.LOGIN,
     },

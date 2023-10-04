@@ -104,7 +104,7 @@ export class TopbarComponent implements OnInit {
   logOut(): void {
     this.authService.logOut().subscribe((val: any) => {
       if (val) {
-        this.router.navigate(["login"]);
+        window.location.href = "http://localhost:2004/login";
       }
     });
   }

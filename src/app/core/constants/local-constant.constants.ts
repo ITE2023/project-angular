@@ -2,7 +2,9 @@
 
 export const LocalStorageType = {
   Token: "token",
+  AccessToken: "accessToken",
   UserInformation: "userInformation",
+  User: "user",
   AssetHierarchy: "assetHierarchy",
   UserThumbnailPhoto: "userThumbnailPhoto",
   DefaultLanguage: "DefaultLanguage",

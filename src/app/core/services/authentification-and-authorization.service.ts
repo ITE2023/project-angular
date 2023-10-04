@@ -211,88 +211,88 @@ export class AuthenticationAndAuthorizationService {
   }
 
   doLogin(
-    userName: string,
-    password: string
+  userName: string,
+  password: string
   ): Observable<UserInformationModel> {
-    const body = {
-      username: userName,
-      password: Md5Help.md5(password),
-    };
+  const body = {
+  username: userName,
+  password: Md5Help.md5(password),
+  };
 
-    const getTime = moment();
-    return of(this.mockUser).pipe(
-      map((data: any) => {
-        if (data.error_code && data.error_code !== "00") {
-          return data;
-        } else {
-          const sideBarConfig = JSON.stringify(data.menu_info);
+  const getTime = moment();
+  return of(this.mockUser).pipe(
+  map((data: any) => {
+  if (data.error_code && data.error_code !== "00") {
+  return data;
+  } else {
+  const sideBarConfig = JSON.stringify(data.menu_info);
 
-          // Doan nay de phan quyen
-          this.setPermissions(data.menu_info);
-          this.setUrls(data.menu_info);
-          this.addPermissionResultToLocalStorage(
-            this.permissionList,
-            this.permissionUrl
-          );
+  // Doan nay de phan quyen
+  this.setPermissions(data.menu_info);
+  this.setUrls(data.menu_info);
+  this.addPermissionResultToLocalStorage(
+  this.permissionList,
+  this.permissionUrl
+  );
 
-          // data.menu_info.pop();
+  // data.menu_info.pop();
 
-          // add thoi gian het han vao localstorage (giay)
-          localStorage.setItem(LocalStorageType.ExpiredTime, data.expired);
+  // add thoi gian het han vao localstorage (giay)
+  localStorage.setItem(LocalStorageType.ExpiredTime, data.expired);
 
-          this.setSideBarConfig(sideBarConfig);
-          const user = new UserInformationModel(
-            undefined,
-            data.user_info.user_id,
-            data.user_info.fullname,
-            data.user_info.username,
-            undefined,
-            data.user_info.fullname,
-            data.user_info.email,
-            getTime,
-            data.user_info.createDate,
-            data.access_token,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            data.user_info.role,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            data.user_info.address,
-            data.user_info.avatar,
-            data.user_info.phone,
-            data.user_info.department_name,
-            data.is_change_password,
-            data.user_info.role_id,
-            data.day,
-            data.notification_code
-          );
+  this.setSideBarConfig(sideBarConfig);
+  const user = new UserInformationModel(
+  undefined,
+  data.user_info.user_id,
+  data.user_info.fullname,
+  data.user_info.username,
+  undefined,
+  data.user_info.fullname,
+  data.user_info.email,
+  getTime,
+  data.user_info.createDate,
+  data.access_token,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  data.user_info.role,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  data.user_info.address,
+  data.user_info.avatar,
+  data.user_info.phone,
+  data.user_info.department_name,
+  data.is_change_password,
+  data.user_info.role_id,
+  data.day,
+  data.notification_code
+  );
 
-          const defaultLang = data.user_info.language;
-          // if (
-          //   langSettings.filter((x) => x.lang_code === defaultLang).length > 0
-          // ) {
-          //   this.translate.use(defaultLang);
-          //   localStorage.setItem(LocalStorageType.CurrentLanguage, defaultLang);
-          // } else {
-          //   this.translate.use("vi");
-          // }
+  const defaultLang = data.user_info.language;
+  // if (
+  //   langSettings.filter((x) => x.lang_code === defaultLang).length > 0
+  // ) {
+  //   this.translate.use(defaultLang);
+  //   localStorage.setItem(LocalStorageType.CurrentLanguage, defaultLang);
+  // } else {
+  //   this.translate.use("vi");
+  // }
 
-          this.translate.use("vi");
-          localStorage.setItem(LocalStorageType.CurrentLanguage, "vi");
+  this.translate.use("vi");
+  localStorage.setItem(LocalStorageType.CurrentLanguage, "vi");
 
-          this.addLoginResultToLocalStorage(user);
-          this.profileShareService.setProfileInfo(
-            data.user_info.avatar,
-            user.displayName
-          );
-          return user;
-        }
+  this.addLoginResultToLocalStorage(user);
+  this.profileShareService.setProfileInfo(
+  data.user_info.avatar,
+  user.displayName
+  );
+  return user;
+  }
       })
-    );
+  );
   }
 
   public addLoginResultToLocalStorage(user: UserInformationModel) {
@@ -328,8 +328,8 @@ export class AuthenticationAndAuthorizationService {
           localStorage.setItem(LocalStorageType.RememberMe, remember);
         }
         this.dialogRef.closeAll();
-        this.toastr.clear();
-        this.clearPermissionAndURLList();
+        // this.toastr.clear();
+        // this.clearPermissionAndURLList();
         return true;
       })
     );
@@ -339,9 +339,10 @@ export class AuthenticationAndAuthorizationService {
     const user: any = JSON.parse(
       localStorage.getItem(LocalStorageType.UserInformation)
     );
-
+    console.log(user);
+    
     return user;
-    // && +user.is_change_password === 0;
+// && +user.is_change_password === 0;
   }
 
   public getCurrentLang(): string {

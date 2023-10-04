@@ -29,7 +29,6 @@ export class AuthGuardService implements CanActivateChild {
     if (this.authService.checkLogin() && this.checkSessionTimeout()) {
       return true;
     }
-
     this.router.navigate(["login"]);
     return false;
   }
@@ -39,7 +38,7 @@ export class AuthGuardService implements CanActivateChild {
       localStorage.getItem(LocalStorageType.UserInformation)
     );
 
-    if(userInformation.userRole == "admin") {
+    if(userInformation.role == "admin" || userInformation.role =="recruiter") {
       return true;
     }else
     {

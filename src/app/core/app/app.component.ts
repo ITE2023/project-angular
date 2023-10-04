@@ -40,9 +40,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.events.subscribe((event: RouterEvent) => {
-      this.navigationInterceptor(event);
-    });
+    // this.router.events.subscribe((event: RouterEvent) => {
+    //   this.navigationInterceptor(event);
+    // });
     if (!this.detectRefresh()) {
       this.authenticationService.logOut();
     }
@@ -57,20 +57,20 @@ export class AppComponent implements OnInit {
   public doBeforeUnload(): void {
     this.detectRefresh();
   }
-  navigationInterceptor(event: RouterEvent): void {
-    if (event instanceof NavigationEnd) {
-      if (!event.url) {
-        this.router.navigate(['login']);
-      }
-      const menu = LeftMenuKeyConfig.filter(i => i.url === event.url);
-      // nếu nằm trong DS menu và không có quyền
-      if (!this.authenticationService.checkPermissionUrl(event.url) && menu.length > 0) {
-        this.router.navigate(["error-403"]);
-      }
-      this.setTitle(this.router);
-      window.scrollTo(0, 0);
-    }
-  }
+  // navigationInterceptor(event: RouterEvent): void {
+  //   if (event instanceof NavigationEnd) {
+  //     if (!event.url) {
+  //       this.router.navigate(['login']);
+  //     }
+  //     const menu = LeftMenuKeyConfig.filter(i => i.url === event.url);
+  //     // nếu nằm trong DS menu và không có quyền
+  //     if (!this.authenticationService.checkPermissionUrl(event.url) && menu.length > 0) {
+  //       this.router.navigate(["error-403"]);
+  //     }
+  //     this.setTitle(this.router);
+  //     window.scrollTo(0, 0);
+  //   }
+  // }
 
   private setTitle(router: Router) {
     const data = router.routerState ? router.routerState.root : undefined;

@@ -73,16 +73,10 @@ export class AuthenticationInterceptor implements HttpInterceptor {
 
       const secretKey = "oIKDWN8fwjojOmdwo62nNfw";
       let inputSignature = `date-time=${dateTime}&access-code=${accessCode}&digest=${digest}`;
-      let outputSignature = this.hashValueSHA256(inputSignature, secretKey);
 
       let headers = req.headers;
 
       headers = headers
-        .append("date-time", dateTime)
-        .append("access-code", accessCode)
-        .append("digest", digest)
-        .append("hash-field", hashField)
-        .append("signature", outputSignature)
         .append("Cache-Control", "no-cache")
         .append("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
         .append("X-Requested-With", "XMLHttpRequest")
@@ -112,88 +106,24 @@ export class AuthenticationInterceptor implements HttpInterceptor {
       let inputSignature = `date-time=${dateTime}&access-code=${accessCode}&digest=${digest}`;
       let outputSignature = this.hashValueSHA256(inputSignature, secretKey);
 
-      // let headers = req.headers.append(
-      //   "Authorization",
-      //   `Bearer ${accessToken}`
-      // );
-
-      let headers = req.headers;
-
-      headers = headers
-        .append("date-time", dateTime)
-        .append("access-code", accessCode)
-        .append("digest", digest)
-        .append("hash-field", hashField)
-        .append("signature", outputSignature)
-        .append("Authorization", `Bearer ${accessToken}`)
-        .append("Cache-Control", "no-cache")
-        .append("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
-        .append("X-Requested-With", "XMLHttpRequest")
-        .append("Access-Control-Allow-Origin", "*")
-        .append("Cache-Control", "no-store")
-        .append("Expires", "0")
-        .append("Pragma", "no-cache");
-
-      // newRequest = req.clone({
-      //   headers: headers,
-      //   body: {
-      //     ...req.body,
-      //     device: browserInfo.device,
-      //     ip_address: browserInfo.ip_address,
-      //   },
-      // });
-
-      // let headers = req.headers.set("Authorization", "Bearer " + accessToken);
-      // headers = headers
-      //   .append("Cache-Control", "no-cache")
-      //   .append("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
-      //   .append("X-Requested-With", "XMLHttpRequest")
-      //   .append("Access-Control-Allow-Origin", "*")
-      //   .append("Cache-Control", "no-store")
-      //   .append("Expires", "0")
-      //   .append("Pragma", "no-cache");
-
-      newRequest = req.clone({
-        headers,
-        body: {
-          ...req.body,
-          device: browserInfo.device,
-          ip_address: browserInfo.ip_address,
-        },
-      });
-
-      // newRequest.headers = newRequest.headers.append(
-      //   "Signature",
-      //   this.hashValue(newRequest.body, accessToken)
-      // );
-
-      // }
-      // else {
-      //   let headers = req.headers.set(
-      //     "Authorization",
-      //     "Bearer " + accessToken
-      //   );
-      //   headers = headers
-      //     .append("Cache-Control", "no-cache")
-      //     .append(
-      //       "Access-Control-Allow-Methods",
-      //       "POST, GET, OPTIONS"
-      //     )
-      //     .append("Access-Control-Allow-Origin", "*")
-      //     .append("Cache-Control", "no-store")
-      //     .append("Expires", "0")
-      //     .append("Pragma", "no-cache");
-      //   newRequest = req.clone({
-      //     headers,
-      //     body: req.body,
-      //   });
-      //   const formData = req.body as FormData;
-      //   const value = formData.get("req") as string;
-      //   newRequest.headers = newRequest.headers.append(
-      //     "Signature",
-      //     this.hashValueString(value, accessToken)
-      //   );
-      // }
+      let headers = req.headers.set(
+            "Authorization",
+            "Bearer " + accessToken
+          );
+          headers = headers
+            .append("Cache-Control", "no-cache")
+            .append(
+              "Access-Control-Allow-Methods",
+              "POST, GET, OPTIONS"
+            )
+            .append("Access-Control-Allow-Origin", "*")
+            .append("Cache-Control", "no-store")
+            .append("Expires", "0")
+            .append("Pragma", "no-cache");
+          newRequest = req.clone({
+            headers,
+            body: req.body,
+          });
     }
     return next.handle(newRequest).pipe(
       map((event: HttpEvent<any>) => {
@@ -206,22 +136,22 @@ export class AuthenticationInterceptor implements HttpInterceptor {
           this.router.navigate(["login"]);
         }
         // timeout
-        if (error.status === 401 && !req.url.includes("login")) {
-          if (error.error?.error_code === "77") {
-            this.toastr.error("Invalid Signature");
-          } else {
-            this.clear();
-            this.authService.logOut();
-            this.toastr.error(this.translate.instant("session-timeout"));
-            this.router.navigate(["login"]);
-          }
-        }
-        if (error.status === 403 && !req.url.includes("login")) {
-          this.dialog.closeAll();
-          this.toastr.clear();
-          this.router.navigate(["error-403"]);
-          // this.toastr.error(this.translate.instant("function-role"));
-        }
+        // if (error.status === 401 && !req.url.includes("login")) {
+        //   if (error.error?.error_code === "77") {
+        //     this.toastr.error("Invalid Signature");
+        //   } else {
+        //     this.clear();
+        //     this.authService.logOut();
+        //     this.toastr.error(this.translate.instant("session-timeout"));
+        //     this.router.navigate(["login"]);
+        //   }
+        // }
+        // if (error.status === 403 && !req.url.includes("login")) {
+        //   this.dialog.closeAll();
+        //   this.toastr.clear();
+        //   this.router.navigate(["error-403"]);
+        //   // this.toastr.error(this.translate.instant("function-role"));
+        // }
         return throwError(error);
       })
     );

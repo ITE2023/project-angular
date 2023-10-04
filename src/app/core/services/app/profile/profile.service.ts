@@ -34,9 +34,6 @@ export class ProfileService {
         : "";
   }
 
-  detailProfile(): Observable<ProfileResponse> {
-    return this.http.post<ProfileResponse>(`${this.baseUrl}/user-info`, {});
-  }
 
   updateProfile(request: any): Observable<any> {
     const body = {
@@ -99,5 +96,9 @@ export class ProfileService {
         return data;
       })
     );
+  }
+
+  getUserById(id: string): Observable<any> {
+    return this.http.get(`https://account.apiidentity.duckdns.org/api/users/get-user?idUser=${id}`);
   }
 }
