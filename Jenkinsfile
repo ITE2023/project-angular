@@ -1,98 +1,81 @@
-def CredentialsId = "thanhnd56"
-def	gitCredentialId= "545c2196-4572-4d4d-a53e-1580d0fa99bc"
-def image="ite-pg-mm-web-dev"
-def containerName="ite-pg-mm-web-dev"
-def ppWebRegistry = "thanhnd56/${image}"
-def dockerimage = ''
-def lastSuccessfulBuildID  = 0
-def artifacCredentialIds='jfrog-vtl-dev'
-def artifactoryRegistry = '171.244.27.138:8082/viettel-develop'
-def FullWS = './dist/viettel'
+def image=" _image"
+def containerName="Recruiter_container"
 
-node ('jenkins_build') {
+node ('ITE') {
     try {
-        checkout scm
-        stage('Build') {
-            checkout scm
-//             checkout_from_reference()
-            // sh "cd ${Workspace}"
-			// sh 'rm -rf node_modules'
-            sh "npm install -y"
-            sh "npm i gzipper -g"
-            sh "npm run prod"
-            sh 'rm -rf node_modules/@angular/compiler-cli/ngcc/__ngcc_lock_file__'
-            dockerimage = docker.build(ppWebRegistry + ":$BUILD_NUMBER" + " --build-arg SourceLink=${FullWS}", ' -f Dockerfile .')
-        }
+        def notifySlack(String buildStatus = 'STARTED', String errorMessage = null) {
+            // Build status of null means success.
+            buildStatus = buildStatus ?: 'SUCCESS'
 
-        stage('Push Image To Artifactory') {
-            try{
-                sh "docker tag $ppWebRegistry:$BUILD_NUMBER $artifactoryRegistry/$ppWebRegistry-single:$BUILD_NUMBER"
+            def color
 
-                // Login Artifactory
-                withCredentials([usernamePassword(credentialsId: 'jfrog-vtl-dev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                 sh "docker login -u $USERNAME -p $PASSWORD $artifactoryRegistry"
-                }
-                sh "docker push $artifactoryRegistry/$ppWebRegistry-single:$BUILD_NUMBER"
-            } catch(e){
-                echo "push image exception-" + e.toString()
+            if (buildStatus == 'STARTED') {
+                color = '#D4DADF'
+            } else if (buildStatus == 'SUCCESS') {
+                color = '#BDFFC3'
+            } else if (buildStatus == 'UNSTABLE') {
+                color = '#FFFE89'
+            } else {
+                color = '#FF9FA1'
             }
-        }
 
-    }catch (e) {
-        currentBuild.result = 'FAILED'
-        throw e
-    } finally {
-    }
-}
+            def msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}:\n${env.BUILD_URL}"
 
-
-node ("develop_run"){
-    try {
-        stage("Pull image from artifactory"){
-            try{
-                // Login Artifactory
-                withCredentials([usernamePassword(credentialsId: 'jfrog-vtl-dev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                 sh "docker login -u $USERNAME -p $PASSWORD $artifactoryRegistry"
-                }
-                sh "docker pull $artifactoryRegistry/$ppWebRegistry-single:$BUILD_NUMBER"
-                sh "docker tag $artifactoryRegistry/$ppWebRegistry-single:$BUILD_NUMBER $ppWebRegistry-single:$BUILD_NUMBER"
-            } catch(e){
-                echo "pull image fail! "
+            if (errorMessage) {
+                msg += "\nError Message: \n```\n${errorMessage}\n```"
             }
-        }
 
+            slackSend(color: color, message: msg)
+        }
         stage('Delete Docker Container if exists') {
-            // stop and remove logs container
-            try{
-                sh "docker container stop $containerName"
-                sh "docker container rm $containerName"
-                echo "Delete $containerName Done"
-            } catch(Exception e){
-                echo " $containerName not exists or not running"
-            }
+                // stop and remove logs container
+                try {
+                    sh "docker container stop $containerName"
+                    sh "docker container rm $containerName"
+                    echo "Delete $containerName Done"
+                } catch (Exception e) {
+                    echo " $containerName not exists or not running"
+                }
         }
+        stage('Delete Docker image if exists') {
+        def imageExists = sh(script: "docker images -q ${image}", returnStatus: true)
+                if (imageExists == 0) {
+                    echo "Image $image does not exist."
+                } else {
+                    stage('Remove Image - ${image}') {
+                        echo "Remove Image"
+                        sh "docker image rm $image"
+                        echo "Remove Image Done"
+                    }
 
-        stage("Run Transaction Docker Image"){
-            try{
-                sh "docker run -d -p 9002:80 --restart always --name $containerName $ppWebRegistry-single:$BUILD_NUMBER"
-            } catch(e){
-                echo "Run $containerName failure"
-            }
+                    stage('Remove Image None - ${image}') {
+                        echo "Remove Image None"
+                        sh "docker image prune -f"
+                        echo "Remove Image None Done"
+                    }
+                }
         }
-
-        stage("Delete Docker Image"){
-            try{
-                sh "docker image rm -f $ppWebRegistry-single:$BUILD_NUMBER"
-                sh "docker image rm -f $artifactoryRegistry/$ppWebRegistry-single:$BUILD_NUMBER"
-                echo "Delete image $ppWebRegistry-single:$BUILD_NUMBER successfull"
-            } catch(Exception e){
-                echo " Image $ppWebRegistry-single:$BUILD_NUMBER is not delete"
-            }
+        stage('Build') {
+                checkout scm
+                sh "npm install -y"
+                sh "npm i gzipper -g"
+                sh "npm run prod"
+                sh 'rm -rf node_modules/@angular/compiler-cli/ngcc/__ngcc_lock_file__'
+                dockerimage = docker.build(ppWebRegistry + ":$BUILD_NUMBER" + " --build-arg SourceLink=${FullWS}", ' -f Dockerfile .')
         }
-    }catch (e) {
+        stage('Run') {
+                echo "Start Build Container"
+                sh "docker run -d -p 2003:80 --ip 172.18.0.12 -e TZ=Asia/Ho_Chi_Minh --network Ite-Network --restart=always --name=${containerName} ${image}:${BUILD_NUMBER}"
+                echo "Build done !"
+        }
+    } catch (Exception e) {
         currentBuild.result = "FAILED"
+        notifySlack(currentBuild.result, e.toString())         
         throw e
     } finally {
+        echo "Build Done"
+        notifySlack(currentBuild.result)      
 
     }
 }
+
