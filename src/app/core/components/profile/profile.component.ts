@@ -85,27 +85,8 @@ export class ProfileComponent implements OnInit {
   public getDetailProfile() {
     // this.loader.show();
     this.profileService.getUserById(this.idUser.id).subscribe((data) => {
-      // if (value.error_code === "00") {
       this.profile = data.data;
       console.log(this.profile);
-      
-      // this.profile = value.data;
-      // this._profileImage = this.profile.avatar
-      //   ? this.profile.avatar
-      //   : DefaultAvatar.toString();
-      // this.profileService.getLanguageList().subscribe((res) => {
-      //   if (res.error_code === "00") {
-      //     this.langs = res.list_data;
-      //     if (this.profile.language === "vn") {
-      //       this.profile.language = "vi";
-      //     }
-      //     this.language = this.langs.filter(
-      //       (i) => i.value === this.profile.language
-      //     )[0].desc;
-      //     this.getHistory(this.page);
-      //   }
-      // });
-      // }
     });
   }
 
@@ -133,7 +114,7 @@ export class ProfileComponent implements OnInit {
       width: "400px",
       disableClose: true,
       data: {
-        profile: this.profile,
+        id: this.profile.id,
         langs: this.langs,
       },
     });

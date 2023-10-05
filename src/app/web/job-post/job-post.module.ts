@@ -12,6 +12,7 @@ import { EditJobPostComponent } from './edit-job-post/edit-job-post.component';
 import { routing } from "./job-post.routing";
 import { QuillModule } from 'ngx-quill';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddJobPostComponent } from './add-job-post/add-job-post.component';
 
 defineLocale("vi", viLocale);
 defineLocale("en", enGbLocale);
@@ -21,7 +22,7 @@ defineLocale("en", enGbLocale);
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [JobPostComponent, EditJobPostComponent],
+  declarations: [JobPostComponent, EditJobPostComponent, AddJobPostComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routing),

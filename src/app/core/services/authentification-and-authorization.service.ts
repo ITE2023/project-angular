@@ -318,16 +318,18 @@ export class AuthenticationAndAuthorizationService {
   public logOut(): Observable<boolean> {
     return of(true).pipe(
       map((data: any) => {
-        this.userInformation = null;
-        let remember = null;
-        if (localStorage.getItem(LocalStorageType.RememberMe)) {
-          remember = localStorage.getItem(LocalStorageType.RememberMe);
-        }
-        localStorage.clear();
-        if (remember != null) {
-          localStorage.setItem(LocalStorageType.RememberMe, remember);
-        }
-        this.dialogRef.closeAll();
+        // this.userInformation = null;
+        // let remember = null;
+        // if (localStorage.getItem(LocalStorageType.RememberMe)) {
+        //   remember = localStorage.getItem(LocalStorageType.RememberMe);
+        // }
+        // localStorage.clear();
+        // if (remember != null) {
+        //   localStorage.setItem(LocalStorageType.RememberMe, remember);
+        // }
+        localStorage.removeItem(LocalStorageType.Token);
+        localStorage.removeItem(LocalStorageType.UserInformation);
+        // this.dialogRef.closeAll();
         // this.toastr.clear();
         // this.clearPermissionAndURLList();
         return true;

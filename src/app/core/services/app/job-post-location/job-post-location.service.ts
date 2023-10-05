@@ -8,10 +8,17 @@ export class JobPostLocationService {
   constructor(private http: HttpClient) { }
 
   getJobPostLocationById(id: string): Observable<any> {
-    return this.http.get(`https://recrutier.duckdns.org/api/jobpostlocation/get-by-id?id=${id}`);
+    return this.http.get(`http://210.211.99.111:15001/recruiter/jobpostlocation/get-by-id?id=${id}`);
   }
 
   updateJobPostLocation(request: any): Observable<any> {
-    return this.http.put<any>(`https://recrutier.duckdns.org/api/jobpostlocation/Update`, request);
+    return this.http.put<any>(`http://210.211.99.111:15001/recruiter/jobpostlocation/Update`, request);
+  }
+
+  addJobPostLocation(request: any): Observable<any> {
+    return this.http.post<any>(`http://210.211.99.111:15001/recruiter/jobpostlocation/add`, request);
+  }
+  deleteJobPostLocation(id: string): Observable<any> {
+    return this.http.delete<any>(`http://210.211.99.111:15001/recruiter/jobpostlocation/delete?id=${id}`);
   }
 }

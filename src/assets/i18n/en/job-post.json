@@ -26,7 +26,8 @@
       "description": "Description",
       "save": "Save",
       "cancel": "Cancel",
-      "edit" : "Edit"
+      "edit" : "Edit",
+      "remove": "Remove"
     }
   }
 }

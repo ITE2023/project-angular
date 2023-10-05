@@ -94,8 +94,8 @@ export class ChangePasswordComponent implements OnInit {
       return;
     }
     const request: ProfilePassword = {
-      old_password: this.changePasswordForm.value.currentPassword,
-      new_password: this.changePasswordForm.value.password,
+      oldPassword: this.changePasswordForm.value.currentPassword,
+      newPassword: this.changePasswordForm.value.password,
     };
 
     this.profileService.updatePassword(request).subscribe((data) => {

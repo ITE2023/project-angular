@@ -213,6 +213,12 @@
     "pdf": "Export PDF",
     "excel": "Export Excel"
   },
+  "job-post-mes": {
+    "validator": {
+      "successAdd": "Added successful recruitment news",
+      "successEdit": "Successfully edited the job posting"
+    }
+  },
   "left-menu": {
     "dashboard": "Dashboard",
     "manage-post": "Manage post",

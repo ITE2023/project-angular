@@ -28,7 +28,7 @@ export class ProfileModalComponent implements OnInit {
   public isLoading: boolean;
   public commonErrorCode = CommonErrorCode;
   public languageList = [];
-  @ViewChild("phone") phone;
+  @ViewChild("phoneNumber") phone;
 
   constructor(
     private profile: ProfileShare,
@@ -41,6 +41,8 @@ export class ProfileModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.user = this.data?.profile;
+    console.log(this.user);
+    
     this.languageList = this.data?.langs;
   }
   foods: Food[] = [
@@ -62,14 +64,13 @@ export class ProfileModalComponent implements OnInit {
         Validators.required,
         Validators.pattern(EMAIL_REGEX),
       ]),
-      phone: this.fb.control("", [
+      phoneNumber: this.fb.control("", [
         Validators.required,
         Validators.pattern(PHONE_REGEX),
       ]),
       gender: this.fb.control(0, [
         Validators.required,
       ]),
-      // language: this.fb.control(""),
     });
     if (Object.keys(this.user).length > 0) {
       this.profileForm.patchValue(this.user);
@@ -93,9 +94,9 @@ export class ProfileModalComponent implements OnInit {
   public onSubmit() {
     if (this.profileForm.valid) {
       let request = Object.assign({}, this.profileForm.value);
-      request.full_name = request.full_name.trim();
-      this.profileService.updateProfile(request).subscribe((result) => {
-        // if (result.error_code === "00") {
+      request.firstName = request.firstName.trim();
+      request.lastName = request.lastName.trim();
+      this.profileService.updateProfile({ id: this.user.id, imageLink: "Null  " , ...request}).subscribe((result) => {
         this.cancel(true);
         const message = this.localizeService.instant(
           "profileAccount.validator.success"

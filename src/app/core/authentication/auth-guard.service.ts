@@ -29,7 +29,8 @@ export class AuthGuardService implements CanActivateChild {
     if (this.authService.checkLogin() && this.checkSessionTimeout()) {
       return true;
     }
-    this.router.navigate(["login"]);
+    // this.router.navigate(["login"]);
+    window.location.href= "http://localhost:2004/login";
     return false;
   }
 

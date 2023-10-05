@@ -10,6 +10,7 @@ import {
   PHONE_REGEX,
   LocalStorageType,
   EMAIL_REGEX,
+  PASSWORD_REGEX,
 } from "@core/constants";
 import { UserInformationModel } from "@core/models";
 import { FormValidators } from "src/app/shared/validators";
@@ -29,7 +30,7 @@ export const confirmPasswordValidator: ValidatorFn = (control: FormGroup): Valid
   styleUrls: ['./change-password-modal.component.scss']
 })
 export class ChangePasswordModalComponent implements OnInit {
-  public user: any;
+  public id: string;
   public profileForm: FormGroup;
   public isLoading: boolean;
   public commonErrorCode = CommonErrorCode;
@@ -46,26 +47,21 @@ export class ChangePasswordModalComponent implements OnInit {
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.user = this.data?.profile;
+    this.id = this.data.id;
     this.languageList = this.data?.langs;
   }
-  foods: Food[] = [
-    {value: 1, viewValue: 'male'},
-    {value: 2, viewValue: 'female'},
-  ];
   ngOnInit(): void {
     this.profileForm = this.fb.group({
       oldPassword: this.fb.control("", [
         Validators.required,
-        Validators.pattern(PHONE_REGEX),
+        Validators.pattern(PASSWORD_REGEX),
       ]),
       newPassword: this.fb.control("", [
         Validators.required,
-        Validators.pattern(PHONE_REGEX),
+        Validators.pattern(PASSWORD_REGEX),
       ]),
       confirmPassword: this.fb.control("", [
         Validators.required,
-        Validators.pattern(PHONE_REGEX),
       ]),
     });
   }
@@ -85,8 +81,14 @@ export class ChangePasswordModalComponent implements OnInit {
   public onSubmit() {
     if (this.profileForm.valid) {
       let request = Object.assign({}, this.profileForm.value);
-      request.full_name = request.full_name.trim();
-      this.profileService.updateProfile(request).subscribe((result) => {
+      // request.full_name = request.full_name.trim();
+      console.log(request);
+      const data = {
+        id: this.id,
+        oldPassword : request.oldPassword,
+        newPassword : request.newPassword
+      }
+      this.profileService.updatePassword(data).subscribe((result) => {
         // if (result.error_code === "00") {
         this.cancel(true);
         const message = this.localizeService.instant(

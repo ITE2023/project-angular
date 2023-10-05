@@ -29,6 +29,7 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { RegisterComponent } from "./components/register/register.component";
 import { ResetPasswordComponent } from "./components/reset-password/reset-password.component";
 import { ChangePasswordModalComponent } from './components/profile/change-password-modal/change-password-modal.component';
+import { ModalConfirmComponent } from './components/modal-confirm/modal-confirm.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ChangePasswordModalComponent } from './components/profile/change-passwo
     NotificationDialogComponent,
     ErrorForbiddenPageComponent,
     PageNotFoundComponent,
-    ChangePasswordModalComponent
+    ChangePasswordModalComponent,
+    ModalConfirmComponent
   ],
   imports: [
     CommonModule,

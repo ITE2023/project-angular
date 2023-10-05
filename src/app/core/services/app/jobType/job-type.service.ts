@@ -9,6 +9,6 @@ export class JobTypeService {
 
   constructor(private http: HttpClient) { }
   getJobTypeAll(): Observable<any> { 
-    return this.http.get(`https://recrutier.duckdns.org/api/jobtype/get-all`);
+    return this.http.get(`http://210.211.99.111:15001/recruiter/jobtype/get-all`);
   }
 }

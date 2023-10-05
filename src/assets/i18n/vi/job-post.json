@@ -26,7 +26,8 @@
       "description": "Mô tả",
       "save": "Lưu",
       "cancel": "Hủy bỏ",
-      "edit" : "Sửa"
+      "edit" : "Sửa",
+      "remove": "Xóa"
     }
   }
 }

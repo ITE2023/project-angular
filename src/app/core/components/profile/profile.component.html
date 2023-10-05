@@ -34,7 +34,12 @@
                     {{ "profileAccount.gender.title" | translate }}:
                   </div>
                   <div class="col-info ml-2">
-                    {{ profile?.gender }}
+                    <div *ngIf="profile?.gender == 1">
+                      {{ 'profileAccount.gender.value.male' | translate}}
+                    </div>
+                    <div *ngIf="profile?.gender == 2">
+                      {{ 'profileAccount.gender.value.female' | translate}}
+                    </div>
                   </div>
                 </div>
                 <div class="info">

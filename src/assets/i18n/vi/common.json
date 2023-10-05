@@ -213,6 +213,12 @@
     "pdf": "Xuất PDF",
     "excel": "Xuất Excel"
   },
+  "job-post-mes": {
+    "validator": {
+      "successAdd": "Thêm bài đăng tuyển dụng thành công",
+      "successEdit": "Sửa tin tuyển dụng thành công"
+    }
+  },
   "left-menu": {
     "dashboard": "Bảng điều khiển",
     "manage-post": "Quản lí bài viết",

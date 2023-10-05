@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { PageEvent } from "@angular/material/paginator";
-import { CommonConstants, DATE_CONFIG } from "@core/constants";
+import { CommonConstants, DATE_CONFIG, LocalStorageType } from "@core/constants";
 import { AuthenticationAndAuthorizationService } from "@core/services";
 import { JobPostService } from "@core/services/app/job-post/job-post.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "ite-job-post",
@@ -25,13 +26,15 @@ export class JobPostComponent implements OnInit {
   public totalRecords: any;
   public pageSize = 10;
   public pageSizes = CommonConstants.DEFAULT_PAGE_SIZE_OPTION;
-
+  public id: string;
+  public user: any;
   checkPermission(key) {
     return this.authService.checkPermission(key);
   }
   constructor(
     private authService: AuthenticationAndAuthorizationService,
     private formBuilder: FormBuilder,
+    private router: Router,
     private jobPostService: JobPostService
   ) {
     this.maxDate = new Date();
@@ -45,11 +48,15 @@ export class JobPostComponent implements OnInit {
       from_date: [this.firstDay],
       to_date: [this.currentDay],
     });
+    this.user = JSON.parse(localStorage.getItem(LocalStorageType.UserInformation)); 
+    this.id = this.user.id;
+    console.log(this.id);
+    
   }
 
   ngOnInit(): void {
     this.data = this.jobPostService
-      .getJobPostByUserId("7e66d61f-1514-5b34-8e7d-ab61ee0f1163")
+      .getJobPostByUserId(this.id)
       .subscribe(
         (data) => {
           this.data = data.result;
@@ -104,5 +111,7 @@ export class JobPostComponent implements OnInit {
     }
   }
 
-
+  add() {
+    this.router.navigate(["admin/job-post/add"]);
+  }
 }

@@ -107,12 +107,12 @@
         <div class="row">
           <div class="col-12">
             <mat-form-field class="w-100" appearance="standard">
-              <mat-label>{{ "profileAccount.phoneNumber" | translate }}</mat-label>
+              <mat-label>{{ "profileAccount.phone" | translate }}</mat-label>
               <mat-icon class="form-input-icon" matPrefix>smartphone</mat-icon>
               <input
                 class="form-field"
                 matInput
-                formControlName="phone"
+                formControlName="phoneNumber"
                 appNumberOnly
                 maxlength="11"
                 #phone
@@ -120,13 +120,13 @@
                   'user.add-edit-detail.placeholder.phone' | translate
                 "
               />
-              <mat-error *ngIf="!f.phone.valid && f.phone.errors.required">
+              <mat-error *ngIf="!f.phoneNumber.valid && f.phoneNumber.errors.required">
                 {{ commonErrorCode.REQUIRED | translate }}
               </mat-error>
-              <mat-error *ngIf="!f.phone.valid && f.phone.errors.pattern">
+              <mat-error *ngIf="!f.phoneNumber.valid && f.phoneNumber.errors.pattern">
                 {{ commonErrorCode.PHONE_PATTERN | translate }}
               </mat-error>
-              <mat-error *ngIf="!f['phone'].valid && f['phone'].errors.exist">
+              <mat-error *ngIf="!f['phoneNumber'].valid && f['phoneNumber'].errors.exist">
                 {{
                   "user.add-edit-detail.notification.add.Error_11" | translate
                 }}

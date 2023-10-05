@@ -24,8 +24,9 @@ export class ProfileRequest {
 
 
 export class ProfilePassword {
-  public old_password: string;
-  public new_password: string;
+  public id?: string;
+  public oldPassword: string;
+  public newPassword: string;
 
   constructor(field3?: Partial<ProfileRequest>) {
     if (field3) {

@@ -69,5 +69,8 @@ export const BREADCRUMB_CONFIG = [
     name: "breadcrumb.manage-job-post",
     url: "/admin/job-post",
     icon: "list_alt",
+    children: [
+      {}
+    ]
   },
 ];

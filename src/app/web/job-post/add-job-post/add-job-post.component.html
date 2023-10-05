@@ -5,7 +5,7 @@
         <span class="title page-title">Câp nhập thông tin</span>
       </div>
       <div>
-        <form [formGroup]="jobTypeForm" (ngSubmit)="onSubmit()" [ngClass]="{ 'disabled-form': isDisabled }">
+        <form [formGroup]="jobTypeForm" (ngSubmit)="onSubmit()">
           <mat-form-field class="w-100" appearance="standard">
             <mat-label style="font-size: 14px">{{ 'job-post.form.title' | translate  }}</mat-label>
             <textarea
@@ -143,20 +143,16 @@
             required
           >
           </quill-editor>
-          <div *ngIf="!isDisabled" class="mt-2">
+          <div class="mt-2">
             <button mat-raised-button color="primary">
               {{ 'job-post.form.save' | translate }}
             </button>
-            <button class="ml-2" mat-raised-button (click)="toggleForm()">
+            <button class="ml-2" mat-raised-button (click) = "redirect()">
               {{ 'job-post.form.cancel' | translate }}
             </button>
           </div>
         </form>
-        <div *ngIf="isDisabled" class="mt-2">
-          <button mat-raised-button color="primary" (click)="toggleForm()">{{ 'job-post.form.edit' | translate }}</button>
-          <button mat-raised-button color="primary" (click)="openConfirmDialog()" class="ml-2">{{ 'job-post.form.remove' | translate }}</button>
-        </div>
       </div>
-    </mat-card-title> 
+    </mat-card-title>
   </mat-card-content>
 </mat-card>

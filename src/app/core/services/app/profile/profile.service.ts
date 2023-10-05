@@ -36,23 +36,12 @@ export class ProfileService {
 
 
   updateProfile(request: any): Observable<any> {
-    const body = {
-      full_name: request.full_name,
-      phone: request.phone,
-      address: request.address,
-      email: request.email,
-    };
-    return this.http.put<ProfileResponse>(`${this.baseUrl}/user-info`, body);
+    return this.http.put<ProfileResponse>(`http://210.211.99.111:15040/api/users/update-user`, request);
   }
 
   updatePassword(request: ProfilePassword): Observable<ProfileResponse> {
-    var body = {
-      old_password: Md5Help.md5(request.old_password),
-      new_password: Md5Help.md5(request.new_password),
-    };
-    return this.http.post<ProfileResponse>(
-      `${this.baseUrl}/profile/update-password`,
-      body
+    return this.http.put<ProfileResponse>(
+      'http://210.211.99.111:15040/api/oauths/change-password',request
     );
   }
   confirmResetPws(body: any): Observable<any> {
@@ -99,6 +88,6 @@ export class ProfileService {
   }
 
   getUserById(id: string): Observable<any> {
-    return this.http.get(`https://account.apiidentity.duckdns.org/api/users/get-user?idUser=${id}`);
+    return this.http.get(`http://210.211.99.111:15040/api/users/get-user?idUser=${id}`);
   }
 }

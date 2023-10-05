@@ -9,23 +9,20 @@ export class JobPostService {
 
   constructor(private http: HttpClient) { }
   getJobPostByUserId(id: string): Observable<any> { 
-    return this.http.get(`https://recrutier.duckdns.org/api/jobpost/get-by-user-id?idUser=${id}`);
+    return this.http.get(`http://210.211.99.111:15001/recruiter/jobpost/get-by-user-id?idUser=${id}`);
   }
 
   getJobPostById(id: string): Observable<any> {
-    return this.http.get(`https://recrutier.duckdns.org/api/jobpost/get-by-id?id=${id}`);
+    return this.http.get(`http://210.211.99.111:15001/recruiter/jobpost/get-by-id?id=${id}`);
   }
 
   updateJobPost(request: any): Observable<any> {
-    const body = {
-      id: request.id,
-      title: request.title,
-      description: request.description,
-      salary: request.salary,
-      idJobType: request.idJobType,
-      expiredAt: request.expiredAt,
-      idLocationJobPost: request.idLocationJobPost
-    };
-    return this.http.put<any>(`https://recrutier.duckdns.org/api/jobpost/update`, request);
+    return this.http.put<any>(`http://210.211.99.111:15001/recruiter/jobpost/update`, request);
+  }
+  addJobPost(request: any): Observable<any> {
+    return this.http.post<any>(`http://210.211.99.111:15001/recruiter/jobpost/add`, request);
+  }
+  deleteJobPost(id: string): Observable<any> {
+    return this.http.delete<any>(`http://210.211.99.111:15001/recruiter/jobpost/delete?id=${id}`);
   }
 }
